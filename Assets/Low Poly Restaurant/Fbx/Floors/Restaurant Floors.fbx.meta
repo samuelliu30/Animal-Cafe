@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: 2e53ff4bdc66d074191d2fbd16d7b44c
+timeCreated: 1558862048
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Restaurant Floor 01
+    100002: Restaurant Floor 010
+    100004: Restaurant Floor 011
+    100006: Restaurant Floor 012
+    100008: Restaurant Floor 013
+    100010: Restaurant Floor 014
+    100012: Restaurant Floor 015
+    100014: Restaurant Floor 016
+    100016: Restaurant Floor 017
+    100018: Restaurant Floor 018
+    100020: Restaurant Floor 019
+    100022: Restaurant Floor 02
+    100024: Restaurant Floor 020
+    100026: Restaurant Floor 021
+    100028: Restaurant Floor 022
+    100030: Restaurant Floor 023
+    100032: Restaurant Floor 024
+    100034: Restaurant Floor 025
+    100036: Restaurant Floor 026
+    100038: Restaurant Floor 027
+    100040: Restaurant Floor 028
+    100042: Restaurant Floor 029
+    100044: Restaurant Floor 03
+    100046: Restaurant Floor 030
+    100048: Restaurant Floor 031
+    100050: Restaurant Floor 032
+    100052: Restaurant Floor 033
+    100054: Restaurant Floor 034
+    100056: Restaurant Floor 035
+    100058: Restaurant Floor 04
+    100060: Restaurant Floor 05
+    100062: Restaurant Floor 06
+    100064: Restaurant Floor 07
+    100066: Restaurant Floor 08
+    100068: Restaurant Floor 09
+    100070: //RootNode
+    100072: Restaurant Floor 036
+    100074: Restaurant Floor 037
+    400000: Restaurant Floor 01
+    400002: Restaurant Floor 010
+    400004: Restaurant Floor 011
+    400006: Restaurant Floor 012
+    400008: Restaurant Floor 013
+    400010: Restaurant Floor 014
+    400012: Restaurant Floor 015
+    400014: Restaurant Floor 016
+    400016: Restaurant Floor 017
+    400018: Restaurant Floor 018
+    400020: Restaurant Floor 019
+    400022: Restaurant Floor 02
+    400024: Restaurant Floor 020
+    400026: Restaurant Floor 021
+    400028: Restaurant Floor 022
+    400030: Restaurant Floor 023
+    400032: Restaurant Floor 024
+    400034: Restaurant Floor 025
+    400036: Restaurant Floor 026
+    400038: Restaurant Floor 027
+    400040: Restaurant Floor 028
+    400042: Restaurant Floor 029
+    400044: Restaurant Floor 03
+    400046: Restaurant Floor 030
+    400048: Restaurant Floor 031
+    400050: Restaurant Floor 032
+    400052: Restaurant Floor 033
+    400054: Restaurant Floor 034
+    400056: Restaurant Floor 035
+    400058: Restaurant Floor 04
+    400060: Restaurant Floor 05
+    400062: Restaurant Floor 06
+    400064: Restaurant Floor 07
+    400066: Restaurant Floor 08
+    400068: Restaurant Floor 09
+    400070: //RootNode
+    400072: Restaurant Floor 036
+    400074: Restaurant Floor 037
+    2300000: Restaurant Floor 01
+    2300002: Restaurant Floor 010
+    2300004: Restaurant Floor 011
+    2300006: Restaurant Floor 012
+    2300008: Restaurant Floor 013
+    2300010: Restaurant Floor 014
+    2300012: Restaurant Floor 015
+    2300014: Restaurant Floor 016
+    2300016: Restaurant Floor 017
+    2300018: Restaurant Floor 018
+    2300020: Restaurant Floor 019
+    2300022: Restaurant Floor 02
+    2300024: Restaurant Floor 020
+    2300026: Restaurant Floor 021
+    2300028: Restaurant Floor 022
+    2300030: Restaurant Floor 023
+    2300032: Restaurant Floor 024
+    2300034: Restaurant Floor 025
+    2300036: Restaurant Floor 026
+    2300038: Restaurant Floor 027
+    2300040: Restaurant Floor 028
+    2300042: Restaurant Floor 029
+    2300044: Restaurant Floor 03
+    2300046: Restaurant Floor 030
+    2300048: Restaurant Floor 031
+    2300050: Restaurant Floor 032
+    2300052: Restaurant Floor 033
+    2300054: Restaurant Floor 034
+    2300056: Restaurant Floor 035
+    2300058: Restaurant Floor 04
+    2300060: Restaurant Floor 05
+    2300062: Restaurant Floor 06
+    2300064: Restaurant Floor 07
+    2300066: Restaurant Floor 08
+    2300068: Restaurant Floor 09
+    2300070: Restaurant Floor 036
+    2300072: Restaurant Floor 037
+    3300000: Restaurant Floor 01
+    3300002: Restaurant Floor 010
+    3300004: Restaurant Floor 011
+    3300006: Restaurant Floor 012
+    3300008: Restaurant Floor 013
+    3300010: Restaurant Floor 014
+    3300012: Restaurant Floor 015
+    3300014: Restaurant Floor 016
+    3300016: Restaurant Floor 017
+    3300018: Restaurant Floor 018
+    3300020: Restaurant Floor 019
+    3300022: Restaurant Floor 02
+    3300024: Restaurant Floor 020
+    3300026: Restaurant Floor 021
+    3300028: Restaurant Floor 022
+    3300030: Restaurant Floor 023
+    3300032: Restaurant Floor 024
+    3300034: Restaurant Floor 025
+    3300036: Restaurant Floor 026
+    3300038: Restaurant Floor 027
+    3300040: Restaurant Floor 028
+    3300042: Restaurant Floor 029
+    3300044: Restaurant Floor 03
+    3300046: Restaurant Floor 030
+    3300048: Restaurant Floor 031
+    3300050: Restaurant Floor 032
+    3300052: Restaurant Floor 033
+    3300054: Restaurant Floor 034
+    3300056: Restaurant Floor 035
+    3300058: Restaurant Floor 04
+    3300060: Restaurant Floor 05
+    3300062: Restaurant Floor 06
+    3300064: Restaurant Floor 07
+    3300066: Restaurant Floor 08
+    3300068: Restaurant Floor 09
+    3300070: Restaurant Floor 036
+    3300072: Restaurant Floor 037
+    4300000: Restaurant Floor 031
+    4300002: Restaurant Floor 034
+    4300004: Restaurant Floor 033
+    4300006: Restaurant Floor 032
+    4300008: Restaurant Floor 035
+    4300010: Restaurant Floor 030
+    4300012: Restaurant Floor 029
+    4300014: Restaurant Floor 05
+    4300016: Restaurant Floor 06
+    4300018: Restaurant Floor 07
+    4300020: Restaurant Floor 04
+    4300022: Restaurant Floor 03
+    4300024: Restaurant Floor 02
+    4300026: Restaurant Floor 023
+    4300028: Restaurant Floor 022
+    4300030: Restaurant Floor 015
+    4300032: Restaurant Floor 016
+    4300034: Restaurant Floor 017
+    4300036: Restaurant Floor 024
+    4300038: Restaurant Floor 025
+    4300040: Restaurant Floor 026
+    4300042: Restaurant Floor 027
+    4300044: Restaurant Floor 028
+    4300046: Restaurant Floor 014
+    4300048: Restaurant Floor 012
+    4300050: Restaurant Floor 020
+    4300052: Restaurant Floor 021
+    4300054: Restaurant Floor 013
+    4300056: Restaurant Floor 08
+    4300058: Restaurant Floor 09
+    4300060: Restaurant Floor 018
+    4300062: Restaurant Floor 019
+    4300064: Restaurant Floor 011
+    4300066: Restaurant Floor 01
+    4300068: Restaurant Floor 010
+    4300070: Restaurant Floor 037
+    4300072: Restaurant Floor 036
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

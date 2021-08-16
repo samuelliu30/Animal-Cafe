@@ -1,0 +1,114 @@
+fileFormatVersion: 2
+guid: 4ad319c7a7fdd1f409331c6e084be72f
+timeCreated: 1558882308
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Door Restaurant Green
+    100002: Door Restaurant White
+    100004: //RootNode
+    100006: Restaurant Wall 04 Grey.003
+    100008: Door 01 Restaurant Grey
+    100010: Door 01 Restaurant White
+    100012: Door 02 Restaurant White
+    400000: Door Restaurant Green
+    400002: Door Restaurant White
+    400004: //RootNode
+    400006: Restaurant Wall 04 Grey.003
+    400008: Door 01 Restaurant Grey
+    400010: Door 01 Restaurant White
+    400012: Door 02 Restaurant White
+    2300000: Door Restaurant Green
+    2300002: Door Restaurant White
+    2300004: Restaurant Wall 04 Grey.003
+    2300006: Door 01 Restaurant Grey
+    2300008: Door 01 Restaurant White
+    2300010: Door 02 Restaurant White
+    3300000: Door Restaurant Green
+    3300002: Door Restaurant White
+    3300004: Restaurant Wall 04 Grey.003
+    3300006: Door 01 Restaurant Grey
+    3300008: Door 01 Restaurant White
+    3300010: Door 02 Restaurant White
+    4300000: Restaurant Wall 04 Grey.003
+    4300002: Door Restaurant Green
+    4300004: Door Restaurant White
+    4300006: Door 02 Restaurant White
+    4300008: Door 01 Restaurant Grey
+    4300010: Door 01 Restaurant White
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 20
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

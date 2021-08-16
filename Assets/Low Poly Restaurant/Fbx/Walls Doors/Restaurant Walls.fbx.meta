@@ -1,0 +1,449 @@
+fileFormatVersion: 2
+guid: d10bd88e06ac0254ba48c8bf53e4673c
+timeCreated: 1558865944
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Restaurant Wall 01 Blue
+    100002: Restaurant Wall 01 Brown
+    100004: Restaurant Wall 01 Dark Green
+    100006: Restaurant Wall 01 Dark Grey
+    100008: Restaurant Wall 01 Green
+    100010: Restaurant Wall 01 Grey
+    100012: Restaurant Wall 01 Light Blue
+    100014: Restaurant Wall 01 Light Green
+    100016: Restaurant Wall 01 Orange
+    100018: Restaurant Wall 01 Pink
+    100020: Restaurant Wall 01 Red
+    100022: Restaurant Wall 01 Violet
+    100024: Restaurant Wall 02 Blue
+    100026: Restaurant Wall 02 Brown
+    100028: Restaurant Wall 02 Dark Green
+    100030: Restaurant Wall 02 Dark Grey
+    100032: Restaurant Wall 02 Green
+    100034: Restaurant Wall 02 Grey
+    100036: Restaurant Wall 02 Light Blue
+    100038: Restaurant Wall 02 Light Green
+    100040: Restaurant Wall 02 Orange
+    100042: Restaurant Wall 02 Pink
+    100044: Restaurant Wall 02 Red
+    100046: Restaurant Wall 02 Violet
+    100048: Restaurant Wall 03 Blue
+    100050: Restaurant Wall 03 Brown
+    100052: Restaurant Wall 03 Dark Green
+    100054: Restaurant Wall 03 Dark Grey
+    100056: Restaurant Wall 03 Green
+    100058: Restaurant Wall 03 Grey
+    100060: Restaurant Wall 03 Light Blue
+    100062: Restaurant Wall 03 Light Green
+    100064: Restaurant Wall 03 Orange
+    100066: Restaurant Wall 03 Pink
+    100068: Restaurant Wall 03 Red
+    100070: Restaurant Wall 03 Violet
+    100072: Restaurant Wall 04 Blue
+    100074: Restaurant Wall 04 Brown
+    100076: Restaurant Wall 04 Dark Green
+    100078: Restaurant Wall 04 Dark Grey
+    100080: Restaurant Wall 04 Green
+    100082: Restaurant Wall 04 Grey
+    100084: Restaurant Wall 04 Light Blue
+    100086: Restaurant Wall 04 Light Green
+    100088: Restaurant Wall 04 Orange
+    100090: Restaurant Wall 04 Pink
+    100092: Restaurant Wall 04 Red
+    100094: Restaurant Wall 04 Violet
+    100096: //RootNode
+    100098: Restaurant Wall 05 Blue
+    100100: Restaurant Wall 05 Brown
+    100102: Restaurant Wall 05 Dark Green
+    100104: Restaurant Wall 05 Dark Grey
+    100106: Restaurant Wall 05 Green
+    100108: Restaurant Wall 05 Grey
+    100110: Restaurant Wall 05 Light Blue
+    100112: Restaurant Wall 05 Light Green
+    100114: Restaurant Wall 05 Orange
+    100116: Restaurant Wall 05 Pink
+    100118: Restaurant Wall 05 Red
+    100120: Restaurant Wall 05 Violet
+    100122: Restaurant Wall 05 Light Green.001
+    100124: Restaurant Wall 06 Blue
+    100126: Restaurant Wall 06 Brown
+    100128: Restaurant Wall 06 Dark Green
+    100130: Restaurant Wall 06 Dark Grey
+    100132: Restaurant Wall 06 Green
+    100134: Restaurant Wall 06 Grey
+    100136: Restaurant Wall 06 Light Green
+    100138: Restaurant Wall 06 Light Green.001
+    100140: Restaurant Wall 06 Orange
+    100142: Restaurant Wall 06 Pink
+    100144: Restaurant Wall 06 Red
+    100146: Restaurant Wall 06 Violet
+    400000: Restaurant Wall 01 Blue
+    400002: Restaurant Wall 01 Brown
+    400004: Restaurant Wall 01 Dark Green
+    400006: Restaurant Wall 01 Dark Grey
+    400008: Restaurant Wall 01 Green
+    400010: Restaurant Wall 01 Grey
+    400012: Restaurant Wall 01 Light Blue
+    400014: Restaurant Wall 01 Light Green
+    400016: Restaurant Wall 01 Orange
+    400018: Restaurant Wall 01 Pink
+    400020: Restaurant Wall 01 Red
+    400022: Restaurant Wall 01 Violet
+    400024: Restaurant Wall 02 Blue
+    400026: Restaurant Wall 02 Brown
+    400028: Restaurant Wall 02 Dark Green
+    400030: Restaurant Wall 02 Dark Grey
+    400032: Restaurant Wall 02 Green
+    400034: Restaurant Wall 02 Grey
+    400036: Restaurant Wall 02 Light Blue
+    400038: Restaurant Wall 02 Light Green
+    400040: Restaurant Wall 02 Orange
+    400042: Restaurant Wall 02 Pink
+    400044: Restaurant Wall 02 Red
+    400046: Restaurant Wall 02 Violet
+    400048: Restaurant Wall 03 Blue
+    400050: Restaurant Wall 03 Brown
+    400052: Restaurant Wall 03 Dark Green
+    400054: Restaurant Wall 03 Dark Grey
+    400056: Restaurant Wall 03 Green
+    400058: Restaurant Wall 03 Grey
+    400060: Restaurant Wall 03 Light Blue
+    400062: Restaurant Wall 03 Light Green
+    400064: Restaurant Wall 03 Orange
+    400066: Restaurant Wall 03 Pink
+    400068: Restaurant Wall 03 Red
+    400070: Restaurant Wall 03 Violet
+    400072: Restaurant Wall 04 Blue
+    400074: Restaurant Wall 04 Brown
+    400076: Restaurant Wall 04 Dark Green
+    400078: Restaurant Wall 04 Dark Grey
+    400080: Restaurant Wall 04 Green
+    400082: Restaurant Wall 04 Grey
+    400084: Restaurant Wall 04 Light Blue
+    400086: Restaurant Wall 04 Light Green
+    400088: Restaurant Wall 04 Orange
+    400090: Restaurant Wall 04 Pink
+    400092: Restaurant Wall 04 Red
+    400094: Restaurant Wall 04 Violet
+    400096: //RootNode
+    400098: Restaurant Wall 05 Blue
+    400100: Restaurant Wall 05 Brown
+    400102: Restaurant Wall 05 Dark Green
+    400104: Restaurant Wall 05 Dark Grey
+    400106: Restaurant Wall 05 Green
+    400108: Restaurant Wall 05 Grey
+    400110: Restaurant Wall 05 Light Blue
+    400112: Restaurant Wall 05 Light Green
+    400114: Restaurant Wall 05 Orange
+    400116: Restaurant Wall 05 Pink
+    400118: Restaurant Wall 05 Red
+    400120: Restaurant Wall 05 Violet
+    400122: Restaurant Wall 05 Light Green.001
+    400124: Restaurant Wall 06 Blue
+    400126: Restaurant Wall 06 Brown
+    400128: Restaurant Wall 06 Dark Green
+    400130: Restaurant Wall 06 Dark Grey
+    400132: Restaurant Wall 06 Green
+    400134: Restaurant Wall 06 Grey
+    400136: Restaurant Wall 06 Light Green
+    400138: Restaurant Wall 06 Light Green.001
+    400140: Restaurant Wall 06 Orange
+    400142: Restaurant Wall 06 Pink
+    400144: Restaurant Wall 06 Red
+    400146: Restaurant Wall 06 Violet
+    2300000: Restaurant Wall 01 Blue
+    2300002: Restaurant Wall 01 Brown
+    2300004: Restaurant Wall 01 Dark Green
+    2300006: Restaurant Wall 01 Dark Grey
+    2300008: Restaurant Wall 01 Green
+    2300010: Restaurant Wall 01 Grey
+    2300012: Restaurant Wall 01 Light Blue
+    2300014: Restaurant Wall 01 Light Green
+    2300016: Restaurant Wall 01 Orange
+    2300018: Restaurant Wall 01 Pink
+    2300020: Restaurant Wall 01 Red
+    2300022: Restaurant Wall 01 Violet
+    2300024: Restaurant Wall 02 Blue
+    2300026: Restaurant Wall 02 Brown
+    2300028: Restaurant Wall 02 Dark Green
+    2300030: Restaurant Wall 02 Dark Grey
+    2300032: Restaurant Wall 02 Green
+    2300034: Restaurant Wall 02 Grey
+    2300036: Restaurant Wall 02 Light Blue
+    2300038: Restaurant Wall 02 Light Green
+    2300040: Restaurant Wall 02 Orange
+    2300042: Restaurant Wall 02 Pink
+    2300044: Restaurant Wall 02 Red
+    2300046: Restaurant Wall 02 Violet
+    2300048: Restaurant Wall 03 Blue
+    2300050: Restaurant Wall 03 Brown
+    2300052: Restaurant Wall 03 Dark Green
+    2300054: Restaurant Wall 03 Dark Grey
+    2300056: Restaurant Wall 03 Green
+    2300058: Restaurant Wall 03 Grey
+    2300060: Restaurant Wall 03 Light Blue
+    2300062: Restaurant Wall 03 Light Green
+    2300064: Restaurant Wall 03 Orange
+    2300066: Restaurant Wall 03 Pink
+    2300068: Restaurant Wall 03 Red
+    2300070: Restaurant Wall 03 Violet
+    2300072: Restaurant Wall 04 Blue
+    2300074: Restaurant Wall 04 Brown
+    2300076: Restaurant Wall 04 Dark Green
+    2300078: Restaurant Wall 04 Dark Grey
+    2300080: Restaurant Wall 04 Green
+    2300082: Restaurant Wall 04 Grey
+    2300084: Restaurant Wall 04 Light Blue
+    2300086: Restaurant Wall 04 Light Green
+    2300088: Restaurant Wall 04 Orange
+    2300090: Restaurant Wall 04 Pink
+    2300092: Restaurant Wall 04 Red
+    2300094: Restaurant Wall 04 Violet
+    2300096: Restaurant Wall 05 Blue
+    2300098: Restaurant Wall 05 Brown
+    2300100: Restaurant Wall 05 Dark Green
+    2300102: Restaurant Wall 05 Dark Grey
+    2300104: Restaurant Wall 05 Green
+    2300106: Restaurant Wall 05 Grey
+    2300108: Restaurant Wall 05 Light Blue
+    2300110: Restaurant Wall 05 Light Green
+    2300112: Restaurant Wall 05 Orange
+    2300114: Restaurant Wall 05 Pink
+    2300116: Restaurant Wall 05 Red
+    2300118: Restaurant Wall 05 Violet
+    2300120: Restaurant Wall 05 Light Green.001
+    2300122: Restaurant Wall 06 Blue
+    2300124: Restaurant Wall 06 Brown
+    2300126: Restaurant Wall 06 Dark Green
+    2300128: Restaurant Wall 06 Dark Grey
+    2300130: Restaurant Wall 06 Green
+    2300132: Restaurant Wall 06 Grey
+    2300134: Restaurant Wall 06 Light Green
+    2300136: Restaurant Wall 06 Light Green.001
+    2300138: Restaurant Wall 06 Orange
+    2300140: Restaurant Wall 06 Pink
+    2300142: Restaurant Wall 06 Red
+    2300144: Restaurant Wall 06 Violet
+    3300000: Restaurant Wall 01 Blue
+    3300002: Restaurant Wall 01 Brown
+    3300004: Restaurant Wall 01 Dark Green
+    3300006: Restaurant Wall 01 Dark Grey
+    3300008: Restaurant Wall 01 Green
+    3300010: Restaurant Wall 01 Grey
+    3300012: Restaurant Wall 01 Light Blue
+    3300014: Restaurant Wall 01 Light Green
+    3300016: Restaurant Wall 01 Orange
+    3300018: Restaurant Wall 01 Pink
+    3300020: Restaurant Wall 01 Red
+    3300022: Restaurant Wall 01 Violet
+    3300024: Restaurant Wall 02 Blue
+    3300026: Restaurant Wall 02 Brown
+    3300028: Restaurant Wall 02 Dark Green
+    3300030: Restaurant Wall 02 Dark Grey
+    3300032: Restaurant Wall 02 Green
+    3300034: Restaurant Wall 02 Grey
+    3300036: Restaurant Wall 02 Light Blue
+    3300038: Restaurant Wall 02 Light Green
+    3300040: Restaurant Wall 02 Orange
+    3300042: Restaurant Wall 02 Pink
+    3300044: Restaurant Wall 02 Red
+    3300046: Restaurant Wall 02 Violet
+    3300048: Restaurant Wall 03 Blue
+    3300050: Restaurant Wall 03 Brown
+    3300052: Restaurant Wall 03 Dark Green
+    3300054: Restaurant Wall 03 Dark Grey
+    3300056: Restaurant Wall 03 Green
+    3300058: Restaurant Wall 03 Grey
+    3300060: Restaurant Wall 03 Light Blue
+    3300062: Restaurant Wall 03 Light Green
+    3300064: Restaurant Wall 03 Orange
+    3300066: Restaurant Wall 03 Pink
+    3300068: Restaurant Wall 03 Red
+    3300070: Restaurant Wall 03 Violet
+    3300072: Restaurant Wall 04 Blue
+    3300074: Restaurant Wall 04 Brown
+    3300076: Restaurant Wall 04 Dark Green
+    3300078: Restaurant Wall 04 Dark Grey
+    3300080: Restaurant Wall 04 Green
+    3300082: Restaurant Wall 04 Grey
+    3300084: Restaurant Wall 04 Light Blue
+    3300086: Restaurant Wall 04 Light Green
+    3300088: Restaurant Wall 04 Orange
+    3300090: Restaurant Wall 04 Pink
+    3300092: Restaurant Wall 04 Red
+    3300094: Restaurant Wall 04 Violet
+    3300096: Restaurant Wall 05 Blue
+    3300098: Restaurant Wall 05 Brown
+    3300100: Restaurant Wall 05 Dark Green
+    3300102: Restaurant Wall 05 Dark Grey
+    3300104: Restaurant Wall 05 Green
+    3300106: Restaurant Wall 05 Grey
+    3300108: Restaurant Wall 05 Light Blue
+    3300110: Restaurant Wall 05 Light Green
+    3300112: Restaurant Wall 05 Orange
+    3300114: Restaurant Wall 05 Pink
+    3300116: Restaurant Wall 05 Red
+    3300118: Restaurant Wall 05 Violet
+    3300120: Restaurant Wall 05 Light Green.001
+    3300122: Restaurant Wall 06 Blue
+    3300124: Restaurant Wall 06 Brown
+    3300126: Restaurant Wall 06 Dark Green
+    3300128: Restaurant Wall 06 Dark Grey
+    3300130: Restaurant Wall 06 Green
+    3300132: Restaurant Wall 06 Grey
+    3300134: Restaurant Wall 06 Light Green
+    3300136: Restaurant Wall 06 Light Green.001
+    3300138: Restaurant Wall 06 Orange
+    3300140: Restaurant Wall 06 Pink
+    3300142: Restaurant Wall 06 Red
+    3300144: Restaurant Wall 06 Violet
+    4300000: Restaurant Wall 01 Dark Green
+    4300002: Restaurant Wall 03 Dark Green
+    4300004: Restaurant Wall 02 Dark Green
+    4300006: Restaurant Wall 04 Dark Green
+    4300008: Restaurant Wall 04 Brown
+    4300010: Restaurant Wall 02 Brown
+    4300012: Restaurant Wall 03 Brown
+    4300014: Restaurant Wall 01 Brown
+    4300016: Restaurant Wall 01 Orange
+    4300018: Restaurant Wall 03 Orange
+    4300020: Restaurant Wall 02 Orange
+    4300022: Restaurant Wall 04 Orange
+    4300024: Restaurant Wall 04 Violet
+    4300026: Restaurant Wall 02 Violet
+    4300028: Restaurant Wall 03 Violet
+    4300030: Restaurant Wall 01 Violet
+    4300032: Restaurant Wall 01 Pink
+    4300034: Restaurant Wall 03 Pink
+    4300036: Restaurant Wall 02 Pink
+    4300038: Restaurant Wall 04 Pink
+    4300040: Restaurant Wall 04 Light Green
+    4300042: Restaurant Wall 02 Light Green
+    4300044: Restaurant Wall 03 Light Green
+    4300046: Restaurant Wall 01 Light Green
+    4300048: Restaurant Wall 01 Light Blue
+    4300050: Restaurant Wall 03 Light Blue
+    4300052: Restaurant Wall 02 Light Blue
+    4300054: Restaurant Wall 04 Light Blue
+    4300056: Restaurant Wall 04 Blue
+    4300058: Restaurant Wall 02 Blue
+    4300060: Restaurant Wall 03 Blue
+    4300062: Restaurant Wall 01 Blue
+    4300064: Restaurant Wall 01 Red
+    4300066: Restaurant Wall 03 Red
+    4300068: Restaurant Wall 02 Red
+    4300070: Restaurant Wall 04 Red
+    4300072: Restaurant Wall 04 Green
+    4300074: Restaurant Wall 02 Green
+    4300076: Restaurant Wall 03 Green
+    4300078: Restaurant Wall 01 Green
+    4300080: Restaurant Wall 01 Dark Grey
+    4300082: Restaurant Wall 03 Dark Grey
+    4300084: Restaurant Wall 02 Dark Grey
+    4300086: Restaurant Wall 04 Dark Grey
+    4300088: Restaurant Wall 04 Grey
+    4300090: Restaurant Wall 02 Grey
+    4300092: Restaurant Wall 03 Grey
+    4300094: Restaurant Wall 01 Grey
+    4300096: Restaurant Wall 05 Brown
+    4300098: Restaurant Wall 05 Orange
+    4300100: Restaurant Wall 05 Violet
+    4300102: Restaurant Wall 05 Pink
+    4300104: Restaurant Wall 05 Dark Green
+    4300106: Restaurant Wall 05 Light Green
+    4300108: Restaurant Wall 05 Light Blue
+    4300110: Restaurant Wall 05 Blue
+    4300112: Restaurant Wall 05 Red
+    4300114: Restaurant Wall 05 Green
+    4300116: Restaurant Wall 05 Dark Grey
+    4300118: Restaurant Wall 05 Grey
+    4300120: Restaurant Wall 05 Light Green.001
+    4300122: Restaurant Wall 06 Brown
+    4300124: Restaurant Wall 06 Violet
+    4300126: Restaurant Wall 06 Pink
+    4300128: Restaurant Wall 06 Orange
+    4300130: Restaurant Wall 06 Dark Green
+    4300132: Restaurant Wall 06 Grey
+    4300134: Restaurant Wall 06 Dark Grey
+    4300136: Restaurant Wall 06 Green
+    4300138: Restaurant Wall 06 Red
+    4300140: Restaurant Wall 06 Blue
+    4300142: Restaurant Wall 06 Light Green.001
+    4300144: Restaurant Wall 06 Light Green
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

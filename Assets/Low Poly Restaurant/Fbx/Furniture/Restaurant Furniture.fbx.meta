@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: e374c02391f6c3a44af28fe3cf2393ff
+timeCreated: 1558887108
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Restaurant Sofa 01 Brown Green
+    100004: Restaurant Table 01 Brown
+    100006: Restaurant Chair 01 Dark Grey
+    100008: Restaurant Chair 01 White
+    100010: Restaurant Table 01 White
+    100012: 'Restaurant Chair 01 Grey '
+    100014: Restaurant Chair 01 Grey
+    100016: Restaurant Chair 01 Black
+    100018: Restaurant Chair 01 Brown
+    100020: Restaurant Chair 01 White Pure
+    100022: Restaurant Table 02 White
+    100024: Restaurant Table 01 Blue
+    100026: Restaurant Table 01 Wooden
+    100028: Restaurant Table 02 Blue
+    100030: Restaurant Table 02 Wooden
+    100032: Restaurant Chair 01 Green
+    100034: Restaurant Chair 01 Red
+    100036: Restaurant Table 03 Blue
+    100038: Restaurant Table 03 White
+    100040: Restaurant Table 03 Wooden
+    100042: Restaurant Chair 01 Blue
+    100044: Restaurant Chair 01 Brown.001
+    400000: //RootNode
+    400002: Restaurant Sofa 01 Brown Green
+    400004: Restaurant Table 01 Brown
+    400006: Restaurant Chair 01 Dark Grey
+    400008: Restaurant Chair 01 White
+    400010: Restaurant Table 01 White
+    400012: 'Restaurant Chair 01 Grey '
+    400014: Restaurant Chair 01 Grey
+    400016: Restaurant Chair 01 Black
+    400018: Restaurant Chair 01 Brown
+    400020: Restaurant Chair 01 White Pure
+    400022: Restaurant Table 02 White
+    400024: Restaurant Table 01 Blue
+    400026: Restaurant Table 01 Wooden
+    400028: Restaurant Table 02 Blue
+    400030: Restaurant Table 02 Wooden
+    400032: Restaurant Chair 01 Green
+    400034: Restaurant Chair 01 Red
+    400036: Restaurant Table 03 Blue
+    400038: Restaurant Table 03 White
+    400040: Restaurant Table 03 Wooden
+    400042: Restaurant Chair 01 Blue
+    400044: Restaurant Chair 01 Brown.001
+    2300000: Restaurant Sofa 01 Brown Green
+    2300002: Restaurant Table 01 Brown
+    2300004: Restaurant Chair 01 Dark Grey
+    2300006: Restaurant Chair 01 White
+    2300008: Restaurant Table 01 White
+    2300010: 'Restaurant Chair 01 Grey '
+    2300012: Restaurant Chair 01 Grey
+    2300014: Restaurant Chair 01 Black
+    2300016: Restaurant Chair 01 Brown
+    2300018: Restaurant Chair 01 White Pure
+    2300020: Restaurant Table 02 White
+    2300022: Restaurant Table 01 Blue
+    2300024: Restaurant Table 01 Wooden
+    2300026: Restaurant Table 02 Blue
+    2300028: Restaurant Table 02 Wooden
+    2300030: Restaurant Chair 01 Green
+    2300032: Restaurant Chair 01 Red
+    2300034: Restaurant Table 03 Blue
+    2300036: Restaurant Table 03 White
+    2300038: Restaurant Table 03 Wooden
+    2300040: Restaurant Chair 01 Blue
+    2300042: Restaurant Chair 01 Brown.001
+    3300000: Restaurant Sofa 01 Brown Green
+    3300002: Restaurant Table 01 Brown
+    3300004: Restaurant Chair 01 Dark Grey
+    3300006: Restaurant Chair 01 White
+    3300008: Restaurant Table 01 White
+    3300010: 'Restaurant Chair 01 Grey '
+    3300012: Restaurant Chair 01 Grey
+    3300014: Restaurant Chair 01 Black
+    3300016: Restaurant Chair 01 Brown
+    3300018: Restaurant Chair 01 White Pure
+    3300020: Restaurant Table 02 White
+    3300022: Restaurant Table 01 Blue
+    3300024: Restaurant Table 01 Wooden
+    3300026: Restaurant Table 02 Blue
+    3300028: Restaurant Table 02 Wooden
+    3300030: Restaurant Chair 01 Green
+    3300032: Restaurant Chair 01 Red
+    3300034: Restaurant Table 03 Blue
+    3300036: Restaurant Table 03 White
+    3300038: Restaurant Table 03 Wooden
+    3300040: Restaurant Chair 01 Blue
+    3300042: Restaurant Chair 01 Brown.001
+    4300000: Restaurant Sofa 01 Brown Green
+    4300002: Restaurant Table 01 Brown
+    4300004: Restaurant Chair 01 Dark Grey
+    4300006: Restaurant Chair 01 White
+    4300008: Restaurant Table 01 White
+    4300010: 'Restaurant Chair 01 Grey '
+    4300012: Restaurant Chair 01 Grey
+    4300014: Restaurant Chair 01 White Pure
+    4300016: Restaurant Chair 01 Brown
+    4300018: Restaurant Chair 01 Black
+    4300020: Restaurant Table 02 White
+    4300022: Restaurant Table 02 Wooden
+    4300024: Restaurant Table 01 Wooden
+    4300026: Restaurant Table 01 Blue
+    4300028: Restaurant Table 02 Blue
+    4300030: Restaurant Chair 01 Green
+    4300032: Restaurant Chair 01 Red
+    4300034: Restaurant Table 03 White
+    4300036: Restaurant Table 03 Blue
+    4300038: Restaurant Table 03 Wooden
+    4300040: Restaurant Chair 01 Blue
+    4300042: Restaurant Chair 01 Brown.001
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 20
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

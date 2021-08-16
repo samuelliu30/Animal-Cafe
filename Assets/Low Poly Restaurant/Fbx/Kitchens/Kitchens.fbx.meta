@@ -1,0 +1,121 @@
+fileFormatVersion: 2
+guid: aab5ecea6e7064347a6c11a53a80d7c0
+timeCreated: 1559670590
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Kitchen 01 Blue
+    100004: Kitchen 01 Grey
+    100006: Kitchen 01 Green
+    100008: Kitchen 01 Orange
+    100010: Kitchen 01 Red
+    100012: Kitchen 01 Turquoise
+    100014: Kitchen 01 Yellow
+    400000: //RootNode
+    400002: Kitchen 01 Blue
+    400004: Kitchen 01 Grey
+    400006: Kitchen 01 Green
+    400008: Kitchen 01 Orange
+    400010: Kitchen 01 Red
+    400012: Kitchen 01 Turquoise
+    400014: Kitchen 01 Yellow
+    2300000: //RootNode
+    2300002: Kitchen 01 Blue
+    2300004: Kitchen 01 Grey
+    2300006: Kitchen 01 Green
+    2300008: Kitchen 01 Orange
+    2300010: Kitchen 01 Red
+    2300012: Kitchen 01 Turquoise
+    2300014: Kitchen 01 Yellow
+    3300000: //RootNode
+    3300002: Kitchen 01 Blue
+    3300004: Kitchen 01 Grey
+    3300006: Kitchen 01 Green
+    3300008: Kitchen 01 Orange
+    3300010: Kitchen 01 Red
+    3300012: Kitchen 01 Turquoise
+    3300014: Kitchen 01 Yellow
+    4300000: Kitchen 01 Grey
+    4300002: Kitchen 01 Blue
+    4300004: Kitchen 01 Yellow
+    4300006: Kitchen 01 Turquoise
+    4300008: Kitchen 01 Orange
+    4300010: Kitchen 01 Green
+    4300012: Kitchen 01 Red
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

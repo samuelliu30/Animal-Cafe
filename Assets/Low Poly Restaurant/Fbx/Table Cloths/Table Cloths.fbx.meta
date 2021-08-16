@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: ef6f3fcfab48778478548e538bb1bdfc
+timeCreated: 1558897514
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Table Cloth Blue
+    100002: Table Cloth Brown
+    100004: Table Cloth Brown 2
+    100006: Table Cloth Dark Grey
+    100008: Table Cloth Green
+    100010: Table Cloth Green 2
+    100012: Table Cloth Green 3
+    100014: Table Cloth Grey
+    100016: Table Cloth Light Blue
+    100018: Table Cloth Orange
+    100020: Table Cloth Orange 2
+    100022: Table Cloth Pink
+    100024: Table Cloth Red
+    100026: Table Cloth Turquoise
+    100028: Table Cloth Yellow
+    100030: //RootNode
+    400000: Table Cloth Blue
+    400002: Table Cloth Brown
+    400004: Table Cloth Brown 2
+    400006: Table Cloth Dark Grey
+    400008: Table Cloth Green
+    400010: Table Cloth Green 2
+    400012: Table Cloth Green 3
+    400014: Table Cloth Grey
+    400016: Table Cloth Light Blue
+    400018: Table Cloth Orange
+    400020: Table Cloth Orange 2
+    400022: Table Cloth Pink
+    400024: Table Cloth Red
+    400026: Table Cloth Turquoise
+    400028: Table Cloth Yellow
+    400030: //RootNode
+    2300000: Table Cloth Blue
+    2300002: Table Cloth Brown
+    2300004: Table Cloth Brown 2
+    2300006: Table Cloth Dark Grey
+    2300008: Table Cloth Green
+    2300010: Table Cloth Green 2
+    2300012: Table Cloth Green 3
+    2300014: Table Cloth Grey
+    2300016: Table Cloth Light Blue
+    2300018: Table Cloth Orange
+    2300020: Table Cloth Orange 2
+    2300022: Table Cloth Pink
+    2300024: Table Cloth Red
+    2300026: Table Cloth Turquoise
+    2300028: Table Cloth Yellow
+    3300000: Table Cloth Blue
+    3300002: Table Cloth Brown
+    3300004: Table Cloth Brown 2
+    3300006: Table Cloth Dark Grey
+    3300008: Table Cloth Green
+    3300010: Table Cloth Green 2
+    3300012: Table Cloth Green 3
+    3300014: Table Cloth Grey
+    3300016: Table Cloth Light Blue
+    3300018: Table Cloth Orange
+    3300020: Table Cloth Orange 2
+    3300022: Table Cloth Pink
+    3300024: Table Cloth Red
+    3300026: Table Cloth Turquoise
+    3300028: Table Cloth Yellow
+    4300000: Table Cloth Light Blue
+    4300002: Table Cloth Brown 2
+    4300004: Table Cloth Orange 2
+    4300006: Table Cloth Orange
+    4300008: Table Cloth Pink
+    4300010: Table Cloth Green 3
+    4300012: Table Cloth Yellow
+    4300014: Table Cloth Green 2
+    4300016: Table Cloth Red
+    4300018: Table Cloth Brown
+    4300020: Table Cloth Turquoise
+    4300022: Table Cloth Blue
+    4300024: Table Cloth Green
+    4300026: Table Cloth Dark Grey
+    4300028: Table Cloth Grey
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

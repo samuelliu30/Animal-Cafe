@@ -1,0 +1,19 @@
+Hello and thank you for purchasing Low Poly Restaurant Package.
+
+There are 195 prefabs.
+
+Prefabs are set to static.
+
+Texture is 512*512 png
+
+Example Scenes have baked mixed and realtime lighting.
+
+UPDATE 1.1 NOTE: 
+- Pack updated to Universal Render Pipeline.
+- Outer Walls added. As new FBX files and added to prefabs.
+- Mixed Lights Example Scene with Animated Doors added.
+- Realtime Lights Example Scene added.
+- Setup Prefabs added for Mixed and Realtime lighting. (Camera Post-Process Volume and Light.)
+
+For questions you can contact me at:
+a3deve@gmail.com

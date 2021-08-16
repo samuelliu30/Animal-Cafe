@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: c5cb49afff5a87d48977cf3a0166ab4b
+timeCreated: 1559894215
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Cake 01
+    100002: Cake 02
+    100004: Cake 03
+    100006: Coffee Cup Black
+    100008: Coffee Cup Empty Black
+    100010: Coffee Cup Empty Grey
+    100012: Coffee Cup Empty White
+    100014: Coffee Cup Grey
+    100016: Coffee Cup White
+    100018: Cola Bottle
+    100020: Cube
+    100022: Fork
+    100024: Knife
+    100026: Pasta Bowl
+    100028: Pizza
+    100030: Pizza Slice
+    100032: Plate 01 Black
+    100034: Plate 01 Grey
+    100036: Plate 01 White
+    100038: Plate 02 Black
+    100040: Plate 02 Grey
+    100042: Plate 02 White
+    100044: Stew Bowl
+    100046: Stew Bowl Green
+    100048: //RootNode
+    100050: Bottle 01
+    100052: Bottle 02
+    100054: Bottle 03
+    100056: Bottle 04
+    100058: Bottle 05
+    100060: Pan
+    100062: Pot
+    400000: Cake 01
+    400002: Cake 02
+    400004: Cake 03
+    400006: Coffee Cup Black
+    400008: Coffee Cup Empty Black
+    400010: Coffee Cup Empty Grey
+    400012: Coffee Cup Empty White
+    400014: Coffee Cup Grey
+    400016: Coffee Cup White
+    400018: Cola Bottle
+    400020: Cube
+    400022: Fork
+    400024: Knife
+    400026: Pasta Bowl
+    400028: Pizza
+    400030: Pizza Slice
+    400032: Plate 01 Black
+    400034: Plate 01 Grey
+    400036: Plate 01 White
+    400038: Plate 02 Black
+    400040: Plate 02 Grey
+    400042: Plate 02 White
+    400044: Stew Bowl
+    400046: Stew Bowl Green
+    400048: //RootNode
+    400050: Bottle 01
+    400052: Bottle 02
+    400054: Bottle 03
+    400056: Bottle 04
+    400058: Bottle 05
+    400060: Pan
+    400062: Pot
+    2300000: Cake 01
+    2300002: Cake 02
+    2300004: Cake 03
+    2300006: Coffee Cup Black
+    2300008: Coffee Cup Empty Black
+    2300010: Coffee Cup Empty Grey
+    2300012: Coffee Cup Empty White
+    2300014: Coffee Cup Grey
+    2300016: Coffee Cup White
+    2300018: Cola Bottle
+    2300020: Cube
+    2300022: Fork
+    2300024: Knife
+    2300026: Pasta Bowl
+    2300028: Pizza
+    2300030: Pizza Slice
+    2300032: Plate 01 Black
+    2300034: Plate 01 Grey
+    2300036: Plate 01 White
+    2300038: Plate 02 Black
+    2300040: Plate 02 Grey
+    2300042: Plate 02 White
+    2300044: Stew Bowl
+    2300046: Stew Bowl Green
+    2300048: Bottle 01
+    2300050: Bottle 02
+    2300052: Bottle 03
+    2300054: Bottle 04
+    2300056: Bottle 05
+    2300058: Pan
+    2300060: Pot
+    3300000: Cake 01
+    3300002: Cake 02
+    3300004: Cake 03
+    3300006: Coffee Cup Black
+    3300008: Coffee Cup Empty Black
+    3300010: Coffee Cup Empty Grey
+    3300012: Coffee Cup Empty White
+    3300014: Coffee Cup Grey
+    3300016: Coffee Cup White
+    3300018: Cola Bottle
+    3300020: Cube
+    3300022: Fork
+    3300024: Knife
+    3300026: Pasta Bowl
+    3300028: Pizza
+    3300030: Pizza Slice
+    3300032: Plate 01 Black
+    3300034: Plate 01 Grey
+    3300036: Plate 01 White
+    3300038: Plate 02 Black
+    3300040: Plate 02 Grey
+    3300042: Plate 02 White
+    3300044: Stew Bowl
+    3300046: Stew Bowl Green
+    3300048: Bottle 01
+    3300050: Bottle 02
+    3300052: Bottle 03
+    3300054: Bottle 04
+    3300056: Bottle 05
+    3300058: Pan
+    3300060: Pot
+    4300000: Cola Bottle
+    4300002: Stew Bowl Green
+    4300004: Stew Bowl
+    4300006: Knife
+    4300008: Pasta Bowl
+    4300010: Pizza Slice
+    4300012: Cake 03
+    4300014: Cake 02
+    4300016: Cake 01
+    4300018: Pizza
+    4300020: Fork
+    4300022: Cube
+    4300024: Coffee Cup Empty White
+    4300026: Coffee Cup Empty Grey
+    4300028: Coffee Cup Empty Black
+    4300030: Coffee Cup Black
+    4300032: Coffee Cup Grey
+    4300034: Coffee Cup White
+    4300036: Plate 02 Black
+    4300038: Plate 02 Grey
+    4300040: Plate 02 White
+    4300042: Plate 01 Black
+    4300044: Plate 01 White
+    4300046: Plate 01 Grey
+    4300048: Bottle 05
+    4300050: Bottle 04
+    4300052: Bottle 03
+    4300054: Bottle 02
+    4300056: Bottle 01
+    4300058: Pan
+    4300060: Pot
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
