@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
@@ -43,16 +44,37 @@ public class InputManager : MonoBehaviour
 
     private void CheckClickHoldEvent()
     {
-        throw new NotImplementedException();
+        if(Input.GetMouseButton(0) && EventSystem.current.IsPointerOverGameObject() == false)
+        {
+            var position = RaycastGround();
+            if(position != null)
+            {
+                OnMouseHold?.Invoke(position.Value);
+            }
+        }
     }
 
     private void CheckClickUpEvent()
     {
-        throw new NotImplementedException();
+        if (Input.GetMouseButtonUp(0) && EventSystem.current.IsPointerOverGameObject() == false)
+        {
+            var position = RaycastGround();
+            if (position != null)
+            {
+                OnMouseUp?.Invoke();
+            }
+        }
     }
 
     private void CheckClickDownEvent()
     {
-        throw new NotImplementedException();
+        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false)
+        {
+            var position = RaycastGround();
+            if (position != null)
+            {
+                OnMouseClick?.Invoke(position.Value);
+            }
+        }
     }
 }
