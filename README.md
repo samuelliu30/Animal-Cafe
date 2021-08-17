@@ -4,3 +4,6 @@
 * Install Unity 2020.3.16.f1
 * Add the project to Unity project list by clicking on "ADD" and choose the project directory
 * Load the prototype scene 
+
+## License
+* All assets and scripts are limited to this project only. Do not copy.
