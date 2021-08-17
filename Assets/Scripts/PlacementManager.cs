@@ -22,11 +22,12 @@ public class PlacementManager : MonoBehaviour
 
     internal bool CheckIfPositionIsFree(Vector3Int pos)
     {
-        return true;
+        return diningRoomGrid.GetStatusOfCell(pos.x, pos.z) == 0;
     }
 
     internal void PlaceTemporaryStructure(Vector3Int pos, GameObject item, CellType cellType)
     {
         GameObject newStructure = Instantiate(item, pos, Quaternion.identity);
+        diningRoomGrid.SetGridOccupied(pos.x, pos.z);
     }
 }
