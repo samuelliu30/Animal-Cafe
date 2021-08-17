@@ -5,21 +5,19 @@ using UnityEngine;
 
 public class PlacementManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int width, height;
+    Grid diningRoomGrid;
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        diningRoomGrid = new Grid(width, height);
     }
 
     internal bool CheckIfPositionInBound(Vector3Int pos)
     {
-        return true;
+        if((pos.x >= 0)&&(pos.x < width)&&(pos.z >= 0)&&(pos.z <= height))
+            return true;
+        else
+            return false;
     }
 
     internal bool CheckIfPositionIsFree(Vector3Int pos)

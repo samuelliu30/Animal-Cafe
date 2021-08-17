@@ -11,12 +11,14 @@ public class FurnitureManager : MonoBehaviour
     public PlacementManager placementManager;
 
     public List<Vector3Int> tempPlacementPos = new List<Vector3Int>();
+    //private Dictionary<Vector3Int, CellType> FurnitureDic = new Dictionary<Vector3Int, CellType>();
 
     [SerializeField]
     GameObject table, chair;
 
     public void changePlacement(int i)
     {
+        // Switch placement furniture type
         Debug.Log(i);
         switch (i)
         {
@@ -39,5 +41,9 @@ public class FurnitureManager : MonoBehaviour
             return;
 
         placementManager.PlaceTemporaryStructure(pos, furniture, CellType.Furniture);
+
+        // If succsessfully placed a furniture, store that into dictionary
+        //FurnitureDic.Add(new Vector3Int(pos.x, pos.z, ), );
+
     }
 }
