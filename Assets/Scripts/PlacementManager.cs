@@ -28,7 +28,12 @@ public class PlacementManager : MonoBehaviour
             if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
             {
                 tempStructure.transform.position = new Vector3(hit.point.x, 1, hit.point.z);
-                placementIndicator.transform.position = new Vector3(hit.point.x, 0.05f, hit.point.z);
+
+                //TODO: Optimize the indicator movement. The update is lagged right now
+
+                // Cast the indicator to the top surface
+                float surface = hit.collider.ClosestPointOnBounds(hit.point).y;
+                placementIndicator.transform.position = new Vector3(hit.point.x, surface, hit.point.z);
 
                 // Convert Vector3 to Vector3Int
                 Vector3Int pointInt = new Vector3Int(Mathf.FloorToInt(hit.point.x), Mathf.FloorToInt(hit.point.y), Mathf.FloorToInt(hit.point.z));
