@@ -7,6 +7,7 @@ public class FurnitureManager : MonoBehaviour
 {
 
     private GameObject furniture;
+    private GameObject preview;
 
     public PlacementManager placementManager;
 
@@ -14,7 +15,12 @@ public class FurnitureManager : MonoBehaviour
     //private Dictionary<Vector3Int, CellType> FurnitureDic = new Dictionary<Vector3Int, CellType>();
 
     [SerializeField]
-    GameObject table, chair;
+    GameObject table, chair, indicator;
+
+    private void Start()
+    {
+        preview = indicator;
+    }
 
     public void changePlacement(int i)
     {
@@ -31,6 +37,14 @@ public class FurnitureManager : MonoBehaviour
             default:
                 break;
         }
+
+        // Initialize the placement indicator
+        Vector3 furnitureSize = furniture.GetComponent<Renderer>().bounds.size / 2;
+
+        // TODO: Dynamically initialize the mesh size of the indicator
+        //       Currently the size is hardcoded and scale by the factor of funiture size
+        preview.transform.localScale = new Vector3(0.25f * furnitureSize.x, 0.1f, 0.25f * furnitureSize.z);
+        placementManager.ShowTemporalObject(furniture, preview);
     }
 
     public void PlaceFurniture(Vector3Int pos)

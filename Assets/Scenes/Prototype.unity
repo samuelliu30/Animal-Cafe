@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 152220915}
   m_Layer: 0
   m_Name: Door 02 Restaurant White Left
-  m_TagString: Untagged
+  m_TagString: DoorLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -785,6 +785,7 @@ MonoBehaviour:
   tempPlacementPos: []
   table: {fileID: 7964282844709130247, guid: 52ad7ccc47805e74f972d9a79e89558f, type: 3}
   chair: {fileID: 3159346109758416859, guid: 0504f87d1512daf49b6b35491849aacf, type: 3}
+  indicator: {fileID: 5252152883806024138, guid: fa49e2bf692473640864e0afffeffbd5, type: 3}
 --- !u!1 &853494845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b1f3b81ec5dd245a279112cf4b937d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cat: {fileID: 1295047182210554455, guid: 113b0def5cde0d84a96ccc63ccef9ecd, type: 3}
+  animals:
+  - {fileID: 1295047182210554455, guid: 113b0def5cde0d84a96ccc63ccef9ecd, type: 3}
+  - {fileID: 1563148236825658704, guid: 43df11c88ff28af49b81ee41df0778b8, type: 3}
 --- !u!4 &1108257054
 Transform:
   m_ObjectHideFlags: 0
@@ -1575,7 +1578,7 @@ GameObject:
   - component: {fileID: 1863473390}
   m_Layer: 0
   m_Name: Door 02 Restaurant White Right
-  m_TagString: Untagged
+  m_TagString: DoorRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2259,7 +2262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3240312177627983398, guid: 65a15d015192591488ab43e13a09e355, type: 3}
       propertyPath: m_TagString
-      value: Door
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4344182391315274564, guid: 65a15d015192591488ab43e13a09e355, type: 3}
       propertyPath: m_RootOrder

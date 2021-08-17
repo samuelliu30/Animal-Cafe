@@ -5,23 +5,24 @@ using UnityEngine;
 public class CustomerManager : MonoBehaviour
 {
     private GameObject customer;
+    private Vector3 doorPos;
 
     [SerializeField]
-    GameObject cat;
+    GameObject[] animals;
 
     private void Start()
     {
-        customer = cat;
+        GameObject doorLeft = GameObject.FindWithTag("DoorLeft");
+        GameObject doorRight = GameObject.FindWithTag("DoorRight");
+        doorPos = new Vector3((doorLeft.transform.position.x + doorRight.transform.position.x) / 2, 0, (doorLeft.transform.position.z + doorRight.transform.position.z) / 2);
+
     }
-    private Vector3 FindDoorPosition()
-    {
-        GameObject door = GameObject.FindWithTag("Door");
-        return door.transform.position;
-    }
+
 
     public void SpawnCustomer()
     {
-        GameObject newCustomer = Instantiate(customer, FindDoorPosition(), Quaternion.identity);
+        customer = animals[Random.Range(0, 2)];
+        GameObject newCustomer = Instantiate(customer, doorPos, Quaternion.identity);
     }
 
 }
