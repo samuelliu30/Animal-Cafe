@@ -42,6 +42,11 @@ public class PlacementManager : MonoBehaviour
                     ChangeIndicatorColor(pointInt);
                 }
             }
+
+            if (Input.GetKeyDown((KeyCode)'r')) {
+                tempStructure.transform.Rotate(Vector3.up, 90.0f);
+                placementIndicator.transform.Rotate(Vector3.up, 90.0f);
+            }
         }
     }
 
@@ -74,7 +79,7 @@ public class PlacementManager : MonoBehaviour
 
     internal void PlaceTemporaryStructure(Vector3Int pos, GameObject item, CellType cellType)
     {
-        GameObject newStructure = Instantiate(item, pos, Quaternion.identity);
+        GameObject newStructure = Instantiate(item, pos, tempStructure.transform.rotation);
         diningRoomGrid.SetGridOccupied(pos.x, pos.z);
 
         // Destroy Indicator
