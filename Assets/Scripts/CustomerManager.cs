@@ -9,6 +9,8 @@ public class CustomerManager : MonoBehaviour
 
     [SerializeField]
     GameObject[] animals;
+    [SerializeField]
+    InventoryManager moneyManager;
 
     private void Start()
     {
@@ -23,6 +25,12 @@ public class CustomerManager : MonoBehaviour
     {
         customer = animals[Random.Range(0, 2)];
         GameObject newCustomer = Instantiate(customer, doorPos, Quaternion.identity);
+        moneyManager.ChangeMoney(10);
     }
 
+    private void FindPathToPos(Vector3Int pos)
+    {
+        Vector3 curPos = this.transform.position;
+
+    }
 }

@@ -13,6 +13,7 @@ public class FurnitureManager : MonoBehaviour
 
     public List<Vector3Int> tempPlacementPos = new List<Vector3Int>();
     //private Dictionary<Vector3Int, CellType> FurnitureDic = new Dictionary<Vector3Int, CellType>();
+    private Dictionary<CellType, List<Vector3Int>> FurniturePositionDic = new Dictionary<CellType, List<Vector3Int>>();
 
     [SerializeField]
     GameObject table, chair, indicator;
@@ -55,6 +56,16 @@ public class FurnitureManager : MonoBehaviour
             return;
 
         placementManager.PlaceTemporaryStructure(pos, furniture, CellType.Furniture);
+        if (FurniturePositionDic.ContainsKey(CellType.Furniture))
+        {
+            FurniturePositionDic[CellType.Furniture].Add(pos);
+        }
+        else 
+        {
+            List<Vector3Int> tmp = new List<Vector3Int>();
+            tmp.Add(pos);
+            FurniturePositionDic[CellType.Furniture] = tmp;
+        }
 
         // If succsessfully placed a furniture, store that into dictionary
         //FurnitureDic.Add(new Vector3Int(pos.x, pos.z, ), );
