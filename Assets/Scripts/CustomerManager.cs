@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LitJson;
+using System.IO;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -14,10 +16,12 @@ public class CustomerManager : MonoBehaviour
 
     private void Start()
     {
+
+        // Load the scene from Json
+
         GameObject doorLeft = GameObject.FindWithTag("DoorLeft");
         GameObject doorRight = GameObject.FindWithTag("DoorRight");
         doorPos = new Vector3((doorLeft.transform.position.x + doorRight.transform.position.x) / 2, 0, (doorLeft.transform.position.z + doorRight.transform.position.z) / 2);
-
     }
 
 
