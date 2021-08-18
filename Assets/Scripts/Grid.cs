@@ -82,9 +82,9 @@ class Grid
         return _grid[x, y];
     }
 
-    public void SetGridOccupied(int x, int y)
+    public void SetGridStatus(int x, int y, int status)
     {
-        _grid[x, y] = 1;
+        _grid[x, y] = status;
     }
 
     public List<Point> GetAdjacentCells(int x, int y)

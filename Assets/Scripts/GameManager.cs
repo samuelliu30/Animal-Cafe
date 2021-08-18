@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] CustomerManager customerManager;
     [SerializeField] TextMeshProUGUI moneyBoard;
     [SerializeField] InventoryManager MoneyData;
+    [SerializeField] PlacementManager placementManager;
 
     IEnumerator SpawnTarget()
     {
@@ -46,6 +47,14 @@ public class GameManager : MonoBehaviour
     private void HandleMouseClick(Vector3Int pos)
     {
         Debug.Log(pos);
-        furnitureManager.PlaceFurniture(pos);
+        if (furnitureManager.IfPlaceable())
+        {
+            furnitureManager.PlaceFurniture(pos);
+
+        }
+        else if (placementManager.IfMove())
+        {
+            furnitureManager.PickUp();
+        }
     }
 }

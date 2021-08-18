@@ -23,16 +23,17 @@ public class FurnitureManager : MonoBehaviour
         preview = indicator;
     }
 
-    public void changePlacement(int i)
+    public void ChangePlacement(string name)
     {
+        //TODO: Change the furniture name
+
         // Switch placement furniture type
-        Debug.Log(i);
-        switch (i)
+        switch (name)
         {
-            case 0:
+            case "Restaurant Table 01 Wooden(Clone)":
                 furniture = table;
                 break;
-            case 1:
+            case "Restaurant Chair 01 Brown(Clone)":
                 furniture = chair;
                 break;
             default:
@@ -50,6 +51,7 @@ public class FurnitureManager : MonoBehaviour
 
     public void PlaceFurniture(Vector3Int pos)
     {
+
         if (placementManager.CheckIfPositionInBound(pos) == false) 
             return;
         if (placementManager.CheckIfPositionIsFree(pos) == false)
@@ -67,6 +69,7 @@ public class FurnitureManager : MonoBehaviour
             furniturePositionDic[CellType.Furniture] = tmp;
         }
 
+        furniture = null;
         // If succsessfully placed a furniture, store that into dictionary
         //FurnitureDic.Add(new Vector3Int(pos.x, pos.z, ), );
 
@@ -79,4 +82,33 @@ public class FurnitureManager : MonoBehaviour
         }
     }
 
+
+    public void PickUp()
+    {
+        // Convert Screen unit to game world unit
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 mouse = Input.mousePosition;
+            Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+            RaycastHit hit;
+            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+            {
+                GameObject c = hit.collider.gameObject;
+                if (c.tag == "Furniture")
+                {
+                    placementManager.FreePosition(Vector3Int.CeilToInt(c.transform.position));
+                    ChangePlacement(c.name);
+                    GameObject.Destroy(c);
+                }
+
+            }
+
+        }
+
+    }
+
+    public bool IfPlaceable()
+    {
+        return furniture != null;
+    }
 }

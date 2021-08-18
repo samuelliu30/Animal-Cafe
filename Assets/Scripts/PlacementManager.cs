@@ -10,6 +10,8 @@ public class PlacementManager : MonoBehaviour
 
     private GameObject tempStructure;
     private GameObject placementIndicator;
+    public FurnitureManager furnitureManager;
+    private bool move;
 
     private void Start()
     {
@@ -80,11 +82,16 @@ public class PlacementManager : MonoBehaviour
     internal void PlaceTemporaryStructure(Vector3Int pos, GameObject item, CellType cellType)
     {
         GameObject newStructure = Instantiate(item, pos, tempStructure.transform.rotation);
-        diningRoomGrid.SetGridOccupied(pos.x, pos.z);
+        diningRoomGrid.SetGridStatus(pos.x, pos.z, 1);
 
         // Destroy Indicator
         GameObject.Destroy(tempStructure);
         GameObject.Destroy(placementIndicator);
+    }
+
+    internal void FreePosition(Vector3Int pos)
+    {
+        diningRoomGrid.SetGridStatus(pos.x, pos.z, 0);
     }
 
     // Display a preview of the object player trying to place
@@ -94,4 +101,32 @@ public class PlacementManager : MonoBehaviour
         //Vector3 size = tempStructure.GetComponent<Renderer>().bounds.size;
         placementIndicator = Instantiate(preview, tempStructure.transform.position, Quaternion.identity);
     }
+
+    public void PickUp()
+    {
+        // Convert Screen unit to game world unit
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 mouse = Input.mousePosition;
+            Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+            RaycastHit hit;
+            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+            {
+                GameObject c = hit.collider.gameObject;
+            }
+
+        }
+
+    }
+
+    internal bool IfMove()
+    {
+        return move;
+    }
+
+    public void Move()
+    {
+        move = true;
+    }
+
 }
