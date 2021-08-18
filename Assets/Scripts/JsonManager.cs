@@ -40,8 +40,6 @@ public class JsonManager : MonoBehaviour
         string jsonData = JsonUtility.ToJson(tmp);
         File.WriteAllText(Application.dataPath + "/Resources/test.json", jsonData.ToString());
 
-        LoadSetupData();
-        //Debug.Log(furnitureJson);
     }
 
     public void LoadSetupData()
@@ -54,10 +52,10 @@ public class JsonManager : MonoBehaviour
 
         Debug.Log(setUpData.name + ": " + setUpData.positions[0]);
 
-        //for(int i = 0; i < setUpData.positions.Count; i++)
-        //{
-        //    placementManager.PlaceTemporaryStructure(setUpData.positions, , CellType.Furniture)
-        //}
+        for (int i = 0; i < setUpData.positions.Count; i++)
+        {
+            placementManager.PlaceObject(setUpData.positions[i], setUpData.name, CellType.Furniture);
+        }
 
     }
 

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI moneyBoard;
     [SerializeField] InventoryManager MoneyData;
     [SerializeField] PlacementManager placementManager;
+    [SerializeField] JsonManager jsonManager;
 
     IEnumerator SpawnTarget()
     {
@@ -60,5 +61,6 @@ public class GameManager : MonoBehaviour
 
     private void LoadGame()
     {
+        jsonManager.LoadSetupData();
     }
 }

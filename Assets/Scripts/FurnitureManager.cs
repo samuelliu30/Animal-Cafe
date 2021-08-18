@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class FurnitureManager : MonoBehaviour
 {
@@ -18,27 +19,19 @@ public class FurnitureManager : MonoBehaviour
     [SerializeField]
     GameObject table, chair, indicator;
 
+    private Dictionary<string, GameObject> furniturePool = new Dictionary<string, GameObject>();
+
     private void Start()
     {
         preview = indicator;
+        furniturePool["table"] = table;
+        furniturePool["chair"] = chair;
     }
 
     public void ChangePlacement(string name)
     {
-        //TODO: Change the furniture name
 
-        // Switch placement furniture type
-        switch (name)
-        {
-            case "Restaurant Table 01 Wooden(Clone)":
-                furniture = table;
-                break;
-            case "Restaurant Chair 01 Brown(Clone)":
-                furniture = chair;
-                break;
-            default:
-                break;
-        }
+        furniture = furniturePool[name];
 
         // Initialize the placement indicator
         Vector3 furnitureSize = furniture.GetComponent<Renderer>().bounds.size / 2;
@@ -131,6 +124,19 @@ public class FurnitureManager : MonoBehaviour
 
         }
 
+    }
+
+#nullable enable
+    internal GameObject? GetItem(string name)
+    {
+        if (furniturePool.ContainsKey(name))
+        {
+            return furniturePool[name];
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public bool IfPlaceable()

@@ -112,4 +112,17 @@ public class PlacementManager : MonoBehaviour
         move = true;
     }
 
+    internal void PlaceObject(Vector3Int pos, string name, CellType type)
+    {
+        if(type == CellType.Furniture)
+        {
+#nullable enable
+            GameObject? item = furnitureManager.GetItem(name);
+            if(item != null) 
+            {
+                GameObject tmp = Instantiate(item, pos, Quaternion.identity);
+            }
+        }
+    }
+
 }
