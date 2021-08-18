@@ -57,4 +57,8 @@ public class GameManager : MonoBehaviour
             furnitureManager.PickUp();
         }
     }
+
+    private void LoadGame()
+    {
+    }
 }
