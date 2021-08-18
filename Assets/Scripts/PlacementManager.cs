@@ -95,28 +95,11 @@ public class PlacementManager : MonoBehaviour
     }
 
     // Display a preview of the object player trying to place
-    public void ShowTemporalObject(GameObject item, GameObject preview)
+    public void ShowTemporalObject(GameObject item, GameObject preview, float rotation = 0)
     {
-        tempStructure = Instantiate(item, Input.mousePosition, Quaternion.identity);
+        tempStructure = Instantiate(item, Input.mousePosition, Quaternion.Euler(0, rotation, 0));
         //Vector3 size = tempStructure.GetComponent<Renderer>().bounds.size;
-        placementIndicator = Instantiate(preview, tempStructure.transform.position, Quaternion.identity);
-    }
-
-    public void PickUp()
-    {
-        // Convert Screen unit to game world unit
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 mouse = Input.mousePosition;
-            Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-            RaycastHit hit;
-            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-            {
-                GameObject c = hit.collider.gameObject;
-            }
-
-        }
-
+        placementIndicator = Instantiate(preview, tempStructure.transform.position, Quaternion.Euler(0, rotation, 0));
     }
 
     internal bool IfMove()
