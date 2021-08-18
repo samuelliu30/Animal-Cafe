@@ -61,7 +61,7 @@ public class PlacementManager : MonoBehaviour
 
     internal bool CheckIfPositionInBound(Vector3Int pos)
     {
-        if((pos.x >= 0)&&(pos.x < width)&&(pos.z >= 0)&&(pos.z < height))
+        if((pos.x > 0)&&(pos.x < width)&&(pos.z > 0)&&(pos.z < height))
             return true;
         else
             return false;
