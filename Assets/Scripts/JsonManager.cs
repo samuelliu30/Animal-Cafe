@@ -16,12 +16,12 @@ public class JsonManager : MonoBehaviour
     [System.Serializable]
     public class FurnitureData
     {
-        public Vector3Int pos;
+        public Vector3 pos;
         public string name;
         public Quaternion rotation;
 
         public FurnitureData() { }
-        public FurnitureData(Vector3Int pos, FurnitureManager.FurnitureData data)
+        public FurnitureData(Vector3 pos, FurnitureManager.FurnitureData data)
         {
             this.pos = pos;
             this.name = data.name;
@@ -43,7 +43,7 @@ public class JsonManager : MonoBehaviour
             File.Create(filePath);
         }
 
-        Dictionary<Vector3Int, FurnitureManager.FurnitureData> positionFurnitureDic = furnitureManager.PositionFurnitureDic;
+        Dictionary<Vector3, FurnitureManager.FurnitureData> positionFurnitureDic = furnitureManager.PositionFurnitureDic;
 
         FurnitureManager.FurnitureData tmpData = new FurnitureManager.FurnitureData();
         // Use ListFurnitureData class to serialize furnituredata

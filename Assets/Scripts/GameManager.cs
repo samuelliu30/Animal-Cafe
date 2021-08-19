@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         moneyBoard.text = "Money: " + MoneyData.Money;
     }
 
-    private void HandleMouseClick(Vector3Int pos)
+    private void HandleMouseClick(Vector3 pos)
     {
         Debug.Log(pos);
         if (furnitureManager.IfPlaceable())

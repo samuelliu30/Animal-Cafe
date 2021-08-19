@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
-    public Action<Vector3Int> OnMouseClick, OnMouseHold;
+    public Action<Vector3> OnMouseClick, OnMouseHold;
     public Action OnMouseUp;
     private Vector2 camMovementVector;
 
@@ -27,13 +27,13 @@ public class InputManager : MonoBehaviour
         CheckClickHoldEvent();
     }
 
-    private Vector3Int? RaycastGround()
+    private Vector3? RaycastGround()
     {
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit, Mathf.Infinity, groudMask))
         {
-            Vector3Int postionInt = Vector3Int.RoundToInt(hit.point);
+            Vector3 postionInt = hit.point;
             return postionInt;
         }
         else

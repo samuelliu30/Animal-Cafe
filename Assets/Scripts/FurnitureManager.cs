@@ -12,7 +12,7 @@ public class FurnitureManager : MonoBehaviour
 
     public PlacementManager placementManager;
 
-    public List<Vector3Int> tempPlacementPos = new List<Vector3Int>();
+    public List<Vector3> tempPlacementPos = new List<Vector3>();
     public class FurnitureData
     {
         // A class to store furniture specs
@@ -31,7 +31,7 @@ public class FurnitureManager : MonoBehaviour
     }
 
 
-    private Dictionary<Vector3Int, FurnitureData> postionFurnitureDic = new Dictionary<Vector3Int, FurnitureData>();
+    private Dictionary<Vector3, FurnitureData> postionFurnitureDic = new Dictionary<Vector3, FurnitureData>();
 
     [SerializeField]
     GameObject table, chair, indicator;
@@ -85,7 +85,7 @@ public class FurnitureManager : MonoBehaviour
         placementManager.ShowTemporalObject(furniturePool[furniture], preview, rotation);
     }
 
-    public void PlaceFurniture(Vector3Int pos)
+    public void PlaceFurniture(Vector3 pos)
     {
 
         if (placementManager.CheckIfPositionInBound(pos) == false) 
@@ -94,11 +94,12 @@ public class FurnitureManager : MonoBehaviour
             return;
 
         placementManager.PlaceTemporaryStructure(pos, furniturePool[furniture], CellType.Furniture);
+        WritePositionDict(pos, furniture, furniturePool[furniture].transform.rotation);
 
         furniture = null;
 
     }
-    public Dictionary<Vector3Int, FurnitureData> PositionFurnitureDic
+    public Dictionary<Vector3, FurnitureData> PositionFurnitureDic
     {
         get
         {
@@ -120,8 +121,8 @@ public class FurnitureManager : MonoBehaviour
                 GameObject c = hit.collider.gameObject;
                 if (c.tag == "Furniture")
                 {
-                    placementManager.FreePosition(Vector3Int.CeilToInt(c.transform.position));
-                    postionFurnitureDic.Remove(Vector3Int.CeilToInt(c.transform.position));
+                    placementManager.FreePosition(c.transform.position);
+                    postionFurnitureDic.Remove(c.transform.position);
                     ChangePlacement(c.name, c.transform.rotation.eulerAngles.y);
                     GameObject.Destroy(c);
                 }
@@ -150,7 +151,7 @@ public class FurnitureManager : MonoBehaviour
         return furniture != null;
     }
 
-    public void WritePositionDict(Vector3Int pos, string name, Quaternion rotation)
+    public void WritePositionDict(Vector3 pos, string name, Quaternion rotation)
     {
         FurnitureData tmp = new FurnitureData();
         tmp.name = furniture;

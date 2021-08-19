@@ -6,16 +6,15 @@ using UnityEngine;
 public class PlacementManager : MonoBehaviour
 {
     public int width, height;
-    Grid diningRoomGrid;
 
     private GameObject tempStructure;
     private GameObject placementIndicator;
     public FurnitureManager furnitureManager;
     private bool move;
+    private bool ifPlaceable;
 
     private void Start()
     {
-        diningRoomGrid = new Grid(width, height);
     }
 
     private void Update()
@@ -37,8 +36,8 @@ public class PlacementManager : MonoBehaviour
                 float surface = hit.collider.ClosestPointOnBounds(hit.point).y;
                 placementIndicator.transform.position = new Vector3(hit.point.x, surface, hit.point.z);
 
-                // Convert Vector3 to Vector3Int
-                Vector3Int pointInt = new Vector3Int(Mathf.FloorToInt(hit.point.x), Mathf.FloorToInt(hit.point.y), Mathf.FloorToInt(hit.point.z));
+                // Convert Vector3 to Vector3
+                Vector3 pointInt = new Vector3(Mathf.FloorToInt(hit.point.x), Mathf.FloorToInt(hit.point.y), Mathf.FloorToInt(hit.point.z));
                 if(CheckIfPositionInBound(pointInt))
                 {
                     ChangeIndicatorColor(pointInt);
@@ -52,7 +51,7 @@ public class PlacementManager : MonoBehaviour
         }
     }
 
-    private void ChangeIndicatorColor(Vector3Int pos)
+    private void ChangeIndicatorColor(Vector3 pos)
     {
         var render = placementIndicator.GetComponent<Renderer>();
 
@@ -66,36 +65,32 @@ public class PlacementManager : MonoBehaviour
         }
     }
 
-    internal bool CheckIfPositionInBound(Vector3Int pos)
+    internal bool CheckIfPositionInBound(Vector3 pos)
     {
-        if((pos.x > 0)&&(pos.x < width)&&(pos.z > 0)&&(pos.z < height)&&(pos.y == 0))
+        if((pos.x > 0)&&(pos.x < width)&&(pos.z > 0)&&(pos.z < height)&&(Mathf.Abs(pos.y)<0.1f))
             return true;
         else
             return false;
     }
 
-    internal bool CheckIfPositionIsFree(Vector3Int pos)
+    internal bool CheckIfPositionIsFree(Vector3 pos)
     {
-        return diningRoomGrid.GetStatusOfCell(pos.x, pos.z) == 0;
+        // tempStructure.GetComponent<Collider>().
+        return true;
     }
 
-    internal void PlaceTemporaryStructure(Vector3Int pos, GameObject item, CellType cellType)
+    internal void PlaceTemporaryStructure(Vector3 pos, GameObject item, CellType cellType)
     {
+        Debug.Log("CUCK CUCK CUCK");
         GameObject newStructure = Instantiate(item, pos, tempStructure.transform.rotation);
-        if(cellType == CellType.Furniture)
-        {
-            furnitureManager.WritePositionDict(pos, furnitureManager.Furniture, tempStructure.transform.rotation);
-        }
-        diningRoomGrid.SetGridStatus(pos.x, pos.z, 1);
 
         // Destroy Indicator
         GameObject.Destroy(tempStructure);
         GameObject.Destroy(placementIndicator);
     }
 
-    internal void FreePosition(Vector3Int pos)
+    internal void FreePosition(Vector3 pos)
     {
-        diningRoomGrid.SetGridStatus(pos.x, pos.z, 0);
     }
 
     // Display a preview of the object player trying to place
@@ -106,7 +101,7 @@ public class PlacementManager : MonoBehaviour
         placementIndicator = Instantiate(preview, tempStructure.transform.position, Quaternion.Euler(0, rotation, 0));
     }
 
-    internal void PlaceObject(Vector3Int pos, string name, Quaternion rotation, CellType type)
+    internal void PlaceObject(Vector3 pos, string name, Quaternion rotation, CellType type)
     {
         if (type == CellType.Furniture)
         {
@@ -143,4 +138,15 @@ public class PlacementManager : MonoBehaviour
     {
         move = true;
     }
+
+    void OnCollisionEnter(Collision collider)
+    {
+        ifPlaceable = false;
+    }
+    
+    void OnCollisionExist(Collision collider)
+    {
+        ifPlaceable = true;
+    }
+
 }
