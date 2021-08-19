@@ -7,6 +7,7 @@ TagManager:
   - DoorLeft
   - DoorRight
   - Furniture
+  - LeftWall
   layers:
   - Default
   - TransparentFX

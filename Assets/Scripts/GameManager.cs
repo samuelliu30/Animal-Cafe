@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI moneyBoard;
     [SerializeField] InventoryManager MoneyData;
     [SerializeField] PlacementManager placementManager;
+    [SerializeField] CameraManager cameraManager;
 
     IEnumerator SpawnTarget()
     {
@@ -51,11 +52,24 @@ public class GameManager : MonoBehaviour
         if (furnitureManager.IfPlaceable())
         {
             furnitureManager.PlaceFurniture(pos);
-
         }
         else if (placementManager.IfMove())
         {
             furnitureManager.PickUp();
+        }
+        else if (cameraManager.IfDecorate())
+        {
+            Vector3 mouse = Input.mousePosition;
+            Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+            RaycastHit hit;
+            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+            {
+                GameObject c = hit.collider.gameObject;
+                if (c.tag == "LeftWall")
+                {
+                    cameraManager.DecorateLeftWall();
+                }
+            }
         }
     }
 

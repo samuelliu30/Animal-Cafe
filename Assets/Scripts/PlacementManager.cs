@@ -102,23 +102,13 @@ public class PlacementManager : MonoBehaviour
         placementIndicator = Instantiate(preview, tempStructure.transform.position, Quaternion.Euler(0, rotation, 0));
     }
 
-    internal bool IfMove()
-    {
-        return move;
-    }
-
-    public void Move()
-    {
-        move = true;
-    }
-
     internal void PlaceObject(Vector3Int pos, string name, Quaternion rotation, CellType type)
     {
-        if(type == CellType.Furniture)
+        if (type == CellType.Furniture)
         {
 #nullable enable
             GameObject? item = furnitureManager.GetItem(name);
-            if(item != null) 
+            if (item != null)
             {
                 GameObject tmp = Instantiate(item, pos, rotation);
             }
@@ -129,4 +119,14 @@ public class PlacementManager : MonoBehaviour
         }
     }
 
+
+    internal bool IfMove()
+    {
+        return move;
+    }
+
+    public void Move()
+    {
+        move = true;
+    }
 }
