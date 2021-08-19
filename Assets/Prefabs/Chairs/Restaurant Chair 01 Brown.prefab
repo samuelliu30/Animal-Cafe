@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3146687064408423607}
   - component: {fileID: 3138973788627349899}
   - component: {fileID: 3114977469109388989}
+  - component: {fileID: -910177458072364367}
   m_Layer: 0
   m_Name: Restaurant Chair 01 Brown
   m_TagString: Furniture
@@ -95,3 +96,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27603847, y: 0.544078, z: 0.31625974}
   m_Center: {x: 0.000000022351742, y: 0.2722109, z: -0.05082519}
+--- !u!208 &-910177458072364367
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3159346109758416859}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.13800001, y: 0.272, z: 0.158}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.272, z: -0.051000003}
+  m_TimeToStationary: 0.5
