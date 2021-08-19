@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44263533, g: 0.49175, b: 0.5715604, a: 1}
+  m_IndirectSpecularColor: {r: 0.4426356, g: 0.49175042, b: 0.5715609, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 116169692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 264cdb0f127b7c041a111b5efa9762ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!81 &116169695
@@ -735,6 +735,7 @@ MonoBehaviour:
   moneyBoard: {fileID: 798662079}
   MoneyData: {fileID: 11400000, guid: 1b839b3ff85d8fd4bac329c6047e70d2, type: 2}
   placementManager: {fileID: 928012334}
+  cameraManager: {fileID: 116169694}
 --- !u!1001 &332826556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1098,7 +1099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2000, y: -100}
+  m_AnchoredPosition: {x: 1300, y: -100}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825576800
@@ -1988,7 +1989,7 @@ GameObject:
   - component: {fileID: 1495399929}
   m_Layer: 0
   m_Name: Restaurant Wall Doors 05 Light Green
-  m_TagString: Untagged
+  m_TagString: LeftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -2154,7 +2155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2000, y: -250}
+  m_AnchoredPosition: {x: 1300, y: -250}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1524079522
@@ -2201,9 +2202,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 928012334}
-        m_TargetAssemblyTypeName: PlacementManager, Assembly-CSharp
-        m_MethodName: Move
+      - m_Target: {fileID: 116169694}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: MoveCamera
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2513,7 +2514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DecorateWall
+  m_text: Decorate Wall
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
