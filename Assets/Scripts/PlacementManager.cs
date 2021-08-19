@@ -112,7 +112,7 @@ public class PlacementManager : MonoBehaviour
         move = true;
     }
 
-    internal void PlaceObject(Vector3Int pos, string name, CellType type)
+    internal void PlaceObject(Vector3Int pos, string name, Quaternion rotation, CellType type)
     {
         if(type == CellType.Furniture)
         {
@@ -120,8 +120,12 @@ public class PlacementManager : MonoBehaviour
             GameObject? item = furnitureManager.GetItem(name);
             if(item != null) 
             {
-                GameObject tmp = Instantiate(item, pos, Quaternion.identity);
+                GameObject tmp = Instantiate(item, pos, rotation);
             }
+        }
+        else
+        {
+            throw new NotImplementedException();
         }
     }
 

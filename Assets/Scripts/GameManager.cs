@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public InputManager inputManager;
     public FurnitureManager furnitureManager;
+    public JsonManager jsonManager;
 
     private float spawnRate = 1.5f;
     private bool isStoreOpen = true;
@@ -16,7 +17,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI moneyBoard;
     [SerializeField] InventoryManager MoneyData;
     [SerializeField] PlacementManager placementManager;
-    [SerializeField] JsonManager jsonManager;
 
     IEnumerator SpawnTarget()
     {
@@ -59,8 +59,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void LoadGame()
+    public void LoadGame()
     {
         jsonManager.LoadSetupData();
+    }
+
+    public void SaveGame()
+    {
+        jsonManager.SaveSetupData();
     }
 }
