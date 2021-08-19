@@ -16,6 +16,7 @@ public class PlacementManager : MonoBehaviour
     private void Start()
     {
         diningRoomGrid = new Grid(width, height);
+        move = false;
     }
 
     private void Update()
@@ -141,6 +142,6 @@ public class PlacementManager : MonoBehaviour
 
     public void Move()
     {
-        move = true;
+        move = !move;
     }
 }

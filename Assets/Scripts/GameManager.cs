@@ -70,6 +70,10 @@ public class GameManager : MonoBehaviour
                 {
                     cameraManager.DecorateLeftWall();
                 }
+                else if (c.tag == "RightWall")
+                {
+                    cameraManager.DecorateRightWall();
+                }
             }
         }
     }

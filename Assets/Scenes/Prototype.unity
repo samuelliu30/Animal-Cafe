@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44263533, g: 0.49175, b: 0.5715604, a: 1}
+  m_IndirectSpecularColor: {r: 0.4426356, g: 0.49175042, b: 0.5715609, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,13 +150,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116169692}
-  m_LocalRotation: {x: -0.095598504, y: 0.9000805, z: -0.25055712, w: -0.34341994}
+  m_LocalRotation: {x: 0.09559706, y: -0.90008163, z: 0.25055385, w: 0.34341985}
   m_LocalPosition: {x: 4.88, y: 5.27, z: 5.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 586416487}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.111, y: -138.232, z: 0}
 --- !u!114 &116169694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1758,7 +1758,7 @@ GameObject:
   - component: {fileID: 1248163834}
   m_Layer: 0
   m_Name: Restaurant Wall 04 Light Green
-  m_TagString: Untagged
+  m_TagString: RightWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
