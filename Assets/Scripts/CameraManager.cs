@@ -23,7 +23,7 @@ public class CameraManager : MonoBehaviour
         {
             this.transform.position = Vector3.Lerp(this.transform.position, leftDoorPos, cameraSpeed * Time.deltaTime);
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, leftDoorRotation, cameraSpeed * Time.deltaTime);
-            this.GetComponent<Camera>().orthographicSize -= 0.5f * Time.deltaTime;
+            //this.GetComponent<Camera>().orthographicSize -= 0.5f * Time.deltaTime;
             if (this.transform.position == leftDoorPos && this.transform.rotation == leftDoorRotation)
             {
                 leftWall = false;

@@ -16,9 +16,6 @@ public class CustomerManager : MonoBehaviour
 
     private void Start()
     {
-
-        // Load the scene from Json
-
         GameObject doorLeft = GameObject.FindWithTag("DoorLeft");
         GameObject doorRight = GameObject.FindWithTag("DoorRight");
         doorPos = new Vector3((doorLeft.transform.position.x + doorRight.transform.position.x) / 2, 0, (doorLeft.transform.position.z + doorRight.transform.position.z) / 2);
@@ -32,9 +29,4 @@ public class CustomerManager : MonoBehaviour
         moneyManager.ChangeMoney(10);
     }
 
-    private void FindPathToPos(Vector3Int pos)
-    {
-        Vector3 curPos = this.transform.position;
-
-    }
 }

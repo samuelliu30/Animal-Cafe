@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         while (isStoreOpen)
         {
             yield return new WaitForSeconds(spawnRate);
-            customerManager.SpawnCustomer();
+            //customerManager.SpawnCustomer();
         }
 
     }

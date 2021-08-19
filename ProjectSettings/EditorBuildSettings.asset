@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Prototype.unity
+    guid: b08ebfc7e1e490547a8a2070e87dc422
+  - enabled: 0
+    path: Assets/Quirky Series/Pets/Cat/Demo/Cat Demo.unity
+    guid: 30acd7b05f359dc47a574dbba8826cc3
   m_configObjects: {}
