@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        //LoadGame();
         inputManager.OnMouseClick += HandleMouseClick;
         StartCoroutine(SpawnTarget());
     }

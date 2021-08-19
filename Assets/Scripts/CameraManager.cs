@@ -7,7 +7,7 @@ public class CameraManager : MonoBehaviour
     private Vector3 leftDoorPos;
     private Vector3 leftOffset;
     private Quaternion leftDoorRotation;
-    private float cameraSpeed = 5.0f;
+    private float cameraSpeed = 8.0f;
     private bool move;
     private bool leftWall;
 
@@ -23,6 +23,7 @@ public class CameraManager : MonoBehaviour
         {
             this.transform.position = Vector3.Lerp(this.transform.position, leftDoorPos, cameraSpeed * Time.deltaTime);
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, leftDoorRotation, cameraSpeed * Time.deltaTime);
+            this.GetComponent<Camera>().orthographicSize -= 0.5f * Time.deltaTime;
             if (this.transform.position == leftDoorPos && this.transform.rotation == leftDoorRotation)
             {
                 leftWall = false;

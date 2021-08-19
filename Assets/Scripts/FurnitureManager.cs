@@ -7,7 +7,7 @@ using System;
 public class FurnitureManager : MonoBehaviour
 {
 
-    private GameObject furniture;
+    private string furniture;
     private GameObject preview;
 
     public PlacementManager placementManager;
@@ -19,6 +19,15 @@ public class FurnitureManager : MonoBehaviour
 
         public string name;
         public Quaternion rotation;
+    }
+
+    public string Furniture
+    {
+        get
+        {
+            return furniture;
+
+        }
     }
 
 
@@ -39,15 +48,15 @@ public class FurnitureManager : MonoBehaviour
     public void ChangePlacement(string name)
     {
 
-        furniture = furniturePool[name];
+        furniture = name;
 
         // Initialize the placement indicator
-        Vector3 furnitureSize = furniture.GetComponent<Renderer>().bounds.size / 2;
+        Vector3 furnitureSize = furniturePool[name].GetComponent<Renderer>().bounds.size / 2;
 
         // TODO: Dynamically initialize the mesh size of the indicator
         //       Currently the size is hardcoded and scale by the factor of funiture size
         preview.transform.localScale = new Vector3(0.25f * furnitureSize.x, 0.1f, 0.25f * furnitureSize.z);
-        placementManager.ShowTemporalObject(furniture, preview);
+        placementManager.ShowTemporalObject(furniturePool[name], preview);
     }
 
     public void ChangePlacement(string name, float rotation)
@@ -58,22 +67,22 @@ public class FurnitureManager : MonoBehaviour
         switch (name)
         {
             case "Restaurant Table 01 Wooden(Clone)":
-                furniture = table;
+                furniture = "table";
                 break;
             case "Restaurant Chair 01 Brown(Clone)":
-                furniture = chair;
+                furniture = "chair";
                 break;
             default:
                 break;
         }
 
         // Initialize the placement indicator
-        Vector3 furnitureSize = furniture.GetComponent<Renderer>().bounds.size / 2;
+        Vector3 furnitureSize = furniturePool[furniture].GetComponent<Renderer>().bounds.size / 2;
 
         // TODO: Dynamically initialize the mesh size of the indicator
         //       Currently the size is hardcoded and scale by the factor of funiture size
         preview.transform.localScale = new Vector3(0.25f * furnitureSize.x, 0.1f, 0.25f * furnitureSize.z);
-        placementManager.ShowTemporalObject(furniture, preview, rotation);
+        placementManager.ShowTemporalObject(furniturePool[furniture], preview, rotation);
     }
 
     public void PlaceFurniture(Vector3Int pos)
@@ -84,16 +93,9 @@ public class FurnitureManager : MonoBehaviour
         if (placementManager.CheckIfPositionIsFree(pos) == false)
             return;
 
-        placementManager.PlaceTemporaryStructure(pos, furniture, CellType.Furniture);
-
-        FurnitureData tmp = new FurnitureData();
-        tmp.name = "table";
-        tmp.rotation = Quaternion.identity;
-        postionFurnitureDic[pos] = tmp;
+        placementManager.PlaceTemporaryStructure(pos, furniturePool[furniture], CellType.Furniture);
 
         furniture = null;
-        // If succsessfully placed a furniture, store that into dictionary
-        //FurnitureDic.Add(new Vector3Int(pos.x, pos.z, ), );
 
     }
     public Dictionary<Vector3Int, FurnitureData> PositionFurnitureDic
@@ -119,6 +121,7 @@ public class FurnitureManager : MonoBehaviour
                 if (c.tag == "Furniture")
                 {
                     placementManager.FreePosition(Vector3Int.CeilToInt(c.transform.position));
+                    postionFurnitureDic.Remove(Vector3Int.CeilToInt(c.transform.position));
                     ChangePlacement(c.name, c.transform.rotation.eulerAngles.y);
                     GameObject.Destroy(c);
                 }
@@ -145,5 +148,15 @@ public class FurnitureManager : MonoBehaviour
     public bool IfPlaceable()
     {
         return furniture != null;
+    }
+
+    public void WritePositionDict(Vector3Int pos, string name, Quaternion rotation)
+    {
+        FurnitureData tmp = new FurnitureData();
+        tmp.name = furniture;
+        tmp.rotation = rotation;
+
+        // Add new furniture to the position Dictionary
+        postionFurnitureDic[pos] = tmp;
     }
 }

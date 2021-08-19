@@ -68,7 +68,7 @@ public class PlacementManager : MonoBehaviour
 
     internal bool CheckIfPositionInBound(Vector3Int pos)
     {
-        if((pos.x > 0)&&(pos.x < width)&&(pos.z > 0)&&(pos.z < height))
+        if((pos.x > 0)&&(pos.x < width)&&(pos.z > 0)&&(pos.z < height)&&(pos.y == 0))
             return true;
         else
             return false;
@@ -82,6 +82,10 @@ public class PlacementManager : MonoBehaviour
     internal void PlaceTemporaryStructure(Vector3Int pos, GameObject item, CellType cellType)
     {
         GameObject newStructure = Instantiate(item, pos, tempStructure.transform.rotation);
+        if(cellType == CellType.Furniture)
+        {
+            furnitureManager.WritePositionDict(pos, furnitureManager.Furniture, tempStructure.transform.rotation);
+        }
         diningRoomGrid.SetGridStatus(pos.x, pos.z, 1);
 
         // Destroy Indicator
@@ -106,8 +110,7 @@ public class PlacementManager : MonoBehaviour
     {
         if (type == CellType.Furniture)
         {
-#nullable enable
-            GameObject? item = furnitureManager.GetItem(name);
+            GameObject item = furnitureManager.GetItem(name);
             if (item != null)
             {
                 GameObject tmp = Instantiate(item, pos, rotation);
@@ -119,6 +122,17 @@ public class PlacementManager : MonoBehaviour
         }
     }
 
+    public void CancelCurrentMovement()
+    {
+        if(tempStructure != null)
+        {
+            Destroy(tempStructure.gameObject);
+        }
+        if(placementIndicator != null)
+        {
+            Destroy(placementIndicator.gameObject);
+        }
+    }
 
     internal bool IfMove()
     {

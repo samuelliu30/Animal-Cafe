@@ -54,6 +54,7 @@ public class JsonManager : MonoBehaviour
             //tmpData = item.Value;
             FurnitureData storeData = new FurnitureData(item.Key, item.Value);
             dataList.listFurnitureData.Add(storeData);
+            Debug.Log(storeData.rotation);
         }
 
         string jsonData = JsonUtility.ToJson(dataList, true);
@@ -69,6 +70,10 @@ public class JsonManager : MonoBehaviour
         string jsonString = File.ReadAllText(Application.dataPath + "/Resources/test.json");
         dataList = JsonUtility.FromJson<ListFurnitureData>(jsonString);
 
+        if(dataList == null)
+        {
+            return;
+        }
 
         FurnitureData furnitureData = new FurnitureData();
 
