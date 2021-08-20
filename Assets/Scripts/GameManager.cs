@@ -98,13 +98,14 @@ public class GameManager : MonoBehaviour
                 {
                     bagManager.AddItem(new Item { itemType = Item.ItemType.Chair, name = "chair", amount = 1});
                     uiBagManager.RefreshBagItems();
+                    furnitureManager.Store(c);
                 }
                 else if (c.name.Contains("Table"))
                 {
                     bagManager.AddItem(new Item { itemType = Item.ItemType.Table, name = "table", amount = 1 });
                     uiBagManager.RefreshBagItems();
+                    furnitureManager.Store(c);
                 }
-                furnitureManager.Store(c);
             }
         }
     }
