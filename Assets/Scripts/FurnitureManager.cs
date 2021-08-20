@@ -11,7 +11,6 @@ public class FurnitureManager : MonoBehaviour
     private GameObject preview;
 
     public PlacementManager placementManager;
-    public ItemWorld itemWorld;
     public BagManager bagManager;
 
     public List<Vector3Int> tempPlacementPos = new List<Vector3Int>();

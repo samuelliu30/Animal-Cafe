@@ -5,23 +5,39 @@ using UnityEngine;
 
 public class BagManager
 {
-    private List<Item> itemList;
+
+    private Dictionary<string, Item> itemDict;
 
     public BagManager()
     {
-        itemList = new List<Item>();
+        itemDict = new Dictionary<string, Item>();
+    }
 
-        AddItem(new Item { itemType = Item.ItemType.Chair, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.Table, amount = 1 });
+    public BagManager(Dictionary<string, Item> itemDict)
+    {
+        this.itemDict = itemDict;
+    }
+
+
+    public Dictionary<string, Item> ItemDict
+    {
+        get
+        {
+            return itemDict;
+        }
     }
 
     public void AddItem(Item item)
     {
-        itemList.Add(item);
+        if (itemDict.ContainsKey(item.name))
+        {
+            itemDict[item.name].amount += 1;
+        }
+        else
+        {
+            itemDict.Add(item.name, item);
+        }
+        //itemList.Add(item);
     }
 
-    public List<Item> GetItemList()
-    {
-        return itemList;
-    }
 }

@@ -33,13 +33,15 @@ public class UI_BagManager : MonoBehaviour
         int y = 0;
         float itemSlotCellSize = 90f;
 
-        foreach (Item item in bagManager.GetItemList())
+        foreach (KeyValuePair<string, Item> item in bagManager.ItemDict)
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, this.transform).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.anchoredPosition = new Vector2(247 + x * itemSlotCellSize, -231 + y * itemSlotCellSize);
             RawImage image = itemSlotRectTransform.Find("Image").GetComponent<RawImage>();
-            image.texture = item.GetTexture2D();
+            image.texture = item.Value.GetTexture2D();
+            TextMeshProUGUI text = itemSlotRectTransform.Find("Text").GetComponent<TextMeshProUGUI>();
+            text.SetText(item.Value.amount.ToString());
             x++;
         }
     }
