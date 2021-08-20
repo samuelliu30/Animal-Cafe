@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using CodeMonkey.Utils;
+using System;
 
 public class UI_BagManager : MonoBehaviour
 {
     private BagManager bagManager;
     private Transform itemSlotTemplate;
     private Transform backGround;
+    [SerializeField]
+    FurnitureManager furnitureManager;
 
     private void Awake()
     {
@@ -19,6 +23,13 @@ public class UI_BagManager : MonoBehaviour
     public void SetBagManager(BagManager bagManager)
     {
         this.bagManager = bagManager;
+
+        bagManager.OnItemListChanged += BagManager_OnItemListchanged;
+        RefreshBagItems();
+    }
+
+    private void BagManager_OnItemListchanged(object sender, EventArgs e)
+    {
         RefreshBagItems();
     }
 
@@ -37,6 +48,13 @@ public class UI_BagManager : MonoBehaviour
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, this.transform).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
+
+            itemSlotRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+            {
+                Debug.Log(item.Value.name);
+                bagManager.RemoveItem(item.Value);
+                furnitureManager.ChangePlacement(item.Value.name);
+            };
             itemSlotRectTransform.anchoredPosition = new Vector2(247 + x * itemSlotCellSize, -231 + y * itemSlotCellSize);
             RawImage image = itemSlotRectTransform.Find("Image").GetComponent<RawImage>();
             image.texture = item.Value.GetTexture2D();
