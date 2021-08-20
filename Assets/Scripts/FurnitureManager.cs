@@ -11,6 +11,8 @@ public class FurnitureManager : MonoBehaviour
     private GameObject preview;
 
     public PlacementManager placementManager;
+    public ItemWorld itemWorld;
+    public BagManager bagManager;
 
     public List<Vector3Int> tempPlacementPos = new List<Vector3Int>();
     public class FurnitureData
@@ -129,7 +131,13 @@ public class FurnitureManager : MonoBehaviour
             }
 
         }
+    }
 
+    public void Store(GameObject c)
+    {
+        placementManager.FreePosition(Vector3Int.CeilToInt(c.transform.position));
+        postionFurnitureDic.Remove(Vector3Int.CeilToInt(c.transform.position));
+        GameObject.Destroy(c);
     }
 
 #nullable enable

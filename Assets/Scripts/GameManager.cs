@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] InventoryManager MoneyData;
     [SerializeField] PlacementManager placementManager;
     [SerializeField] CameraManager cameraManager;
+    [SerializeField] UI_BagManager uiBagManager;
+    [SerializeField] ItemWorld itemWorld;
+
+    private BagManager bagManager;
+
+
 
     IEnumerator SpawnTarget()
     {
@@ -29,12 +35,16 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    private void Awake()
+    {
+        bagManager = new BagManager();
+    }
     private void Start()
     {
         //LoadGame();
         inputManager.OnMouseClick += HandleMouseClick;
         StartCoroutine(SpawnTarget());
+        uiBagManager.SetBagManager(bagManager);
     }
 
     private void Update()
@@ -74,6 +84,28 @@ public class GameManager : MonoBehaviour
                 {
                     cameraManager.DecorateRightWall();
                 }
+            }
+        }
+        else if (itemWorld.IfStore())
+        {
+            Vector3 mouse = Input.mousePosition;
+            Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+            RaycastHit hit;
+            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+            {
+                GameObject c = hit.collider.gameObject;
+                if (c.name.Contains("Chair"))
+                {
+                    Debug.Log("hi");
+                    bagManager.AddItem(new Item { itemType = Item.ItemType.Chair, amount = 1 });
+                    uiBagManager.RefreshBagItems();
+                }
+                else if (c.name.Contains("Table"))
+                {
+                    bagManager.AddItem(new Item { itemType = Item.ItemType.Table, amount = 1 });
+                    uiBagManager.RefreshBagItems();
+                }
+                furnitureManager.Store(c);
             }
         }
     }
