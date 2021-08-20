@@ -96,7 +96,6 @@ public class GameManager : MonoBehaviour
                 GameObject c = hit.collider.gameObject;
                 if (c.name.Contains("Chair"))
                 {
-                    Debug.Log("hi");
                     bagManager.AddItem(new Item { itemType = Item.ItemType.Chair, amount = 1 });
                     uiBagManager.RefreshBagItems();
                 }
