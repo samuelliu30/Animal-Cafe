@@ -121,8 +121,8 @@ public class FurnitureManager : MonoBehaviour
                 GameObject c = hit.collider.gameObject;
                 if (c.tag == "Furniture")
                 {
-                    placementManager.FreePosition(Vector3Int.CeilToInt(c.transform.position));
-                    postionFurnitureDic.Remove(Vector3Int.CeilToInt(c.transform.position));
+                    placementManager.FreePosition(Vector3Int.RoundToInt(c.transform.position));
+                    postionFurnitureDic.Remove(Vector3Int.RoundToInt(c.transform.position));
                     ChangePlacement(c.name, c.transform.rotation.eulerAngles.y);
                     GameObject.Destroy(c);
                 }
@@ -137,6 +137,27 @@ public class FurnitureManager : MonoBehaviour
         placementManager.FreePosition(Vector3Int.CeilToInt(c.transform.position));
         postionFurnitureDic.Remove(Vector3Int.CeilToInt(c.transform.position));
         GameObject.Destroy(c);
+    }
+
+    public void Drag()
+    {
+        // Convert Screen unit to game world unit
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 mouse = Input.mousePosition;
+            Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+            RaycastHit hit;
+            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+            {
+                GameObject c = hit.collider.gameObject;
+                if (c.tag == "Furniture")
+                {
+                    //c.GetComponent<Rigidbody>().AddForce();
+                }
+
+            }
+
+        }
     }
 
 #nullable enable

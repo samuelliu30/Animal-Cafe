@@ -9,9 +9,28 @@ public class JsonManager : MonoBehaviour
     [SerializeField]
     FurnitureManager furnitureManager;
     [SerializeField]
-    PlacementManager placementManager;
+    PlacementManager placementManager;    
+    [SerializeField]
+    GameManager gameManager;
 
-    JsonData furnitureJson;
+    private JsonData furnitureJson;
+    private BagManager bagManager;
+
+
+    public void SaveGame()
+    {
+        SaveSetupData();
+        SaveBagData();
+    }
+
+    public void LoadGame()
+    {
+        LoadSetupData();
+        LoadBagData();
+    }
+
+
+    //////////////////// Saving and Loading Furniture Data ////////////////////
 
     [System.Serializable]
     public class FurnitureData
@@ -84,4 +103,39 @@ public class JsonManager : MonoBehaviour
         }
     }
 
+    //////////////////// Saving and Loading Inventory Data ////////////////////
+
+    [System.Serializable]
+    public class BagData
+    {
+        public Dictionary<string, Item> itemDict = new Dictionary<string, Item>();
+    }
+
+    public void SaveBagData()
+    {
+        bagManager = gameManager.bagManager;
+        string filePath = Application.dataPath + "/Resources/BagTest.json";
+        if (!File.Exists(filePath))
+        {
+            File.Create(filePath);
+        }
+
+        BagData bagData = new BagData();
+        bagData.itemDict = bagManager.ItemDict;
+        Debug.Log(bagData.itemDict["table"].amount);
+
+        string savingData = JsonMapper.ToJson(bagData);
+        File.WriteAllText(filePath, savingData);
+
+    }
+
+    public void LoadBagData()
+    {
+        string jsonString = File.ReadAllText(Application.dataPath + "/Resources/BagTest.json");
+        BagData bagData = new BagData();
+        bagData = JsonMapper.ToObject<BagData>(jsonString);
+
+        gameManager.bagManager.UpdateItemList(bagData.itemDict);
+        gameManager.uiBagManager.RefreshBagItems();
+    }
 }

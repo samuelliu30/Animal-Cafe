@@ -18,10 +18,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] InventoryManager MoneyData;
     [SerializeField] PlacementManager placementManager;
     [SerializeField] CameraManager cameraManager;
-    [SerializeField] UI_BagManager uiBagManager;
+    public UI_BagManager uiBagManager;
     [SerializeField] ItemWorld itemWorld;
 
-    private BagManager bagManager;
+    public BagManager bagManager;
 
 
 

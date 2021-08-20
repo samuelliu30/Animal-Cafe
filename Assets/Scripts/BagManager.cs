@@ -13,12 +13,6 @@ public class BagManager
         itemDict = new Dictionary<string, Item>();
     }
 
-    public BagManager(Dictionary<string, Item> itemDict)
-    {
-        this.itemDict = itemDict;
-    }
-
-
     public Dictionary<string, Item> ItemDict
     {
         get
@@ -38,6 +32,11 @@ public class BagManager
             itemDict.Add(item.name, item);
         }
         //itemList.Add(item);
+    }
+
+    public void UpdateItemList(Dictionary<string, Item> itemDict)
+    {
+        this.itemDict = itemDict;
     }
 
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public enum CellType
 {
@@ -113,4 +114,5 @@ class Grid
     {
         return GetAdjacentCells((int)cell.X, (int)cell.Y);
     }
+
 }

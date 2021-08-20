@@ -11,7 +11,9 @@ public class PlacementManager : MonoBehaviour
     private GameObject tempStructure;
     private GameObject placementIndicator;
     public FurnitureManager furnitureManager;
-    private bool move;
+    private bool move = false;
+    private bool drag = false;
+    private GameObject draggingObject;
 
     private void Start()
     {
@@ -39,8 +41,8 @@ public class PlacementManager : MonoBehaviour
                 placementIndicator.transform.position = new Vector3(hit.point.x, surface, hit.point.z);
 
                 // Convert Vector3 to Vector3Int
-                Vector3Int pointInt = new Vector3Int(Mathf.FloorToInt(hit.point.x), Mathf.FloorToInt(hit.point.y), Mathf.FloorToInt(hit.point.z));
-                if(CheckIfPositionInBound(pointInt))
+                Vector3Int pointInt = Vector3Int.RoundToInt(hit.point);
+                if (CheckIfPositionInBound(pointInt))
                 {
                     ChangeIndicatorColor(pointInt);
                 }
@@ -49,6 +51,30 @@ public class PlacementManager : MonoBehaviour
             if (Input.GetKeyDown((KeyCode)'r')) {
                 tempStructure.transform.Rotate(Vector3.up, 90.0f);
                 placementIndicator.transform.Rotate(Vector3.up, 90.0f);
+            }
+        }
+        else if (drag)
+        {
+            Debug.Log("Dragggggg");
+            if (Input.GetMouseButton(0))
+            {
+                Vector3 mouse = Input.mousePosition;
+                Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+                RaycastHit hit;
+                if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+                {
+                    GameObject c = hit.collider.gameObject;
+                    if (c.tag == "Furniture")
+                    {
+                        float hori = Input.GetAxis("Horizontal") * -2.0f;
+                        float vert = Input.GetAxis("Vertical") * -2.0f;
+                        Vector3 movement = new Vector3(hori * Time.deltaTime, 0.0f, vert * Time.deltaTime);
+                        Debug.Log(movement);
+                        c.GetComponent<Transform>().position += movement;
+                    }
+
+                }
+
             }
         }
     }
@@ -139,7 +165,14 @@ public class PlacementManager : MonoBehaviour
     {
         return move;
     }
-
+    internal bool IfDrag()
+    {
+        return drag;
+    }
+    public void Drag()
+    {
+        drag = !drag;
+    }
     public void Move()
     {
         move = !move;
