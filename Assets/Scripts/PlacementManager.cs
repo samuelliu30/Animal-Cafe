@@ -12,8 +12,10 @@ public class PlacementManager : MonoBehaviour
     private GameObject placementIndicator;
     public FurnitureManager furnitureManager;
     private bool move = false;
-    //private bool drag = false;
-    private GameObject draggingObject;
+    private FurnitureController furnitureController;
+
+    public Material indicator;
+    public Material resturantMaterial;
 
     private void Start()
     {
@@ -26,25 +28,21 @@ public class PlacementManager : MonoBehaviour
         // If player is trying to place an object, move the preview with mouse
         if (tempStructure)
         {
+            //Debug.Log(furnitureController.ifPlaceable);
             // Convert Screen unit to game world unit
             Vector3 mouse = Input.mousePosition;
             Ray castPoint = Camera.main.ScreenPointToRay(mouse);
             RaycastHit hit;
             if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
             {
-                tempStructure.transform.position = new Vector3(hit.point.x, 1, hit.point.z);
-
-                //TODO: Optimize the indicator movement. The update is lagged right now
-
-                // Cast the indicator to the top surface
-                float surface = hit.collider.ClosestPointOnBounds(hit.point).y;
-                placementIndicator.transform.position = new Vector3(hit.point.x, surface, hit.point.z);
-
-                // Convert Vector3 to Vector3Int
-                Vector3Int pointInt = Vector3Int.RoundToInt(hit.point);
-                if (CheckIfPositionInBound(pointInt))
+                tempStructure.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
+                if (!furnitureController.IfPlaceable)
                 {
-                    ChangeIndicatorColor(pointInt);
+                    tempStructure.GetComponent<Renderer>().material = indicator;
+                }
+                else
+                {
+                    tempStructure.GetComponent<Renderer>().material = resturantMaterial;
                 }
             }
 
@@ -53,30 +51,6 @@ public class PlacementManager : MonoBehaviour
                 placementIndicator.transform.Rotate(Vector3.up, 90.0f);
             }
         }
-        //else if (drag)
-        //{
-        //    Debug.Log("Dragggggg");
-        //    if (Input.GetMouseButton(0))
-        //    {
-        //        Vector3 mouse = Input.mousePosition;
-        //        Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-        //        RaycastHit hit;
-        //        if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-        //        {
-        //            GameObject c = hit.collider.gameObject;
-        //            if (c.tag == "Furniture")
-        //            {
-        //                float hori = Input.GetAxis("Horizontal") * -2.0f;
-        //                float vert = Input.GetAxis("Vertical") * -2.0f;
-        //                Vector3 movement = new Vector3(hori * Time.deltaTime, 0.0f, vert * Time.deltaTime);
-        //                Debug.Log(movement);
-        //                c.GetComponent<Transform>().position += movement;
-        //            }
-
-        //        }
-
-        //    }
-        //}
     }
 
     private void ChangeIndicatorColor(Vector3Int pos)
@@ -126,11 +100,11 @@ public class PlacementManager : MonoBehaviour
     }
 
     // Display a preview of the object player trying to place
-    public void ShowTemporalObject(GameObject item, GameObject preview, float rotation = 0)
+    public void ShowTemporalObject(GameObject item, float rotation = 0)
     {
-        tempStructure = Instantiate(item, Input.mousePosition, Quaternion.Euler(0, rotation, 0));
-        //Vector3 size = tempStructure.GetComponent<Renderer>().bounds.size;
-        placementIndicator = Instantiate(preview, tempStructure.transform.position, Quaternion.Euler(0, rotation, 0));
+        Vector3 pos = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.z);
+        tempStructure = Instantiate(item, pos, Quaternion.Euler(0, rotation, 0));
+        furnitureController = tempStructure.GetComponent<FurnitureController>();
     }
 
     internal void PlaceObject(Vector3Int pos, string name, Quaternion rotation, CellType type)
@@ -165,14 +139,6 @@ public class PlacementManager : MonoBehaviour
     {
         return move;
     }
-    //internal bool IfDrag()
-    //{
-    //    return drag;
-    //}
-    //public void Drag()
-    //{
-    //    drag = !drag;
-    //}
     public void Move()
     {
         move = !move;

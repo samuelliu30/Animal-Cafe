@@ -1477,7 +1477,7 @@ GameObject:
   - component: {fileID: 859231738}
   m_Layer: 7
   m_Name: Restaurant Floor 019
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1766,6 +1766,8 @@ MonoBehaviour:
   width: 5
   height: 6
   furnitureManager: {fileID: 657863390}
+  indicator: {fileID: 2100000, guid: db9e5f409cf0a4841ae7376b6ea860d9, type: 2}
+  resturantMaterial: {fileID: 2100000, guid: 2f293f379d6ac514aa8fe9a140b933e8, type: 2}
 --- !u!4 &928012335
 Transform:
   m_ObjectHideFlags: 0
