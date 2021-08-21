@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1291948245319865919}
-  - component: {fileID: 1202006702427778365}
+  - component: {fileID: 1592525386}
   m_Layer: 0
   m_Name: Cat_LOD1
   m_TagString: Untagged
@@ -218,7 +218,7 @@ Transform:
   m_Father: {fileID: 1291589020361742501}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1202006702427778365
+--- !u!95 &1592525386
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b38a19066756acb4c86c23b7de92b8c6, type: 3}
   m_Controller: {fileID: 9100000, guid: 342256ebefa98784186770e4669aa2bc, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -494,25 +494,22 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295047182210554455}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.9132098, z: -0.52816176}
-  m_Size: 3.0851932
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1159061985403379969}
+    renderers: []
   - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1158954271789481125}
+    renderers: []
   - screenRelativeHeight: 0.1
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1159327688186021951}
-  m_Enabled: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!195 &-3747578896307588030
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -527,7 +524,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -547,7 +544,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5972c073c7bfd4ba5e34afd7ee260d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: -3747578896307588030}
+  animator:
+  - {fileID: 1592525387}
+  - {fileID: 1592525386}
+  - {fileID: 1592525385}
 --- !u!1 &1295050025854791653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,7 +1059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293651279571850247}
-  - component: {fileID: 1202107850865073151}
+  - component: {fileID: 1592525385}
   m_Layer: 0
   m_Name: Cat_LOD2
   m_TagString: Untagged
@@ -1083,7 +1083,7 @@ Transform:
   m_Father: {fileID: 1291589020361742501}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1202107850865073151
+--- !u!95 &1592525385
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1094,7 +1094,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7a91ea231c229ed4fb64c0b48c176a98, type: 3}
   m_Controller: {fileID: 9100000, guid: 342256ebefa98784186770e4669aa2bc, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -1415,7 +1415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293422899346340957}
-  - component: {fileID: 1202180874564649493}
+  - component: {fileID: 1592525387}
   m_Layer: 0
   m_Name: Cat_LOD0
   m_TagString: Untagged
@@ -1439,7 +1439,7 @@ Transform:
   m_Father: {fileID: 1291589020361742501}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1202180874564649493
+--- !u!95 &1592525387
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1450,7 +1450,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5c31a83083fd92745b13f6207022d1d7, type: 3}
   m_Controller: {fileID: 9100000, guid: 342256ebefa98784186770e4669aa2bc, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0

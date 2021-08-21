@@ -12,7 +12,7 @@ public class PlacementManager : MonoBehaviour
     private GameObject placementIndicator;
     public FurnitureManager furnitureManager;
     private bool move = false;
-    private bool drag = false;
+    //private bool drag = false;
     private GameObject draggingObject;
 
     private void Start()
@@ -53,30 +53,30 @@ public class PlacementManager : MonoBehaviour
                 placementIndicator.transform.Rotate(Vector3.up, 90.0f);
             }
         }
-        else if (drag)
-        {
-            Debug.Log("Dragggggg");
-            if (Input.GetMouseButton(0))
-            {
-                Vector3 mouse = Input.mousePosition;
-                Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-                RaycastHit hit;
-                if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-                {
-                    GameObject c = hit.collider.gameObject;
-                    if (c.tag == "Furniture")
-                    {
-                        float hori = Input.GetAxis("Horizontal") * -2.0f;
-                        float vert = Input.GetAxis("Vertical") * -2.0f;
-                        Vector3 movement = new Vector3(hori * Time.deltaTime, 0.0f, vert * Time.deltaTime);
-                        Debug.Log(movement);
-                        c.GetComponent<Transform>().position += movement;
-                    }
+        //else if (drag)
+        //{
+        //    Debug.Log("Dragggggg");
+        //    if (Input.GetMouseButton(0))
+        //    {
+        //        Vector3 mouse = Input.mousePosition;
+        //        Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+        //        RaycastHit hit;
+        //        if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+        //        {
+        //            GameObject c = hit.collider.gameObject;
+        //            if (c.tag == "Furniture")
+        //            {
+        //                float hori = Input.GetAxis("Horizontal") * -2.0f;
+        //                float vert = Input.GetAxis("Vertical") * -2.0f;
+        //                Vector3 movement = new Vector3(hori * Time.deltaTime, 0.0f, vert * Time.deltaTime);
+        //                Debug.Log(movement);
+        //                c.GetComponent<Transform>().position += movement;
+        //            }
 
-                }
+        //        }
 
-            }
-        }
+        //    }
+        //}
     }
 
     private void ChangeIndicatorColor(Vector3Int pos)
@@ -165,14 +165,14 @@ public class PlacementManager : MonoBehaviour
     {
         return move;
     }
-    internal bool IfDrag()
-    {
-        return drag;
-    }
-    public void Drag()
-    {
-        drag = !drag;
-    }
+    //internal bool IfDrag()
+    //{
+    //    return drag;
+    //}
+    //public void Drag()
+    //{
+    //    drag = !drag;
+    //}
     public void Move()
     {
         move = !move;

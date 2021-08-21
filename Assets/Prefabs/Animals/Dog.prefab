@@ -1001,7 +1001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1559531729281432590}
-  - component: {fileID: 1506293066275028698}
+  - component: {fileID: 1425835469}
   m_Layer: 0
   m_Name: Dog_LOD2
   m_TagString: Untagged
@@ -1025,7 +1025,7 @@ Transform:
   m_Father: {fileID: 1565907059849146874}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1506293066275028698
+--- !u!95 &1425835469
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1036,7 +1036,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f0fe2d4d01a519d4eb811bc38f71f8e6, type: 3}
   m_Controller: {fileID: 9100000, guid: a9edfc0aaba0217418d720d42b3ba0e0, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -1209,25 +1209,22 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563148236825658704}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.09028715, y: 0.8609692, z: -0.30541706}
-  m_Size: 3.1626222
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1464316773925290604}
+    renderers: []
   - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1467056661280895976}
+    renderers: []
   - screenRelativeHeight: 0.1
     fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1467605141860794510}
-  m_Enabled: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!195 &4231321688576355193
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1242,7 +1239,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1262,7 +1259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5972c073c7bfd4ba5e34afd7ee260d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+  animator:
+  - {fileID: 1425835465}
+  - {fileID: 1425835467}
+  - {fileID: 1425835469}
 --- !u!1 &1563152671304046352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,7 +1430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1559607268097904930}
-  - component: {fileID: 1506196892189285692}
+  - component: {fileID: 1425835465}
   m_Layer: 0
   m_Name: Dog_LOD0
   m_TagString: Untagged
@@ -1454,7 +1454,7 @@ Transform:
   m_Father: {fileID: 1565907059849146874}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1506196892189285692
+--- !u!95 &1425835465
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1465,7 +1465,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 90c8e8789d3576a4d9c0d5c5c9e9f680, type: 3}
   m_Controller: {fileID: 9100000, guid: a9edfc0aaba0217418d720d42b3ba0e0, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -1763,7 +1763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1559479268287196846}
-  - component: {fileID: 1506329796661469576}
+  - component: {fileID: 1425835467}
   m_Layer: 0
   m_Name: Dog_LOD1
   m_TagString: Untagged
@@ -1787,7 +1787,7 @@ Transform:
   m_Father: {fileID: 1565907059849146874}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1506329796661469576
+--- !u!95 &1425835467
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1798,7 +1798,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2bbbada57f0105047a05c9b98935190d, type: 3}
   m_Controller: {fileID: 9100000, guid: a9edfc0aaba0217418d720d42b3ba0e0, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0

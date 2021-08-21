@@ -73,7 +73,6 @@ public class JsonManager : MonoBehaviour
             //tmpData = item.Value;
             FurnitureData storeData = new FurnitureData(item.Key, item.Value);
             dataList.listFurnitureData.Add(storeData);
-            Debug.Log(storeData.rotation);
         }
 
         string jsonData = JsonUtility.ToJson(dataList, true);
@@ -122,7 +121,6 @@ public class JsonManager : MonoBehaviour
 
         BagData bagData = new BagData();
         bagData.itemDict = bagManager.ItemDict;
-        Debug.Log(bagData.itemDict["table"].amount);
 
         string savingData = JsonMapper.ToJson(bagData);
         File.WriteAllText(filePath, savingData);
