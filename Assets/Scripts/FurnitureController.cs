@@ -23,6 +23,14 @@ public class FurnitureController : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Furniture"))
+        {
+            ifPlaceable = false;
+        }
+    }
+
     public bool IfPlaceable
     {
         get
