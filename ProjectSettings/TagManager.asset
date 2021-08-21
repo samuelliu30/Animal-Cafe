@@ -9,6 +9,7 @@ TagManager:
   - Furniture
   - LeftWall
   - RightWall
+  - Floor
   layers:
   - Default
   - TransparentFX

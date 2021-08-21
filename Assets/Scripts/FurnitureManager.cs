@@ -8,7 +8,7 @@ public class FurnitureManager : MonoBehaviour
 {
 
     private string furniture;
-    private GameObject preview;
+    private GameObject tempStructure;
 
     public PlacementManager placementManager;
     public BagManager bagManager;
@@ -41,7 +41,6 @@ public class FurnitureManager : MonoBehaviour
 
     private void Start()
     {
-        preview = indicator;
         furniturePool["table"] = table;
         furniturePool["chair"] = chair;
     }
@@ -54,10 +53,7 @@ public class FurnitureManager : MonoBehaviour
         // Initialize the placement indicator
         Vector3 furnitureSize = furniturePool[name].GetComponent<Renderer>().bounds.size / 2;
 
-        // TODO: Dynamically initialize the mesh size of the indicator
-        //       Currently the size is hardcoded and scale by the factor of funiture size
-        preview.transform.localScale = new Vector3(0.25f * furnitureSize.x, 0.1f, 0.25f * furnitureSize.z);
-        placementManager.ShowTemporalObject(furniturePool[name], preview);
+        placementManager.ShowTemporalObject(furniturePool[furniture]);
     }
 
     public void ChangePlacement(string name, float rotation)
@@ -77,13 +73,7 @@ public class FurnitureManager : MonoBehaviour
                 break;
         }
 
-        // Initialize the placement indicator
-        Vector3 furnitureSize = furniturePool[furniture].GetComponent<Renderer>().bounds.size / 2;
-
-        // TODO: Dynamically initialize the mesh size of the indicator
-        //       Currently the size is hardcoded and scale by the factor of funiture size
-        preview.transform.localScale = new Vector3(0.25f * furnitureSize.x, 0.1f, 0.25f * furnitureSize.z);
-        placementManager.ShowTemporalObject(furniturePool[furniture], preview, rotation);
+        placementManager.ShowTemporalObject(furniturePool[furniture], rotation);
     }
 
     public void PlaceFurniture(Vector3Int pos)
@@ -137,27 +127,6 @@ public class FurnitureManager : MonoBehaviour
         placementManager.FreePosition(Vector3Int.CeilToInt(c.transform.position));
         postionFurnitureDic.Remove(Vector3Int.CeilToInt(c.transform.position));
         GameObject.Destroy(c);
-    }
-
-    public void Drag()
-    {
-        // Convert Screen unit to game world unit
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 mouse = Input.mousePosition;
-            Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-            RaycastHit hit;
-            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-            {
-                GameObject c = hit.collider.gameObject;
-                if (c.tag == "Furniture")
-                {
-                    //c.GetComponent<Rigidbody>().AddForce();
-                }
-
-            }
-
-        }
     }
 
 #nullable enable
