@@ -53,6 +53,7 @@ class Grid
     public int Width { get { return _width; } }
     private int _height;
     public int Height { get { return _height; } }
+    public float sizeRatio = 1f;
 
     public int this[int i, int j]
     {
@@ -113,6 +114,45 @@ class Grid
     public List<Point> GetAdjacentCells(Point cell)
     {
         return GetAdjacentCells((int)cell.X, (int)cell.Y);
+    }
+
+    public bool FitInGird(Vector3Int pos, float x_size, float z_size)
+    {
+        int half_w = Mathf.CeilToInt((x_size / sizeRatio)/2);
+        int half_h = Mathf.CeilToInt((z_size / sizeRatio)/2);
+
+        for (int i = (pos.x - half_w); i < (pos.x + half_w) ; i++)
+        {
+            for (int j = (pos.z - half_h); j < (pos.z + half_h); j++)
+            {
+                if (!((i > 0) && (i < Width) && (j > 0) && (j < Height)))
+                {
+                    return false;
+                }
+                if (_grid[i, j] == 1)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public void WriteToGrid(int x, int y, float x_size, float z_size, int status)
+    {
+
+        int half_w = Mathf.CeilToInt((x_size / sizeRatio) / 2);
+        int half_h = Mathf.CeilToInt((z_size / sizeRatio) / 2);
+
+        for (int i = (x - half_w); i < (x + half_w); i++)
+        {
+            for (int j = (y - half_h); j < (y + half_h); j++)
+            {
+                _grid[i, j] = status;
+            }
+        }
+
     }
 
 }

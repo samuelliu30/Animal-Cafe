@@ -88,10 +88,14 @@ public class FurnitureManager : MonoBehaviour
 
     public void PlaceFurniture(Vector3Int pos)
     {
+        GameObject tmpFurniture = furniturePool[furniture];
+        Vector3 size = tmpFurniture.GetComponent<Renderer>().bounds.size;
+        Debug.Log(size);
+        Debug.Log(tmpFurniture.GetComponent<Renderer>().bounds.extents);
 
         if (placementManager.CheckIfPositionInBound(pos) == false) 
             return;
-        if (placementManager.CheckIfPositionIsFree(pos) == false)
+        if (placementManager.CheckIfPositionIsFree(pos, size.x, size.z) == false)
             return;
 
         placementManager.PlaceTemporaryStructure(pos, furniturePool[furniture], CellType.Furniture);

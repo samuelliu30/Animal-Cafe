@@ -13,7 +13,7 @@ public class PlacementManager : MonoBehaviour
     public FurnitureManager furnitureManager;
     private bool move = false;
     //private bool drag = false;
-    private GameObject draggingObject;
+    //private GameObject draggingObject;
 
     private void Start()
     {
@@ -82,8 +82,9 @@ public class PlacementManager : MonoBehaviour
     private void ChangeIndicatorColor(Vector3Int pos)
     {
         var render = placementIndicator.GetComponent<Renderer>();
+        Debug.Log("Indicator size: " + render.bounds.size);
 
-        if (CheckIfPositionIsFree(pos))
+        if (CheckIfPositionIsFree(pos, render.bounds.size.x, render.bounds.size.z))
         {
             render.material.SetColor("_Color", Color.green);
         }
@@ -101,9 +102,10 @@ public class PlacementManager : MonoBehaviour
             return false;
     }
 
-    internal bool CheckIfPositionIsFree(Vector3Int pos)
+    internal bool CheckIfPositionIsFree(Vector3Int pos, float x_size, float z_size)
     {
-        return diningRoomGrid.GetStatusOfCell(pos.x, pos.z) == 0;
+        Debug.Log("The status of (" +  pos.x.ToString() + ","+  pos.z.ToString() +  ") is " + diningRoomGrid[pos.x, pos.z].ToString());
+        return diningRoomGrid.FitInGird(pos, x_size, z_size);
     }
 
     internal void PlaceTemporaryStructure(Vector3Int pos, GameObject item, CellType cellType)
@@ -113,7 +115,10 @@ public class PlacementManager : MonoBehaviour
         {
             furnitureManager.WritePositionDict(pos, furnitureManager.Furniture, tempStructure.transform.rotation);
         }
-        diningRoomGrid.SetGridStatus(pos.x, pos.z, 1);
+
+        Vector3 dimention = newStructure.GetComponent<Renderer>().bounds.size;
+        Debug.Log("Trying to place with size: " + Mathf.CeilToInt(dimention.x).ToString() + ", " + Mathf.CeilToInt(dimention.z).ToString());
+        diningRoomGrid.WriteToGrid(pos.x, pos.z, dimention.x, dimention.z, 1);
 
         // Destroy Indicator
         GameObject.Destroy(tempStructure);
@@ -130,7 +135,7 @@ public class PlacementManager : MonoBehaviour
     {
         tempStructure = Instantiate(item, Input.mousePosition, Quaternion.Euler(0, rotation, 0));
         //Vector3 size = tempStructure.GetComponent<Renderer>().bounds.size;
-        placementIndicator = Instantiate(preview, tempStructure.transform.position, Quaternion.Euler(0, rotation, 0));
+        placementIndicator = Instantiate(preview, tempStructure.transform.position, Quaternion.Euler(0, rotation, 0), tempStructure.transform);
     }
 
     internal void PlaceObject(Vector3Int pos, string name, Quaternion rotation, CellType type)
@@ -165,6 +170,11 @@ public class PlacementManager : MonoBehaviour
     {
         return move;
     }
+
+    public void Move()
+    {
+        move = !move;
+    }
     //internal bool IfDrag()
     //{
     //    return drag;
@@ -173,8 +183,5 @@ public class PlacementManager : MonoBehaviour
     //{
     //    drag = !drag;
     //}
-    public void Move()
-    {
-        move = !move;
-    }
+
 }
