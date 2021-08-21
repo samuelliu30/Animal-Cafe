@@ -53,22 +53,9 @@ public class PlacementManager : MonoBehaviour
         }
     }
 
-    private void ChangeIndicatorColor(Vector3Int pos)
-    {
-        var render = placementIndicator.GetComponent<Renderer>();
-
-        if (CheckIfPositionIsFree(pos))
-        {
-            render.material.SetColor("_Color", Color.green);
-        }
-        else
-        {
-            render.material.SetColor("_Color", Color.red);
-        }
-    }
-
     internal bool CheckIfPositionInBound(Vector3Int pos)
     {
+        Debug.Log("in check bound");
         if((pos.x > 0)&&(pos.x < width)&&(pos.z > 0)&&(pos.z < height)&&(pos.y == 0))
             return true;
         else
@@ -77,7 +64,9 @@ public class PlacementManager : MonoBehaviour
 
     internal bool CheckIfPositionIsFree(Vector3Int pos)
     {
-        return diningRoomGrid.GetStatusOfCell(pos.x, pos.z) == 0;
+        bool cuck = diningRoomGrid.GetStatusOfCell(pos.x, pos.z) == 0;
+        Debug.Log(cuck);
+        return cuck;
     }
 
     internal void PlaceTemporaryStructure(Vector3Int pos, GameObject item, CellType cellType)
