@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         inputManager.OnMouseClick += HandleMouseClick;
         StartCoroutine(SpawnTarget());
         uiBagManager.SetBagManager(bagManager);
+        furnitureManager.SetBagManager(bagManager);
     }
 
     private void Update()

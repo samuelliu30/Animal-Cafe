@@ -12,6 +12,8 @@ public class BagManager
     public BagManager()
     {
         itemDict = new Dictionary<string, Item>();
+        itemDict.Add("table", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table" });
+        itemDict.Add("chair", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chair" });
     }
 
     public Dictionary<string, Item> ItemDict
@@ -36,15 +38,15 @@ public class BagManager
         //itemList.Add(item);
     }
 
-    public void RemoveItem(Item item)
+    public void RemoveItem(string name)
     {
-        if (itemDict[item.name].amount == 1)
+        if (itemDict[name].amount == 1)
         {
-            itemDict.Remove(item.name);
+            itemDict.Remove(name);
         }
         else
         {
-            itemDict[item.name].amount -= 1;
+            itemDict[name].amount -= 1;
         }
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }

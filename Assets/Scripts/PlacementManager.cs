@@ -80,6 +80,7 @@ public class PlacementManager : MonoBehaviour
         // Destroy Indicator
         GameObject.Destroy(tempStructure);
         GameObject.Destroy(placementIndicator);
+
     }
 
     internal void FreePosition(Vector3Int pos)
@@ -90,6 +91,7 @@ public class PlacementManager : MonoBehaviour
     // Display a preview of the object player trying to place
     public void ShowTemporalObject(GameObject item, float rotation = 0)
     {
+        CancelCurrentMovement();
         Vector3 pos = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.z);
         tempStructure = Instantiate(item, pos, Quaternion.Euler(0, rotation, 0));
         furnitureController = tempStructure.GetComponent<FurnitureController>();

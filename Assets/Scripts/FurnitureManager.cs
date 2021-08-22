@@ -11,7 +11,7 @@ public class FurnitureManager : MonoBehaviour
     private GameObject tempStructure;
 
     public PlacementManager placementManager;
-    public BagManager bagManager;
+    private BagManager bagManager;
 
     public List<Vector3Int> tempPlacementPos = new List<Vector3Int>();
     public class FurnitureData
@@ -44,6 +44,12 @@ public class FurnitureManager : MonoBehaviour
         furniturePool["table"] = table;
         furniturePool["chair"] = chair;
     }
+
+    public void SetBagManager(BagManager bagManager)
+    {
+        this.bagManager = bagManager;
+    }
+
 
     public void ChangePlacement(string name)
     {
@@ -85,7 +91,7 @@ public class FurnitureManager : MonoBehaviour
             return;
 
         placementManager.PlaceTemporaryStructure(pos, furniturePool[furniture], CellType.Furniture);
-
+        bagManager.RemoveItem(furniture);
         furniture = null;
 
     }
