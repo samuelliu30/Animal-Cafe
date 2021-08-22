@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -910177458072364367}
   - component: {fileID: -8111925604574491248}
   - component: {fileID: -7992451875252496434}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Restaurant Chair 01 Brown
   m_TagString: Furniture
   m_Icon: {fileID: 0}

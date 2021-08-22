@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 152220917}
   - component: {fileID: 152220916}
   - component: {fileID: 152220915}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door 02 Restaurant White Left
   m_TagString: DoorLeft
   m_Icon: {fileID: 0}
@@ -866,6 +866,10 @@ PrefabInstance:
       value: Restaurant Wall 04 Outer
       objectReference: {fileID: 0}
     - target: {fileID: 9169053679540269231, guid: 8f8bc045562f7264a9dce18eae8d7b45, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169053679540269231, guid: 8f8bc045562f7264a9dce18eae8d7b45, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -908,7 +912,7 @@ MonoBehaviour:
   mainCamera: {fileID: 116169697}
   groudMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 128
 --- !u!4 &421119045
 Transform:
   m_ObjectHideFlags: 0
@@ -1791,7 +1795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 964639273}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walls Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2363,7 +2367,7 @@ GameObject:
   - component: {fileID: 1248163836}
   - component: {fileID: 1248163835}
   - component: {fileID: 1248163834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Restaurant Wall 04 Light Green
   m_TagString: RightWall
   m_Icon: {fileID: 0}
@@ -2983,7 +2987,7 @@ GameObject:
   - component: {fileID: 1495399931}
   - component: {fileID: 1495399930}
   - component: {fileID: 1495399929}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Restaurant Wall Doors 05 Light Green
   m_TagString: LeftWall
   m_Icon: {fileID: 0}
@@ -3776,7 +3780,7 @@ GameObject:
   - component: {fileID: 1863473392}
   - component: {fileID: 1863473391}
   - component: {fileID: 1863473390}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door 02 Restaurant White Right
   m_TagString: DoorRight
   m_Icon: {fileID: 0}
@@ -5020,6 +5024,10 @@ PrefabInstance:
     - target: {fileID: 3240312177627983398, guid: 65a15d015192591488ab43e13a09e355, type: 3}
       propertyPath: m_Name
       value: Restaurant Wall 05 Outer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240312177627983398, guid: 65a15d015192591488ab43e13a09e355, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3240312177627983398, guid: 65a15d015192591488ab43e13a09e355, type: 3}
       propertyPath: m_TagString

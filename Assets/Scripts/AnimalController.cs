@@ -9,6 +9,7 @@ public class AnimalController : MonoBehaviour
     [Space(10)]
     public Animator[] animator;
     private GameObject destination;
+    [SerializeField] float destBias = 0.2f;
 
     private bool arrived = false;
     // Start is called before the first frame update
@@ -16,17 +17,13 @@ public class AnimalController : MonoBehaviour
     {
         agent = this.GetComponent<NavMeshAgent>();
         ChangeAnimation("Walk");
+        agent.SetDestination(FindTable());
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!arrived)
-        {
-            agent.SetDestination(FindTable());
-        }
-
         if (!agent.pathPending)
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
@@ -45,8 +42,9 @@ public class AnimalController : MonoBehaviour
     {
         GameObject[] table = GameObject.FindGameObjectsWithTag("Furniture");
         destination =  table[Random.Range(0, table.Length)];
-        agent.stoppingDistance = destination.GetComponent<Renderer>().bounds.size.z / 2;
+        agent.stoppingDistance = destination.GetComponent<Renderer>().bounds.size.z / 2 + destBias;
         Debug.Log(agent.stoppingDistance);
+
 
         return destination.transform.position;
     }
