@@ -33,7 +33,7 @@ public class PlacementManager : MonoBehaviour
             Vector3 mouse = Input.mousePosition;
             Ray castPoint = Camera.main.ScreenPointToRay(mouse);
             RaycastHit hit;
-            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")));
+            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")))
             {
                 tempStructure.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
                 if (!furnitureController.IfPlaceable)
