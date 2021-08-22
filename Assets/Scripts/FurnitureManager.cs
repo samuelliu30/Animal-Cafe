@@ -115,7 +115,7 @@ public class FurnitureManager : MonoBehaviour
             if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
             {
                 GameObject c = hit.collider.gameObject;
-                if (c.tag == "Furniture")
+                if (c.tag == "Furniture" || c.tag == "Chair")
                 {
                     placementManager.FreePosition(Vector3Int.RoundToInt(c.transform.position));
                     postionFurnitureDic.Remove(Vector3Int.RoundToInt(c.transform.position));

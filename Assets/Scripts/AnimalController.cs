@@ -9,9 +9,10 @@ public class AnimalController : MonoBehaviour
     [Space(10)]
     public Animator[] animator;
     private GameObject destination;
-    [SerializeField] float destBias = 0.2f;
+    [SerializeField] float destBias = 0.5f;
 
     private bool arrived = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,27 +25,32 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!agent.pathPending)
+        if(arrived == false)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            if (!agent.pathPending)
             {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    // Done
-                    ChangeAnimation("Idle A");
-                    arrived = true;
+                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                    {
+                        // Done
+                        arrived = true;
+                        ChangeAnimation("Idle A");
+                        this.GetComponent<NavMeshAgent>().enabled = false;
+                        SitOn();
+                    }
                 }
             }
+
         }
+
     }
 
     private Vector3 FindTable()
     {
-        GameObject[] table = GameObject.FindGameObjectsWithTag("Furniture");
-        destination =  table[Random.Range(0, table.Length)];
+        GameObject[] charis = GameObject.FindGameObjectsWithTag("Chair");
+        destination = charis[Random.Range(0, charis.Length)];
         agent.stoppingDistance = destination.GetComponent<Renderer>().bounds.size.z / 2 + destBias;
-        Debug.Log(agent.stoppingDistance);
-
 
         return destination.transform.position;
     }
@@ -61,6 +67,13 @@ public class AnimalController : MonoBehaviour
             animator[i].SetTrigger(animation);
             //animator[i].SetBool(animation, true);
         }
+    }
+
+    private void SitOn()
+    {
+        Vector3 pos = destination.transform.position;
+        this.transform.position = new Vector3(pos.x, destination.GetComponent<Renderer>().bounds.size.y / 2, pos.z);
+        this.transform.rotation = destination.transform.rotation;
     }
 
 }

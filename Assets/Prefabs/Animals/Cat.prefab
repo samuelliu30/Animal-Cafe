@@ -548,6 +548,7 @@ MonoBehaviour:
   - {fileID: 1592525387}
   - {fileID: 1592525386}
   - {fileID: 1592525385}
+  destBias: 0.2
 --- !u!1 &1295050025854791653
 GameObject:
   m_ObjectHideFlags: 0

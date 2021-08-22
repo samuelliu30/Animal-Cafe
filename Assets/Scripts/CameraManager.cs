@@ -7,11 +7,11 @@ public class CameraManager : MonoBehaviour
     private Vector3 initialPos;
     private Quaternion initialRotation;
     private Vector3 leftDoorPos;
-    private Vector3 leftOffset;
+    private Vector3 leftOffset = new Vector3(0.2f, 1.81f, 1.6f);
     private Vector3 rightDoorPos;
-    private Vector3 rightOffset;
-    private Quaternion leftDoorRotation;
-    private Quaternion rightDoorRotation;
+    private Vector3 rightOffset = new Vector3(0, 0, -1);
+    private Quaternion leftDoorRotation = Quaternion.Euler(2.922f, -181.031f, 0f);
+    private Quaternion rightDoorRotation = Quaternion.Euler(0, -90, 0);
     private Quaternion temp;
     private Quaternion temp1;
     private Quaternion temp2;
@@ -25,12 +25,8 @@ public class CameraManager : MonoBehaviour
     {
         initialPos = this.transform.position;
         initialRotation = this.transform.rotation;
-        leftOffset = new Vector3(0.2f, 1.81f, 1.6f);
         leftDoorPos = GameObject.FindGameObjectWithTag("LeftWall").transform.position + leftOffset;
-        rightOffset = new Vector3(0, 0, -1);
         rightDoorPos = leftDoorPos + rightOffset;
-        leftDoorRotation = Quaternion.Euler(2.922f, -181.031f, 0f);
-        rightDoorRotation = Quaternion.Euler(0, -90, 0);
         move = false;
     }
     private void Update()

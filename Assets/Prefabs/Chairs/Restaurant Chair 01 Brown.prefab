@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -7992451875252496434}
   m_Layer: 8
   m_Name: Restaurant Chair 01 Brown
-  m_TagString: Furniture
+  m_TagString: Chair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
