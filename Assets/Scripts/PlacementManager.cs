@@ -48,7 +48,6 @@ public class PlacementManager : MonoBehaviour
 
             if (Input.GetKeyDown((KeyCode)'r')) {
                 tempStructure.transform.Rotate(Vector3.up, 90.0f);
-                placementIndicator.transform.Rotate(Vector3.up, 90.0f);
             }
         }
     }
