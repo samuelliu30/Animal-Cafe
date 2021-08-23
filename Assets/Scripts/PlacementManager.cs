@@ -11,7 +11,7 @@ public class PlacementManager : MonoBehaviour
     private GameObject tempStructure;
     private GameObject placementIndicator;
     public FurnitureManager furnitureManager;
-    private bool move = false;
+    public bool move = false;
     private FurnitureController furnitureController;
 
     public Material indicator;

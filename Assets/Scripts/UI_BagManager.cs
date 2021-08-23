@@ -51,8 +51,6 @@ public class UI_BagManager : MonoBehaviour
             itemSlotRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
             {  
                 furnitureManager.ChangePlacement(item.Value.name);
-               // bagManager.RemoveItem(item.Value);
-
             };
             itemSlotRectTransform.anchoredPosition = new Vector2(247 + x * itemSlotCellSize, -231 + y * itemSlotCellSize);
             RawImage image = itemSlotRectTransform.Find("Image").GetComponent<RawImage>();

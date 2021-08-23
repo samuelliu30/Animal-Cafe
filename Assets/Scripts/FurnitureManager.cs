@@ -91,7 +91,11 @@ public class FurnitureManager : MonoBehaviour
             return;
 
         placementManager.PlaceTemporaryStructure(pos, furniturePool[furniture], CellType.Furniture);
-        bagManager.RemoveItem(furniture);
+        if (!placementManager.move)
+        {
+            bagManager.RemoveItem(furniture);
+        }
+        placementManager.move = false;
         furniture = null;
 
     }
