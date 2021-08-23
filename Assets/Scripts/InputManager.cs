@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
 {
     public Action<Vector3Int> OnMouseClick, OnMouseHold;
     public Action OnMouseUp;
+    public Action<Vector3> OnCameraRotation;
     private Vector2 camMovementVector;
 
     [SerializeField]
@@ -25,6 +26,7 @@ public class InputManager : MonoBehaviour
         CheckClickDownEvent();
         CheckClickUpEvent();
         CheckClickHoldEvent();
+        CheckCameraRotationEvent();
     }
 
     private Vector3Int? RaycastGround()
@@ -77,4 +79,22 @@ public class InputManager : MonoBehaviour
             }
         }
     }
+
+    // Mobile: change input detection to two finger holding screen
+    private void CheckCameraRotationEvent()
+    {
+        if (Input.GetMouseButton(1) && EventSystem.current.IsPointerOverGameObject() == false)
+        {
+            var position = RaycastGround();
+            if (position != null)
+            {
+                // Take x axis input to y rotation and y aix input to x rotation because the camera will be rotate along that axis
+                // ex.swiping left will cause the camera rotate along y axis to the left
+                // Also inverted Y axis rotation
+                Vector3 cameraRotation = new Vector3(-1 * Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0f);
+                OnCameraRotation?.Invoke(cameraRotation);
+            }
+        }
+    }
+
 }

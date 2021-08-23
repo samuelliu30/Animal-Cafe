@@ -12,14 +12,15 @@ public class CameraManager : MonoBehaviour
     private Vector3 rightOffset = new Vector3(0, 0, -1);
     private Quaternion leftDoorRotation = Quaternion.Euler(2.922f, -181.031f, 0f);
     private Quaternion rightDoorRotation = Quaternion.Euler(0, -90, 0);
-    private Quaternion temp;
-    private Quaternion temp1;
-    private Quaternion temp2;
     private float cameraSpeed = 8.0f;
     private bool move;
     private bool leftWall;
     private bool rightWall;
     private bool goBack;
+    private bool ifRotate;
+    private Vector3 rotation;
+    private Vector3 floorCenter = new Vector3(2,3,2);
+
 
     void Start()
     {
@@ -31,8 +32,10 @@ public class CameraManager : MonoBehaviour
     }
     private void Update()
     {
+        
         if (!move)
         {
+            Debug.Log("In not move");
             this.transform.position = Vector3.Lerp(this.transform.position, initialPos, cameraSpeed * Time.deltaTime);
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, initialRotation, cameraSpeed * Time.deltaTime);
             if (this.transform.position == initialPos && this.transform.rotation == initialRotation)
@@ -60,6 +63,15 @@ public class CameraManager : MonoBehaviour
             }
         }
         
+        if (ifRotate)
+        {
+            transform.eulerAngles += rotation * cameraSpeed * Time.deltaTime;
+            //this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.Euler(this.transform.eulerAngles + rotation), cameraSpeed*Time.deltaTime);
+            ifRotate = false;
+
+            // Debug: set move to true so camera won't reset
+            move = true;
+        }
 
     }
     public void MoveCamera()
@@ -85,4 +97,15 @@ public class CameraManager : MonoBehaviour
     {
         return move;
     }
+
+    public void CameraRotate(Vector3 rotation)
+    {
+        ifRotate = true;
+
+        // TODO: Converts from screen space(mouse input) to world space
+        float pixelPerDegreeX = Screen.width / 180f;
+        float pixelPerDegreeY = Screen.height / 180f;
+        this.rotation = new Vector3(rotation.x * pixelPerDegreeY, rotation.y * pixelPerDegreeX, 0f);
+    }
+
 }

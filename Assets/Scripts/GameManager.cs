@@ -23,8 +23,6 @@ public class GameManager : MonoBehaviour
 
     public BagManager bagManager;
 
-
-
     IEnumerator SpawnTarget()
     {
         while (isStoreOpen)
@@ -43,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         //LoadGame();
         inputManager.OnMouseClick += HandleMouseClick;
+        inputManager.OnCameraRotation += HandleCameraRotate;
         StartCoroutine(SpawnTarget());
         uiBagManager.SetBagManager(bagManager);
         furnitureManager.SetBagManager(bagManager);
@@ -107,6 +106,12 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+
+    private void HandleCameraRotate(Vector3 rot)
+    {
+        cameraManager.CameraRotate(rot);
     }
 
     public void LoadGame()
