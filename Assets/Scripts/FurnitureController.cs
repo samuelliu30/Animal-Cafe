@@ -9,7 +9,7 @@ public class FurnitureController : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Furniture") || collision.gameObject.CompareTag("Chair"))
+        if (collision.gameObject.CompareTag("Furniture") || collision.gameObject.CompareTag("AvailableChair") || collision.gameObject.CompareTag("TakenChair"))
         {
             ifPlaceable = false;
         }
@@ -17,7 +17,7 @@ public class FurnitureController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Furniture") || collision.gameObject.CompareTag("Chair"))
+        if (collision.gameObject.CompareTag("Furniture") || collision.gameObject.CompareTag("AvailableChair") || collision.gameObject.CompareTag("TakenChair"))
         {
             ifPlaceable = true;
         }
@@ -25,7 +25,7 @@ public class FurnitureController : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Furniture") || collision.gameObject.CompareTag("Chair"))
+        if (collision.gameObject.CompareTag("Furniture") || collision.gameObject.CompareTag("AvailableChair")|| collision.gameObject.CompareTag("TakenChair"))
         {
             ifPlaceable = false;
         }

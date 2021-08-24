@@ -80,7 +80,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    // Mobile: change input detection to two finger holding screen
+    // Mobile: change input detection to two finger
     private void CheckCameraRotationEvent()
     {
         if (Input.GetMouseButton(1) && EventSystem.current.IsPointerOverGameObject() == false)

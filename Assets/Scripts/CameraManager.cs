@@ -35,7 +35,6 @@ public class CameraManager : MonoBehaviour
         
         if (!move)
         {
-            Debug.Log("In not move");
             this.transform.position = Vector3.Lerp(this.transform.position, initialPos, cameraSpeed * Time.deltaTime);
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, initialRotation, cameraSpeed * Time.deltaTime);
             if (this.transform.position == initialPos && this.transform.rotation == initialRotation)
