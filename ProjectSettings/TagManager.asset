@@ -10,7 +10,8 @@ TagManager:
   - LeftWall
   - RightWall
   - Floor
-  - Chair
+  - AvailableChair
+  - TakenChair
   layers:
   - Default
   - TransparentFX

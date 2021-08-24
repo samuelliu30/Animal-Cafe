@@ -1263,6 +1263,8 @@ MonoBehaviour:
   - {fileID: 1425835465}
   - {fileID: 1425835467}
   - {fileID: 1425835469}
+  destBias: 0.5
+  messageBox: {fileID: 855630182934633435, guid: 3d7109535a6958241a9621a16b104073, type: 3}
 --- !u!1 &1563152671304046352
 GameObject:
   m_ObjectHideFlags: 0
