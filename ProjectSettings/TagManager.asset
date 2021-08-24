@@ -12,6 +12,7 @@ TagManager:
   - Floor
   - AvailableChair
   - TakenChair
+  - BuyFurniture
   layers:
   - Default
   - TransparentFX

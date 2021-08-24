@@ -12,6 +12,7 @@ public class FurnitureManager : MonoBehaviour
 
     public PlacementManager placementManager;
     private BagManager bagManager;
+    public bool fromInventory = false;
 
     public List<Vector3Int> tempPlacementPos = new List<Vector3Int>();
     public class FurnitureData
@@ -91,11 +92,11 @@ public class FurnitureManager : MonoBehaviour
             return;
 
         placementManager.PlaceTemporaryStructure(pos, furniturePool[furniture], CellType.Furniture);
-        if (!placementManager.move)
+        if (fromInventory)
         {
             bagManager.RemoveItem(furniture);
         }
-        placementManager.move = false;
+        fromInventory = false;
         furniture = null;
 
     }

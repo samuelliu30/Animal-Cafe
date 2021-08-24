@@ -136,4 +136,18 @@ public class JsonManager : MonoBehaviour
         gameManager.bagManager.UpdateItemList(bagData.itemDict);
         gameManager.uiBagManager.RefreshBagItems();
     }
+
+    //////////////////// Saving and Loading Store Data ////////////////////
+    
+    [System.Serializable]
+
+    public class StoreData
+    {
+        public Item item;
+    }
+
+    public void SaveStoreData()
+    {
+
+    }
 }

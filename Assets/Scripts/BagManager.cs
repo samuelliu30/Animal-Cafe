@@ -12,8 +12,8 @@ public class BagManager
     public BagManager()
     {
         itemDict = new Dictionary<string, Item>();
-        itemDict.Add("table", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table" });
-        itemDict.Add("chair", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chair" });
+        itemDict.Add("table", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table"});
+        itemDict.Add("chair", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chair"});
     }
 
     public Dictionary<string, Item> ItemDict

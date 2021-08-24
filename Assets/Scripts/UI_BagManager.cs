@@ -10,6 +10,7 @@ public class UI_BagManager : MonoBehaviour
 {
     private BagManager bagManager;
     private Transform itemSlotTemplate;
+
     private Transform backGround;
     [SerializeField]
     FurnitureManager furnitureManager;
@@ -49,7 +50,8 @@ public class UI_BagManager : MonoBehaviour
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, this.transform).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
-            {  
+            {
+                furnitureManager.fromInventory = true;
                 furnitureManager.ChangePlacement(item.Value.name);
             };
             itemSlotRectTransform.anchoredPosition = new Vector2(247 + x * itemSlotCellSize, -231 + y * itemSlotCellSize);

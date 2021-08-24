@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
                 }
                 else if (c.name.Contains("Table"))
                 {
-                    bagManager.AddItem(new Item { itemType = Item.ItemType.Table, name = "table", amount = 1 });
+                    bagManager.AddItem(new Item { itemType = Item.ItemType.Table, name = "table", amount = 1});
                     furnitureManager.Store(c);
                 }
             }
