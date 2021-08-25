@@ -54,7 +54,7 @@ public class UI_BagManager : MonoBehaviour
                 furnitureManager.fromInventory = true;
                 furnitureManager.ChangePlacement(item.Value.name);
             };
-            itemSlotRectTransform.anchoredPosition = new Vector2(247 + x * itemSlotCellSize, -231 + y * itemSlotCellSize);
+            itemSlotRectTransform.anchoredPosition = new Vector2(-130 + x * itemSlotCellSize, -50 + y * itemSlotCellSize);
             RawImage image = itemSlotRectTransform.Find("Image").GetComponent<RawImage>();
             image.texture = item.Value.GetTexture2D();
             TextMeshProUGUI text = itemSlotRectTransform.Find("Text").GetComponent<TextMeshProUGUI>();

@@ -12,6 +12,8 @@ public class JsonManager : MonoBehaviour
     PlacementManager placementManager;    
     [SerializeField]
     GameManager gameManager;
+    [SerializeField]
+    RecipeManager recipeManager;
 
     private JsonData furnitureJson;
     private BagManager bagManager;
@@ -150,4 +152,41 @@ public class JsonManager : MonoBehaviour
     {
 
     }
+
+    //////////////////// Saving and Loading Recipe Data //////////////////// 
+
+    [System.Serializable]
+    public class RecipeData
+    {
+        public Dictionary<string, RecipeManager.Recipe> itemDict = new Dictionary<string, RecipeManager.Recipe>();
+    }
+
+    public void SaveRecipeData()
+    {
+        bagManager = gameManager.bagManager;
+        string filePath = Application.dataPath + "/Resources/BagTest.json";
+        if (!File.Exists(filePath))
+        {
+            File.Create(filePath);
+        }
+
+        RecipeData recipeData = new RecipeData();
+        recipeData.itemDict = recipeManager.recipeDict;
+
+        string savingData = JsonMapper.ToJson(recipeData);
+        File.WriteAllText(filePath, savingData);
+
+    }
+
+
+    public void LoadRecipeData()
+    {
+        string jsonString = File.ReadAllText(Application.dataPath + "/Resources/Recipe.json");
+        RecipeData recipeData = new RecipeData();
+        recipeData = JsonMapper.ToObject<RecipeData>(jsonString);
+
+        recipeManager.LoadRecipes(recipeData.itemDict);
+    }
+
+
 }

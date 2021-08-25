@@ -20,13 +20,14 @@ public class AnimalController : MonoBehaviour
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
-        ChangeAnimation("Walk");
 
 #nullable enable
         Vector3? dest = FindTable();
         if(dest != null)
         {
             agent.SetDestination((Vector3)dest);
+            ChangeAnimation("Walk");
+
         }
     }
 

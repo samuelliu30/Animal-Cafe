@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -14,8 +15,8 @@ public class GameManager : MonoBehaviour
     private bool isStoreOpen = true;
 
     [SerializeField] CustomerManager customerManager;
-    [SerializeField] TextMeshProUGUI moneyBoard;
-    [SerializeField] InventoryManager MoneyData;
+    [SerializeField] Text moneyBoard;
+    [SerializeField] InventoryManager InventoryData;
     [SerializeField] PlacementManager placementManager;
     [SerializeField] CameraManager cameraManager;
     public UI_BagManager uiBagManager;
@@ -49,12 +50,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        DisplayMoney(MoneyData);
+        DisplayMoney(InventoryData);
     }
 
     private void DisplayMoney(InventoryManager MoneyData)
     {
-        moneyBoard.text = "Money: " + MoneyData.Money;
+        moneyBoard.text = InventoryData.Money.ToString();
     }
 
     private void HandleMouseClick(Vector3Int pos)
