@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype.unity
     guid: b08ebfc7e1e490547a8a2070e87dc422
   - enabled: 0
-    path: Assets/Quirky Series/Pets/Cat/Demo/Cat Demo.unity
+    path: Assets/Imports/Quirky Series/Pets/Cat/Demo/Cat Demo.unity
     guid: 30acd7b05f359dc47a574dbba8826cc3
   m_configObjects: {}
