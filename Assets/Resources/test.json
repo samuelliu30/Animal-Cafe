@@ -2,53 +2,11 @@
     "listFurnitureData": [
         {
             "pos": {
-                "x": 4,
-                "y": 0,
-                "z": 4
-            },
-            "name": "table",
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            }
-        },
-        {
-            "pos": {
-                "x": 2,
-                "y": 0,
-                "z": 4
-            },
-            "name": "table",
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            }
-        },
-        {
-            "pos": {
-                "x": 2,
+                "x": 3,
                 "y": 0,
                 "z": 3
             },
-            "name": "chair",
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            }
-        },
-        {
-            "pos": {
-                "x": 4,
-                "y": 0,
-                "z": 3
-            },
-            "name": "chair",
+            "name": "table",
             "rotation": {
                 "x": 0.0,
                 "y": 0.0,
