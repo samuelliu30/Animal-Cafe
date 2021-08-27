@@ -26,7 +26,7 @@ public class CameraManager : MonoBehaviour
     {
         initialPos = this.transform.position;
         initialRotation = this.transform.rotation;
-        leftDoorPos = GameObject.FindGameObjectWithTag("LeftWall").transform.position + leftOffset;
+        //leftDoorPos = GameObject.FindGameObjectWithTag("LeftWall").transform.position + leftOffset;
         rightDoorPos = leftDoorPos + rightOffset;
         move = false;
     }
