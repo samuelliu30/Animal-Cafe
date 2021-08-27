@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: beacbd04e7f342e41babe858c944f291
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Door1_double_corner_with_not_Floor
+    100002: Door1_large_corner_with_not_Floor
+    100004: Door1_short_corner_with_not_Floor
+    100006: Door1_with_not_Floor
+    100008: Door2_double_corner_with_not_Floor
+    100010: Door2_large_corner_with_not_Floor
+    100012: Door2_short_corner_with_not_Floor
+    100014: Door2_with_not_Floor
+    100016: Door3_double_corner_with_not_Floor
+    100018: Door3_large_corner_with_not_Floor
+    100020: Door3_short_corner_with_not_Floor
+    100022: Door3_with_not_Floor
+    100024: //RootNode
+    400000: Door1_double_corner_with_not_Floor
+    400002: Door1_large_corner_with_not_Floor
+    400004: Door1_short_corner_with_not_Floor
+    400006: Door1_with_not_Floor
+    400008: Door2_double_corner_with_not_Floor
+    400010: Door2_large_corner_with_not_Floor
+    400012: Door2_short_corner_with_not_Floor
+    400014: Door2_with_not_Floor
+    400016: Door3_double_corner_with_not_Floor
+    400018: Door3_large_corner_with_not_Floor
+    400020: Door3_short_corner_with_not_Floor
+    400022: Door3_with_not_Floor
+    400024: //RootNode
+    2100000: Wall1
+    2100002: Color1
+    2300000: Door1_double_corner_with_not_Floor
+    2300002: Door1_large_corner_with_not_Floor
+    2300004: Door1_short_corner_with_not_Floor
+    2300006: Door1_with_not_Floor
+    2300008: Door2_double_corner_with_not_Floor
+    2300010: Door2_large_corner_with_not_Floor
+    2300012: Door2_short_corner_with_not_Floor
+    2300014: Door2_with_not_Floor
+    2300016: Door3_double_corner_with_not_Floor
+    2300018: Door3_large_corner_with_not_Floor
+    2300020: Door3_short_corner_with_not_Floor
+    2300022: Door3_with_not_Floor
+    3300000: Door1_double_corner_with_not_Floor
+    3300002: Door1_large_corner_with_not_Floor
+    3300004: Door1_short_corner_with_not_Floor
+    3300006: Door1_with_not_Floor
+    3300008: Door2_double_corner_with_not_Floor
+    3300010: Door2_large_corner_with_not_Floor
+    3300012: Door2_short_corner_with_not_Floor
+    3300014: Door2_with_not_Floor
+    3300016: Door3_double_corner_with_not_Floor
+    3300018: Door3_large_corner_with_not_Floor
+    3300020: Door3_short_corner_with_not_Floor
+    3300022: Door3_with_not_Floor
+    4300000: Door1_with_not_Floor
+    4300002: Door1_double_corner_with_not_Floor
+    4300004: Door1_large_corner_with_not_Floor
+    4300006: Door1_short_corner_with_not_Floor
+    4300008: Door2_with_not_Floor
+    4300010: Door2_double_corner_with_not_Floor
+    4300012: Door2_large_corner_with_not_Floor
+    4300014: Door2_short_corner_with_not_Floor
+    4300016: Door3_with_not_Floor
+    4300018: Door3_double_corner_with_not_Floor
+    4300020: Door3_large_corner_with_not_Floor
+    4300022: Door3_short_corner_with_not_Floor
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
