@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6274271647464054188}
   - component: {fileID: 7907495679246431051}
   - component: {fileID: 2868535566812495989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Restaurant Table 02 Wooden
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

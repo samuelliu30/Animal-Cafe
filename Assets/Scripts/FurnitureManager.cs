@@ -70,7 +70,7 @@ public class FurnitureManager : MonoBehaviour
         // Switch placement furniture type
         switch (name)
         {
-            case "Restaurant Table 01 Wooden(Clone)":
+            case "Restaurant Table 02 Wooden(Clone)":
                 furniture = "table";
                 break;
             case "Restaurant Chair 01 Brown(Clone)":

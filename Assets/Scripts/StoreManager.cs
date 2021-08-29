@@ -49,7 +49,6 @@ public class StoreManager : MonoBehaviour
         }
         else
         {
-            bool tmp = EditorUtility.DisplayDialog("Uh oh! Not enough money", "Do you want to use diamond to trade some gold?", "Sure!", "GTFO");
         }
     }
 
