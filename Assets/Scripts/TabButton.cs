@@ -10,6 +10,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public TabGroup tabGroup;
 
     public Image background;
+    public UI_BagManager uI_BagManager;
 
     // Start is called before the first frame update
     void Start()
@@ -38,5 +39,14 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     {
         tabGroup.OnTabExit(this);
     }
+    
+    public void Select(string furniture)
+    {
+        uI_BagManager.RefreshInventoryItems(furniture);
+    }
 
+    public void Deselect()
+    {
+
+    }
 }

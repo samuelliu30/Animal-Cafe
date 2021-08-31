@@ -78,8 +78,10 @@ public class UI_BagManager : MonoBehaviour
         switch (furniture)
         {
             case "table":
+                tmpDict = bagManager.TableDict;
                 break;
             case "chair":
+                tmpDict = bagManager.ChairDict;
                 break;
             default:
                 tmpDict = bagManager.TableDict;
