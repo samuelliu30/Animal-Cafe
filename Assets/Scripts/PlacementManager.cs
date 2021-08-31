@@ -63,9 +63,7 @@ public class PlacementManager : MonoBehaviour
 
     internal bool CheckIfPositionIsFree(Vector3Int pos)
     {
-        bool cuck = diningRoomGrid.GetStatusOfCell(pos.x, pos.z) == 0;
-        Debug.Log(cuck);
-        return cuck;
+        return furnitureController.IfPlaceable;
     }
 
     internal void PlaceTemporaryStructure(Vector3Int pos, GameObject item, CellType cellType)
