@@ -5216,6 +5216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   furnitureManager: {fileID: 0}
+  inventoryArea: {fileID: 0}
 --- !u!1 &231971813
 GameObject:
   m_ObjectHideFlags: 0
@@ -24326,6 +24327,8 @@ MonoBehaviour:
   - {fileID: 922789544335582778, guid: 7e4aed944f275ed459c7708802d12f92, type: 3}
   - {fileID: 3365269072159541037, guid: 43df11c88ff28af49b81ee41df0778b8, type: 3}
   moneyManager: {fileID: 11400000, guid: b1a9cbe442e2dfb4195d08c94dca82b3, type: 2}
+  pooledAnimals: []
+  amountToPool: 0
 --- !u!4 &1108257054
 Transform:
   m_ObjectHideFlags: 0
@@ -26839,6 +26842,7 @@ MonoBehaviour:
   menuUI: {fileID: 1417448900}
   bagUI: {fileID: 302641022}
   uI_BagManager: {fileID: 1431326771}
+  RecipeUI: {fileID: 229272755}
 --- !u!4 &1213930962
 Transform:
   m_ObjectHideFlags: 0
@@ -32796,6 +32800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   furnitureManager: {fileID: 657863390}
+  inventoryArea: {fileID: 302641022}
 --- !u!23 &1432835144
 MeshRenderer:
   m_ObjectHideFlags: 0

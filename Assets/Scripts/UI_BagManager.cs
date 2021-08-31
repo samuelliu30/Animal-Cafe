@@ -19,6 +19,8 @@ public class UI_BagManager : MonoBehaviour
 
     private Dictionary<string, Item> tmpDict;
 
+    public GameObject inventoryArea;
+
     private void Awake()
     {
         //itemSlotTemplate = transform.Find("ItemSlotTemplate");
@@ -101,6 +103,7 @@ public class UI_BagManager : MonoBehaviour
             {
                 furnitureManager.fromInventory = true;
                 furnitureManager.ChangePlacement(item.Value.name);
+                inventoryArea.SetActive(false);
             };
             tableRectTransform.anchoredPosition = new Vector2(-286 + x * itemSlotCellSize, 43 + y * itemSlotCellSize);
             RawImage image = tableRectTransform.Find("Image").GetComponent<RawImage>();
