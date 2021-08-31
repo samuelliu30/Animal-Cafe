@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6274271647464054188}
   - component: {fileID: 7907495679246431051}
   - component: {fileID: 2868535566812495989}
+  - component: {fileID: 3692241007270090716}
   m_Layer: 8
   m_Name: Restaurant Table 02 Wooden
   m_TagString: Furniture
@@ -125,3 +126,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead0eabcc73bf204389ba43a488074e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &3692241007270090716
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6340295604769801638}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.28100002, y: 0.17300001, z: 0.296}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.17300001, z: 0}
+  m_TimeToStationary: 0.5

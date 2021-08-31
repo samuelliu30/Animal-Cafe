@@ -8,9 +8,9 @@ public class AnimalController : MonoBehaviour
 {
     private NavMeshAgent agent;
     [Space(10)]
-    public Animator[] animator;
+    public Animator animator;
     private GameObject destination;
-    [SerializeField] float destBias = 0.5f;
+    [SerializeField] float destBias = 2f;
     [SerializeField] GameObject messageBox;
 
     private bool arrived = false;
@@ -26,7 +26,7 @@ public class AnimalController : MonoBehaviour
         if(dest != null)
         {
             agent.SetDestination((Vector3)dest);
-            ChangeAnimation("Walk");
+            ChangeAnimation(1);
 
         }
     }
@@ -34,7 +34,7 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(arrived == false && destination != null)
+        if (arrived == false && destination != null)
         {
             if (!agent.pathPending)
             {
@@ -44,7 +44,7 @@ public class AnimalController : MonoBehaviour
                     {
                         // Done
                         arrived = true;
-                        ChangeAnimation("Idle A");
+                        ChangeAnimation(0);
                         this.GetComponent<NavMeshAgent>().enabled = false;
                         SitOn();
                     }
@@ -78,16 +78,13 @@ public class AnimalController : MonoBehaviour
 
     void Eat()
     {
+        ChangeAnimation(4);
 
     }
 
-    private void ChangeAnimation(string animation)
+    private void ChangeAnimation(int animation)
     {
-        for (int i = 0; i < animator.Length; i++)
-        {
-            animator[i].SetTrigger(animation);
-            //animator[i].SetBool(animation, true);
-        }
+        this.animator.SetInteger("animation", animation);
     }
 
     private void SitOn()
@@ -100,6 +97,7 @@ public class AnimalController : MonoBehaviour
 
     private void Talk()
     {
+        /*
         talking = true;
 
         Camera cam = Camera.main;
@@ -108,6 +106,7 @@ public class AnimalController : MonoBehaviour
         float top = 1f;
         Vector3 finalPos = new Vector3(transform.position.x, transform.position.y + top, transform.position.z);
         messageBox = Instantiate(messageBox, cam.WorldToScreenPoint(finalPos), Quaternion.identity, canvas.transform);
+        */
     }
 
 }

@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject menuUI;
     public GameObject bagUI;
     public UI_BagManager uI_BagManager;
+    public GameObject RecipeUI;
 
     // Start is called before the first frame update
     void Start()
@@ -31,5 +32,9 @@ public class UIManager : MonoBehaviour
     {
         bagUI.SetActive(!bagUI.activeInHierarchy);
         uI_BagManager.RefreshInventoryItems();
+    }
+    public void ToggleRecipeMenu()
+    {
+        RecipeUI.SetActive(!RecipeUI.activeInHierarchy);
     }
 }

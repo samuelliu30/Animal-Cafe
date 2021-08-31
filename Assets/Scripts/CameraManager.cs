@@ -20,6 +20,7 @@ public class CameraManager : MonoBehaviour
     private bool ifRotate;
     private Vector3 rotation;
     private Vector3 floorCenter = new Vector3(2,3,2);
+    private bool ifZoom = false;
 
 
     void Start()
@@ -105,6 +106,21 @@ public class CameraManager : MonoBehaviour
         float pixelPerDegreeX = Screen.width / 180f;
         float pixelPerDegreeY = Screen.height / 180f;
         this.rotation = new Vector3(rotation.x * pixelPerDegreeY, rotation.y * pixelPerDegreeX, 0f);
+    }
+
+
+    public void ZoomIn()
+    {
+        if (!ifZoom)
+        {
+            this.GetComponent<Camera>().orthographicSize -= 5;
+            ifZoom = !ifZoom;
+        }
+        else
+        {
+            this.GetComponent<Camera>().orthographicSize += 5;
+            ifZoom = !ifZoom;
+        }
     }
 
 }
