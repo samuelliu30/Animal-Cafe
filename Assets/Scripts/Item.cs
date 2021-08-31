@@ -32,6 +32,7 @@ public class Item
         {
             default:
             case "table": return ItemAssets.Instance.table;
+            case "tableWhite": return ItemAssets.Instance.tableWhite;
             case "chair": return ItemAssets.Instance.chair;
         }
     }

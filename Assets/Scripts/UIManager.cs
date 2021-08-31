@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject menuUI;
     public GameObject bagUI;
+    public UI_BagManager uI_BagManager;
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +30,6 @@ public class UIManager : MonoBehaviour
     public void ToggleBagMenu()
     {
         bagUI.SetActive(!bagUI.activeInHierarchy);
+        uI_BagManager.RefreshInventoryItems();
     }
 }

@@ -8,6 +8,7 @@ public class TabGroup : MonoBehaviour
     public List<TabButton> tabButtons;
     public Sprite tabIdle;
     public Sprite tabActive;
+    public Sprite tabHover;
     public TabButton selectedTab;
     public List<GameObject> objectsToSwap;
 
@@ -24,7 +25,11 @@ public class TabGroup : MonoBehaviour
     public void OnTabEnter(TabButton button)
     {
         ResetTabs();
-
+        if (selectedTab == null || button != selectedTab)
+        {
+            button.background.sprite = tabHover;
+        }
+            
     }
 
     public void OnTabExit(TabButton button)

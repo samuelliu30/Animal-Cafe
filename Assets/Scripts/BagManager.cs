@@ -8,12 +8,16 @@ public class BagManager
 {
     public event EventHandler OnItemListChanged;
     private Dictionary<string, Item> itemDict;
+    private Dictionary<string, Item> tableDict;
 
     public BagManager()
     {
         itemDict = new Dictionary<string, Item>();
+        tableDict = new Dictionary<string, Item>();
         itemDict.Add("table", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table"});
         itemDict.Add("chair", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chair"});
+        tableDict.Add("table", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table" });
+        tableDict.Add("tableWhite", new Item { itemType = Item.ItemType.Table, amount = 10, name = "tableWhite" });
     }
 
     public Dictionary<string, Item> ItemDict
@@ -21,6 +25,13 @@ public class BagManager
         get
         {
             return itemDict;
+        }
+    }
+    public Dictionary<string, Item> TableDict
+    {
+        get
+        {
+            return tableDict;
         }
     }
 

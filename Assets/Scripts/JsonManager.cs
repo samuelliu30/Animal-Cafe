@@ -136,7 +136,7 @@ public class JsonManager : MonoBehaviour
         bagData = JsonMapper.ToObject<BagData>(jsonString);
 
         gameManager.bagManager.UpdateItemList(bagData.itemDict);
-        gameManager.uiBagManager.RefreshBagItems();
+        // gameManager.uiBagManager.RefreshBagItems();
     }
 
     //////////////////// Saving and Loading Store Data ////////////////////
