@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
+using UnityEngine.UI;
 
 public class AnimalController : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class AnimalController : MonoBehaviour
     public Animator animator;
     private GameObject destination;
     [SerializeField] float destBias = 2f;
-    [SerializeField] GameObject messageBox;
+    public GameObject DialoguePop;
+    private GameObject messageBox;
+    private Vector3 offSet;
 
     private bool arrived = false;
     private bool talking;
@@ -34,28 +37,39 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (arrived == false && destination != null)
+        //{
+        //    if (!agent.pathPending)
+        //    {
+        //        if (agent.remainingDistance <= agent.stoppingDistance)
+        //        {
+        //            if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+        //            {
+        //                // Done
+        //                arrived = true;
+        //                ChangeAnimation(0);
+        //                this.GetComponent<NavMeshAgent>().enabled = false;
+        //                SitOn();
+        //            }
+        //        }
+        //    }
+
+        //}
+
         if (arrived == false && destination != null)
         {
-            if (!agent.pathPending)
+            if(agent.remainingDistance <= agent.stoppingDistance)
             {
-                if (agent.remainingDistance <= agent.stoppingDistance)
-                {
-                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-                    {
-                        // Done
-                        arrived = true;
-                        ChangeAnimation(0);
-                        this.GetComponent<NavMeshAgent>().enabled = false;
-                        SitOn();
-                    }
-                }
+                arrived = true;
+                ChangeAnimation(0);
+                this.GetComponent<NavMeshAgent>().enabled = false;
+                SitOn();
             }
-
         }
 
         if (talking)
         {
-            messageBox.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
+            messageBox.transform.position = Camera.main.WorldToScreenPoint(this.transform.position + offSet);
         }
 
     }
@@ -79,7 +93,6 @@ public class AnimalController : MonoBehaviour
     void Eat()
     {
         ChangeAnimation(4);
-
     }
 
     private void ChangeAnimation(int animation)
@@ -92,21 +105,37 @@ public class AnimalController : MonoBehaviour
         Vector3 pos = destination.transform.position;
         this.transform.position = new Vector3(pos.x, destination.GetComponent<Renderer>().bounds.size.y / 2, pos.z);
         this.transform.rotation = destination.transform.rotation;
+
+        // Do something like talking or ordering
         Talk();
+        //Leave();
     }
 
     private void Talk()
     {
-        /*
-        talking = true;
-
         Camera cam = Camera.main;
         GameObject canvas = GameObject.Find("Canvas");
         //float top = this.GetComponent<MeshFilter>().mesh.bounds.size.y;
-        float top = 1f;
+        float top = 5f;
+        offSet = new Vector3(0f, top, 0f);
+
         Vector3 finalPos = new Vector3(transform.position.x, transform.position.y + top, transform.position.z);
-        messageBox = Instantiate(messageBox, cam.WorldToScreenPoint(finalPos), Quaternion.identity, canvas.transform);
-        */
+        messageBox = Instantiate(DialoguePop, cam.WorldToScreenPoint(finalPos), Quaternion.identity, canvas.transform);
+
+        talking = true;
+
+    }
+
+    private void Leave()
+    {
+        arrived = false;
+        GameObject doorLeft = GameObject.FindWithTag("DoorLeft");
+        GameObject doorRight = GameObject.FindWithTag("DoorRight");
+        Vector3 doorPos = new Vector3((doorLeft.transform.position.x + doorRight.transform.position.x) / 2, 0, (doorLeft.transform.position.z + doorRight.transform.position.z) / 2);
+        this.GetComponent<NavMeshAgent>().enabled = true;
+        ChangeAnimation(1);
+
+        agent.SetDestination(doorPos);
     }
 
 }

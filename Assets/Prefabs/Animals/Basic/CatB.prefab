@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1445963884221360461}
   destBias: 2
-  messageBox: {fileID: 0}
+  DialoguePop: {fileID: 3793735651044741031, guid: 47cf8a1d86e9c714db55206b5497fda7, type: 3}
 --- !u!1 &1531277395897627133
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using System.Linq;
 
 public class FurnitureManager : MonoBehaviour
 {
@@ -35,16 +36,7 @@ public class FurnitureManager : MonoBehaviour
 
     private Dictionary<Vector3Int, FurnitureData> postionFurnitureDic = new Dictionary<Vector3Int, FurnitureData>();
 
-    [SerializeField]
-    GameObject table, chair, indicator;
-
-    private Dictionary<string, GameObject> furniturePool = new Dictionary<string, GameObject>();
-
-    private void Start()
-    {
-        furniturePool["table"] = table;
-        furniturePool["chair"] = chair;
-    }
+    public SerializableDictionary<string, GameObject> furniturePool;
 
     public void SetBagManager(BagManager bagManager)
     {

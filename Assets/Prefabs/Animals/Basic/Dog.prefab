@@ -681,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 3365269072159541037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 3361054341054191791}
   - {fileID: 3367099389701092813}
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3451536575958018029}
   destBias: 2
-  messageBox: {fileID: 0}
+  DialoguePop: {fileID: 3793735651044741031, guid: 47cf8a1d86e9c714db55206b5497fda7, type: 3}
 --- !u!1 &3365300341677535305
 GameObject:
   m_ObjectHideFlags: 0

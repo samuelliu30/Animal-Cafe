@@ -16,6 +16,8 @@ public class CustomerManager : MonoBehaviour
     public List<GameObject> pooledAnimals;
     public int amountToPool;
 
+    private List<string>customerList = new List<string>();
+
 
     private void Start()
     {
@@ -53,8 +55,14 @@ public class CustomerManager : MonoBehaviour
     public void SpawnCustomer()
     {
         customer = animals[Random.Range(0, animals.Length)];
+        customerList.Add(customer.name);
         GameObject newCustomer = Instantiate(customer, doorPos, Quaternion.identity);
         moneyManager.ChangeMoney(10);
+    }
+
+    public void DespawnCustomer(string name)
+    {
+        // TODO: when customer leaves put back to the pool
     }
 
 }
