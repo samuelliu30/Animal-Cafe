@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
 using UnityEngine.UI;
+using CodeMonkey.Utils;
+
 
 public class AnimalController : MonoBehaviour
 {
+    private RecipeManager recipeManager;
+
     private NavMeshAgent agent;
     [Space(10)]
     public Animator animator;
@@ -18,6 +22,7 @@ public class AnimalController : MonoBehaviour
 
     private bool arrived = false;
     private bool talking;
+    private bool leaving;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +37,7 @@ public class AnimalController : MonoBehaviour
             ChangeAnimation(1);
 
         }
+        recipeManager = GameObject.Find("RecipeManager").GetComponent<RecipeManager>();
     }
 
     // Update is called once per frame
@@ -56,7 +62,7 @@ public class AnimalController : MonoBehaviour
 
         //}
 
-        if (arrived == false && destination != null)
+        if (leaving == false && arrived == false && destination != null)
         {
             if(agent.remainingDistance <= agent.stoppingDistance)
             {
@@ -67,9 +73,25 @@ public class AnimalController : MonoBehaviour
             }
         }
 
+        if (leaving == true && arrived == false && destination != null)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                arrived = true;
+                ChangeAnimation(0);
+                this.GetComponent<NavMeshAgent>().enabled = false;
+                Debug.Log("Bye Bye Suckers");
+                Destroy(this.gameObject);
+            }
+        }
+
         if (talking)
         {
-            messageBox.transform.position = Camera.main.WorldToScreenPoint(this.transform.position + offSet);
+            if (messageBox)
+            {
+                messageBox.transform.position = Camera.main.WorldToScreenPoint(this.transform.position + offSet);
+
+            }
         }
 
     }
@@ -93,6 +115,13 @@ public class AnimalController : MonoBehaviour
     void Eat()
     {
         ChangeAnimation(4);
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        Leave();
     }
 
     private void ChangeAnimation(int animation)
@@ -121,9 +150,16 @@ public class AnimalController : MonoBehaviour
 
         Vector3 finalPos = new Vector3(transform.position.x, transform.position.y + top, transform.position.z);
         messageBox = Instantiate(DialoguePop, cam.WorldToScreenPoint(finalPos), Quaternion.identity, canvas.transform);
+        Sprite cuck = recipeManager.recipeIconDict["coffee"];
+        messageBox.transform.Find("Image").GetComponent<Image>().sprite = cuck;
+
+        messageBox.transform.GetComponent<Button_UI>().ClickFunc = () =>
+        {
+            Order();
+            Destroy(messageBox);
+        };
 
         talking = true;
-
     }
 
     private void Leave()
@@ -136,6 +172,12 @@ public class AnimalController : MonoBehaviour
         ChangeAnimation(1);
 
         agent.SetDestination(doorPos);
+        leaving = true;
+    }
+
+    private void Order()
+    {
+        StartCoroutine(ExecuteAfterTime(3));
     }
 
 }

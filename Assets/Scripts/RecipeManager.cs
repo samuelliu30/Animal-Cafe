@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 
-public class RecipeManager
+public class RecipeManager : MonoBehaviour
 {
 
     //public  class recipe
@@ -20,12 +21,29 @@ public class RecipeManager
         public int cost;
         public int revenue;
         public bool ifUnlocked;
+
+        public Recipe(int cost, int revenue, bool ifUnlocked)
+        {
+            this.cost = cost;
+            this.revenue = revenue;
+            this.ifUnlocked = ifUnlocked;
+        }
     }
 
+    public SerializableDictionary<string, Sprite> recipeIconDict;
+
+
     public Dictionary<string, Recipe> recipeDict = new Dictionary<string, Recipe>();
-    public Dictionary<string, GameObject> recipeIcons = new Dictionary<string, GameObject>();
 
     [SerializeField] InventoryManager moneyData;
+
+    // Debug use
+    private void Start()
+    {
+        recipeDict["coffee"] = new Recipe(1, 1, false);
+        recipeDict["coffee_icecream"] = new Recipe(1, 1, false);
+    }
+
 
     public void LoadRecipes(Dictionary<string, Recipe>recipeData)
     {
@@ -35,17 +53,21 @@ public class RecipeManager
 
     public void UnlockRecipe(string name)
     {
-        // Spend money to unlock a recipe
-        if (moneyData.Money >= recipeDict[name].cost)
+        if(recipeDict[name].ifUnlocked == false)
         {
-            moneyData.ChangeMoney(recipeDict[name].cost);
-            recipeDict[name].ifUnlocked = true;
+            // Spend money to unlock a recipe
+            if (moneyData.Money >= recipeDict[name].cost)
+            {
+                moneyData.ChangeMoney(-recipeDict[name].cost);
+                recipeDict[name].ifUnlocked = true;
+            }
+            else
+            {
+                //TODO
+                Debug.Log("Not enough money");
+            }
         }
-        else
-        {
-            //TODO
-            Debug.Log("Not enough money");
-        }
+
     }
 
 }

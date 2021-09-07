@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3793735651044741024}
   - component: {fileID: 3793735651044741026}
   - component: {fileID: 3793735651044741025}
+  - component: {fileID: 3874169014023464601}
   m_Layer: 5
   m_Name: DialoguePop
   m_TagString: Untagged
@@ -73,6 +74,27 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &3874169014023464601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3793735651044741031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602f74cbbbd80034b96f88091a8e7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverBehaviourType: 0
+  hoverBehaviour_Color_Enter: {r: 0, g: 0, b: 0, a: 0}
+  hoverBehaviour_Color_Exit: {r: 0, g: 0, b: 0, a: 0}
+  hoverBehaviour_Image: {fileID: 0}
+  hoverBehaviour_Sprite_Exit: {fileID: 0}
+  hoverBehaviour_Sprite_Enter: {fileID: 0}
+  hoverBehaviour_Move: 0
+  hoverBehaviour_Move_Amount: {x: 0, y: 0}
+  triggerMouseOutFuncOnClick: 0
 --- !u!1 &5346993830894434398
 GameObject:
   m_ObjectHideFlags: 0

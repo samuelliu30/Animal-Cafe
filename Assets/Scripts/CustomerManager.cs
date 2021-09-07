@@ -55,6 +55,7 @@ public class CustomerManager : MonoBehaviour
     public void SpawnCustomer()
     {
         customer = animals[Random.Range(0, animals.Length)];
+        //customer = animals[0];
         customerList.Add(customer.name);
         GameObject newCustomer = Instantiate(customer, doorPos, Quaternion.identity);
         moneyManager.ChangeMoney(10);
