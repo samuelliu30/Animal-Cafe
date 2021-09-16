@@ -16060,10 +16060,20 @@ MonoBehaviour:
   tempPlacementPos: []
   furniturePool:
     list:
-    - Key: table
+    - Key: table01Wooden
       Value: {fileID: 7964282844709130247, guid: 52ad7ccc47805e74f972d9a79e89558f, type: 3}
-    - Key: chair
+    - Key: chairBrown
       Value: {fileID: 3159346109758416859, guid: 0504f87d1512daf49b6b35491849aacf, type: 3}
+    - Key: table02Wooden
+      Value: {fileID: 6340295604769801638, guid: 0db71f5fcc1770c439e033841eef4d5c, type: 3}
+    - Key: chairBlack
+      Value: {fileID: 1193656196645038, guid: 033a58d7fb83d1a438c60bb2130f807b, type: 3}
+    - Key: chairBlue
+      Value: {fileID: 1185017439525552, guid: 05bfe503539ebbd46a989181d91db6b5, type: 3}
+    - Key: chairGrey
+      Value: {fileID: 1176348996102032, guid: fcbd13f2fd1d9464db3ec7ad80a6144b, type: 3}
+    - Key: chairWhite
+      Value: {fileID: 1956085219512652, guid: 7cb3f3c3d429ff14a8105c9b92c9a09f, type: 3}
 --- !u!4 &657957979
 Transform:
   m_ObjectHideFlags: 0
@@ -22776,9 +22786,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a938d3036df22a144a67945cb3a3b78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 2800000, guid: 66305cbad802984468bb3e87aeedb955, type: 3}
-  tableWhite: {fileID: 2800000, guid: 0739df8bd1b5c6946b9043efb4b906b4, type: 3}
-  chair: {fileID: 2800000, guid: 7fec043b2496fab4d93d9e849886c5dc, type: 3}
+  itemPool:
+    list:
+    - Key: table01Wooden
+      Value: {fileID: 2800000, guid: 66305cbad802984468bb3e87aeedb955, type: 3}
+    - Key: table02Wooden
+      Value: {fileID: 2800000, guid: 2ffc663e24f33454797521481f8e7336, type: 3}
+    - Key: chairBrown
+      Value: {fileID: 2800000, guid: 7fec043b2496fab4d93d9e849886c5dc, type: 3}
+    - Key: chairBlue
+      Value: {fileID: 2800000, guid: ed6b4f77fa4190a43a12e11caea67b1f, type: 3}
+    - Key: chairBlack
+      Value: {fileID: 2800000, guid: 3d25e965fe64edc4082a7fbab3a8de1b, type: 3}
+    - Key: chairWhite
+      Value: {fileID: 2800000, guid: 57d201daa9693454e9f0e4ab33141dc5, type: 3}
+    - Key: chairGrey
+      Value: {fileID: 2800000, guid: a039466185904b14c97d84d1dd379b04, type: 3}
+    - Key: table03Wooden
+      Value: {fileID: 2800000, guid: 73bbed69936eed84186d7cb65a6481c7, type: 3}
 --- !u!4 &965563708
 Transform:
   m_ObjectHideFlags: 0
