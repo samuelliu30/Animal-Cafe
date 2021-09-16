@@ -5,14 +5,11 @@ using UnityEngine;
 public class ItemAssets : MonoBehaviour
 {
     public static ItemAssets Instance { get; private set; }
+    public SerializableDictionary<string, Texture2D> itemPool;
 
     private void Awake()
     {
         Instance = this;
     }
-
-    public Texture2D table;
-    public Texture2D tableWhite;
-    public Texture2D chair;
 
 }

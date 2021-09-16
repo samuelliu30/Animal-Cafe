@@ -11,12 +11,7 @@ public class StoreItem
 
     public Texture2D GetTexture2DByName()
     {
-        switch (name)
-        {
-            default:
-            case "table": return ItemAssets.Instance.table;
-            case "chair": return ItemAssets.Instance.chair;
-        }
+        return ItemAssets.Instance.itemPool[name];
     }
 
 }

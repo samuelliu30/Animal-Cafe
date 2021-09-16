@@ -16,24 +16,8 @@ public class Item
     public string name;
     public int amount;
 
-    public Texture2D GetTexture2D()
-    {
-        switch (itemType)
-        {
-            default:
-            case ItemType.Table:    return ItemAssets.Instance.table;
-            case ItemType.Chair:    return ItemAssets.Instance.chair;
-        }
-    }
-
     public Texture2D GetTexture2DByName()
     {
-        switch (name)
-        {
-            default:
-            case "table": return ItemAssets.Instance.table;
-            case "tableWhite": return ItemAssets.Instance.tableWhite;
-            case "chair": return ItemAssets.Instance.chair;
-        }
+        return ItemAssets.Instance.itemPool[name];
     }
 }

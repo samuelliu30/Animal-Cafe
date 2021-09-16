@@ -16,11 +16,14 @@ public class BagManager
         itemDict = new Dictionary<string, Item>();
         tableDict = new Dictionary<string, Item>();
         chairDict = new Dictionary<string, Item>();
-        itemDict.Add("table", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table"});
-        itemDict.Add("chair", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chair"});
-        tableDict.Add("table", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table" });
-        tableDict.Add("tableWhite", new Item { itemType = Item.ItemType.Table, amount = 10, name = "tableWhite" });
-        chairDict.Add("chair", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chair" });
+
+        tableDict.Add("table01Wooden", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table01Wooden" });
+        tableDict.Add("table02Wooden", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table02Wooden" });
+        chairDict.Add("chairBrown", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBrown" });
+        chairDict.Add("chairBlue", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBlue" });
+        chairDict.Add("chairBlack", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBlack" });
+        chairDict.Add("chairGrey", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairGrey" });
+        chairDict.Add("chairWhite", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairWhite" });
     }
 
     public Dictionary<string, Item> ItemDict
@@ -61,16 +64,13 @@ public class BagManager
 
     public void RemoveItem(string name)
     {
-        switch (name)
+        if (name.Contains("chair"))
         {
-            case "table":
-                RemoveFromCategory(tableDict, name);
-                break;
-            case "chair":
-                RemoveFromCategory(chairDict, name);
-                break;
-            default:
-                break;
+            RemoveFromCategory(chairDict, name);
+        }
+        else
+        {
+            RemoveFromCategory(tableDict, name);
         }
     }
 

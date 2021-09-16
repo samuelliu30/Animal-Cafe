@@ -48,29 +48,14 @@ public class FurnitureManager : MonoBehaviour
     {
 
         furniture = name;
-
-        // Initialize the placement indicator
-        Vector3 furnitureSize = furniturePool[name].GetComponent<Renderer>().bounds.size / 2;
-
         placementManager.ShowTemporalObject(furniturePool[furniture]);
     }
 
     public void ChangePlacement(string name, float rotation)
     {
         //TODO: Change the furniture name
-
-        // Switch placement furniture type
-        switch (name)
-        {
-            case "Restaurant Table 02 Wooden(Clone)":
-                furniture = "table";
-                break;
-            case "Restaurant Chair 01 Brown(Clone)":
-                furniture = "chair";
-                break;
-            default:
-                break;
-        }
+        name = name.Split('(')[0];
+        furniture = name;
 
         placementManager.ShowTemporalObject(furniturePool[furniture], rotation);
     }

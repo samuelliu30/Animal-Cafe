@@ -44,34 +44,6 @@ public class UI_BagManager : MonoBehaviour
         //RefreshInventoryItems();
     }
 
-    public void RefreshBagItems()
-    {
-        foreach (Transform child in this.transform)
-        {
-            if (child == itemSlotTemplate || child == backGround) continue;
-            Destroy(child.gameObject);
-        }
-        int x = 0;
-        int y = 0;
-        float itemSlotCellSize = 90f;
-
-        foreach (KeyValuePair<string, Item> item in bagManager.ItemDict)
-        {
-            RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, this.transform).GetComponent<RectTransform>();
-            itemSlotRectTransform.gameObject.SetActive(true);
-            itemSlotRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
-            {
-                furnitureManager.fromInventory = true;
-                furnitureManager.ChangePlacement(item.Value.name);
-            };
-            itemSlotRectTransform.anchoredPosition = new Vector2(-130 + x * itemSlotCellSize, -50 + y * itemSlotCellSize);
-            RawImage image = itemSlotRectTransform.Find("Image").GetComponent<RawImage>();
-            image.texture = item.Value.GetTexture2D();
-            TextMeshProUGUI text = itemSlotRectTransform.Find("Text").GetComponent<TextMeshProUGUI>();
-            text.SetText(item.Value.amount.ToString());
-            x++;
-        }
-    }
 
     public void RefreshInventoryItems(string furniture = "default")
     {
@@ -84,7 +56,7 @@ public class UI_BagManager : MonoBehaviour
                 tmpDict = bagManager.ChairDict;
                 break;
             default:
-                tmpDict = bagManager.TableDict;
+                tmpDict = (tmpDict == null) ? bagManager.TableDict : tmpDict;
                 break;
         }
 
