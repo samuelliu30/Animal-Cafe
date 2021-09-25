@@ -4,6 +4,8 @@ using UnityEngine;
 public enum CellType
 {
     Furniture,
+    Decorator,
+    WallDecorator,
     SpecialStructure,
     None
 }

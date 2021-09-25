@@ -16,6 +16,10 @@ public class UI_BagManager : MonoBehaviour
     private Transform backGround;
     [SerializeField]
     FurnitureManager furnitureManager;
+    [SerializeField]
+    DecorationManager decorationManager;    
+    [SerializeField]
+    WallManager wallManager;
 
     private Dictionary<string, Item> tmpDict;
 
@@ -55,6 +59,12 @@ public class UI_BagManager : MonoBehaviour
             case "chair":
                 tmpDict = bagManager.ChairDict;
                 break;
+            case "decoration":
+                tmpDict = bagManager.DecoDict;
+                break;            
+            case "wall":
+                tmpDict = bagManager.WallDict;
+                break;
             default:
                 tmpDict = (tmpDict == null) ? bagManager.TableDict : tmpDict;
                 break;
@@ -73,12 +83,32 @@ public class UI_BagManager : MonoBehaviour
         {
             RectTransform tableRectTransform = Instantiate(tableTransform, this.transform).GetComponent<RectTransform>();
             tableRectTransform.gameObject.SetActive(true);
-            tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+            if(furniture == "decoration")
             {
-                furnitureManager.fromInventory = true;
-                furnitureManager.ChangePlacement(item.Value.name);
-                inventoryArea.SetActive(false);
-            };
+                tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+                {
+                    decorationManager.ChangePlacement(item.Value.name);
+                    inventoryArea.SetActive(false);
+                };
+            }
+            else if(furniture == "wall")
+            {
+                tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+                {
+                    wallManager.ChangePlacement(item.Value.name);
+                    inventoryArea.SetActive(false);
+                };
+            }
+            else
+            {
+                tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+                {
+                    furnitureManager.fromInventory = true;
+                    furnitureManager.ChangePlacement(item.Value.name);
+                    inventoryArea.SetActive(false);
+                };
+            }
+
             tableRectTransform.anchoredPosition = new Vector2(-286 + x * itemSlotCellSize, 43 + y * itemSlotCellSize);
             RawImage image = tableRectTransform.Find("Image").GetComponent<RawImage>();
             image.texture = item.Value.GetTexture2DByName();

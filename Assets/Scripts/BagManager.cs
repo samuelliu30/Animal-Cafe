@@ -7,16 +7,14 @@ using UnityEngine;
 public class BagManager
 {
     public event EventHandler OnItemListChanged;
-    private Dictionary<string, Item> itemDict;
-    private Dictionary<string, Item> tableDict;
-    private Dictionary<string, Item> chairDict;
+    private Dictionary<string, Item> itemDict = new Dictionary<string, Item>();
+    private Dictionary<string, Item> tableDict = new Dictionary<string, Item>();
+    private Dictionary<string, Item> chairDict = new Dictionary<string, Item>();
+    private Dictionary<string, Item> decoDict = new Dictionary<string, Item>();
+    private Dictionary<string, Item> wallDict = new Dictionary<string, Item>();
 
     public BagManager()
     {
-        itemDict = new Dictionary<string, Item>();
-        tableDict = new Dictionary<string, Item>();
-        chairDict = new Dictionary<string, Item>();
-
         tableDict.Add("table01Wooden", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table01Wooden" });
         tableDict.Add("table02Wooden", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table02Wooden" });
         chairDict.Add("chairBrown", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBrown" });
@@ -24,6 +22,9 @@ public class BagManager
         chairDict.Add("chairBlack", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBlack" });
         chairDict.Add("chairGrey", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairGrey" });
         chairDict.Add("chairWhite", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairWhite" });
+        decoDict.Add("widePlant", new Item { itemType = Item.ItemType.Decoration, amount = 10, name = "widePlant" });
+        wallDict.Add("tmpPlatform", new Item { itemType = Item.ItemType.WallDecoration, amount = 10, name = "tmpPlatform" });
+
     }
 
     public Dictionary<string, Item> ItemDict
@@ -48,6 +49,22 @@ public class BagManager
         }
     }
 
+    public Dictionary<string, Item> DecoDict
+    {
+        get
+        {
+            return decoDict;
+        }
+    }
+    public Dictionary<string, Item> WallDict
+    {
+        get
+        {
+            return wallDict;
+        }
+    }
+
+
     public void AddItem(Item item)
     {
         if (itemDict.ContainsKey(item.name))
@@ -68,9 +85,13 @@ public class BagManager
         {
             RemoveFromCategory(chairDict, name);
         }
-        else
+        else if(name.Contains("table"))
         {
             RemoveFromCategory(tableDict, name);
+        }
+        else
+        {
+            RemoveFromCategory(decoDict, name);
         }
     }
 

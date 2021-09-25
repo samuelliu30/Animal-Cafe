@@ -9,7 +9,8 @@ public class PlacementManager : MonoBehaviour
     Grid diningRoomGrid;
 
     private GameObject tempStructure;
-    private GameObject placementIndicator;
+    public CellType cellType;
+
     public FurnitureManager furnitureManager;
     public bool move = false;
     private FurnitureController furnitureController;
@@ -28,27 +29,86 @@ public class PlacementManager : MonoBehaviour
         // If player is trying to place an object, move the preview with mouse
         if (tempStructure)
         {
-            //Debug.Log(furnitureController.ifPlaceable);
-            // Convert Screen unit to game world unit
-            Vector3 mouse = Input.mousePosition;
-            Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-            RaycastHit hit;
-            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")))
+            if(cellType == CellType.Furniture)
             {
-                tempStructure.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
-                if (!furnitureController.IfPlaceable)
+                // Convert Screen unit to game world unit
+                Vector3 mouse = Input.mousePosition;
+                Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+                RaycastHit hit;
+                if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")))
                 {
-                    tempStructure.GetComponent<Renderer>().material = indicator;
+                    tempStructure.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
+                    if (!furnitureController.IfPlaceable)
+                    {
+                        tempStructure.GetComponent<Renderer>().material = indicator;
+                    }
+                    else
+                    {
+                        tempStructure.GetComponent<Renderer>().material = resturantMaterial;
+                    }
                 }
-                else
+
+                if (Input.GetKeyDown((KeyCode)'r'))
                 {
-                    tempStructure.GetComponent<Renderer>().material = resturantMaterial;
+                    tempStructure.transform.Rotate(Vector3.up, 90.0f);
+                }
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    //PlaceTemporaryStructure(Vector3Int.RoundToInt(tempStructure.transform.position), tempStructure, cellType);
+                    furnitureManager.PlaceFurniture(Vector3Int.RoundToInt(tempStructure.transform.position));
+                }
+            }
+            else if(cellType == CellType.Decorator)
+            {
+                // Convert Screen unit to game world unit
+                Vector3 mouse = Input.mousePosition;
+                Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+                RaycastHit hit;
+                if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, (1 << LayerMask.NameToLayer("Floor") | (1 << LayerMask.NameToLayer("Furniture")))))
+                {
+                    float surface = hit.collider.ClosestPointOnBounds(hit.point).y;
+                    tempStructure.transform.position = new Vector3(hit.point.x, surface, hit.point.z);
+                }
+
+                if (Input.GetKeyDown((KeyCode)'r'))
+                {
+                    tempStructure.transform.Rotate(Vector3.up, 90.0f);
+                }
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    PlaceTemporaryStructure(Vector3Int.RoundToInt(tempStructure.transform.position), tempStructure, cellType);
+                }
+            }
+            else if(cellType == CellType.WallDecorator)
+            {
+
+                //CameraManager cameraManager = Camera.main.GetComponent<CameraManager>();
+                //cameraManager.MoveCamera();
+                //cameraManager.DecorateLeftWall();
+                // Convert Screen unit to game world unit
+                Vector3 mouse = Input.mousePosition;
+                Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+                RaycastHit hit;
+                if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, (1 << LayerMask.NameToLayer("Wall"))))
+                {
+                    tempStructure.transform.position = new Vector3(hit.point.x, hit.point.y, 0f);
+
+                }
+
+                if (Input.GetKeyDown((KeyCode)'r'))
+                {
+                    tempStructure.transform.Rotate(Vector3.up, 90.0f);
+                }
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    // TODO
+                    PlaceTemporaryStructure(Vector3Int.RoundToInt(tempStructure.transform.position), tempStructure, cellType);
                 }
             }
 
-            if (Input.GetKeyDown((KeyCode)'r')) {
-                tempStructure.transform.Rotate(Vector3.up, 90.0f);
-            }
         }
     }
 
@@ -77,7 +137,6 @@ public class PlacementManager : MonoBehaviour
 
         // Destroy Indicator
         GameObject.Destroy(tempStructure);
-        GameObject.Destroy(placementIndicator);
 
     }
 
@@ -87,12 +146,13 @@ public class PlacementManager : MonoBehaviour
     }
 
     // Display a preview of the object player trying to place
-    public void ShowTemporalObject(GameObject item, float rotation = 0)
+    public void ShowTemporalObject(GameObject item, CellType cellType, float rotation = 0)
     {
         CancelCurrentMovement();
         Vector3 pos = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.z);
         tempStructure = Instantiate(item, pos, Quaternion.Euler(0, rotation, 0));
         furnitureController = tempStructure.GetComponent<FurnitureController>();
+        this.cellType = cellType;
     }
 
     internal void PlaceObject(Vector3Int pos, string name, Quaternion rotation, CellType type)
@@ -116,10 +176,6 @@ public class PlacementManager : MonoBehaviour
         if(tempStructure != null)
         {
             Destroy(tempStructure.gameObject);
-        }
-        if(placementIndicator != null)
-        {
-            Destroy(placementIndicator.gameObject);
         }
     }
 

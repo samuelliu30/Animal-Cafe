@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     Camera mainCamera;
 
     public LayerMask groudMask;
+    public LayerMask wallMask;
 
     public Vector2 CamMovementVector
     {
@@ -34,6 +35,21 @@ public class InputManager : MonoBehaviour
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit, Mathf.Infinity, groudMask))
+        {
+            Vector3Int postionInt = Vector3Int.RoundToInt(hit.point);
+            return postionInt;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    private Vector3Int? RaycastWall()
+    {
+        RaycastHit hit;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, wallMask))
         {
             Vector3Int postionInt = Vector3Int.RoundToInt(hit.point);
             return postionInt;

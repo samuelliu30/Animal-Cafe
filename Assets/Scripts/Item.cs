@@ -10,6 +10,8 @@ public class Item
     {
         Table,
         Chair,
+        Decoration,
+        WallDecoration
     }
 
     public ItemType itemType;

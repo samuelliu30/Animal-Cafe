@@ -10,6 +10,7 @@ public class UI_Recipe : MonoBehaviour
 {
 
     public RecipeManager recipeManager;
+    public Sprite lockIcon;
     private Transform pageTransform;
     private Dictionary<string, RectTransform> posDict = new Dictionary<string, RectTransform>();
 
@@ -33,6 +34,7 @@ public class UI_Recipe : MonoBehaviour
             };
             recipeRectTransform.anchoredPosition = new Vector2(-220 + x * itemSlotCellSize, 43 + y * itemSlotCellSize);
             Image image = recipeRectTransform.Find("Image").GetComponent<Image>();
+            Image lockImage = recipeRectTransform.Find("LockImage").GetComponent<Image>();
             image.sprite = recipeManager.recipeIconDict[item.Key];
 
             TextMeshProUGUI name = recipeRectTransform.Find("Name").GetComponent<TextMeshProUGUI>();
@@ -42,6 +44,7 @@ public class UI_Recipe : MonoBehaviour
             {
                 TextMeshProUGUI cost = recipeRectTransform.Find("Price").GetComponent<TextMeshProUGUI>();
                 cost.text = item.Value.cost.ToString();
+                lockImage.sprite = lockIcon;
             }
 
             posDict[item.Key] = recipeRectTransform;

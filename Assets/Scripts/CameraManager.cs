@@ -34,34 +34,34 @@ public class CameraManager : MonoBehaviour
     private void Update()
     {
         
-        if (!move)
-        {
-            this.transform.position = Vector3.Lerp(this.transform.position, initialPos, cameraSpeed * Time.deltaTime);
-            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, initialRotation, cameraSpeed * Time.deltaTime);
-            if (this.transform.position == initialPos && this.transform.rotation == initialRotation)
-            {
-                 move = false;
-            }
-        }
-        else if (leftWall)
-        {
-            this.transform.position = Vector3.Lerp(this.transform.position, leftDoorPos, cameraSpeed * Time.deltaTime);
-            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, leftDoorRotation, cameraSpeed * Time.deltaTime);
-            //this.GetComponent<Camera>().orthographicSize -= 0.5f * Time.deltaTime;
-            if (this.transform.position == leftDoorPos && (this.transform.rotation == leftDoorRotation))
-            {
-                leftWall = false;
-            }
-        }
-        else if (rightWall)
-        {
-            this.transform.position = Vector3.Lerp(this.transform.position, rightDoorPos, cameraSpeed * Time.deltaTime);
-            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, rightDoorRotation, cameraSpeed * Time.deltaTime);
-            if (this.transform.position == rightDoorPos && this.transform.rotation == rightDoorRotation)
-            {
-                rightWall = false;
-            }
-        }
+        //if (!move)
+        //{
+        //    this.transform.position = Vector3.Lerp(this.transform.position, initialPos, cameraSpeed * Time.deltaTime);
+        //    this.transform.rotation = Quaternion.Lerp(this.transform.rotation, initialRotation, cameraSpeed * Time.deltaTime);
+        //    if (this.transform.position == initialPos && this.transform.rotation == initialRotation)
+        //    {
+        //         move = false;
+        //    }
+        //}
+        //else if (leftWall)
+        //{
+        //    this.transform.position = Vector3.Lerp(this.transform.position, leftDoorPos, cameraSpeed * Time.deltaTime);
+        //    this.transform.rotation = Quaternion.Lerp(this.transform.rotation, leftDoorRotation, cameraSpeed * Time.deltaTime);
+        //    //this.GetComponent<Camera>().orthographicSize -= 0.5f * Time.deltaTime;
+        //    if (this.transform.position == leftDoorPos && (this.transform.rotation == leftDoorRotation))
+        //    {
+        //        leftWall = false;
+        //    }
+        //}
+        //else if (rightWall)
+        //{
+        //    this.transform.position = Vector3.Lerp(this.transform.position, rightDoorPos, cameraSpeed * Time.deltaTime);
+        //    this.transform.rotation = Quaternion.Lerp(this.transform.rotation, rightDoorRotation, cameraSpeed * Time.deltaTime);
+        //    if (this.transform.position == rightDoorPos && this.transform.rotation == rightDoorRotation)
+        //    {
+        //        rightWall = false;
+        //    }
+        //}
         
         if (ifRotate)
         {

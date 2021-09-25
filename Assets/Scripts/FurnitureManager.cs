@@ -48,7 +48,8 @@ public class FurnitureManager : MonoBehaviour
     {
 
         furniture = name;
-        placementManager.ShowTemporalObject(furniturePool[furniture]);
+        placementManager.ShowTemporalObject(furniturePool[furniture], CellType.Furniture);
+
     }
 
     public void ChangePlacement(string name, float rotation)
@@ -57,7 +58,7 @@ public class FurnitureManager : MonoBehaviour
         name = name.Split('(')[0];
         furniture = name;
 
-        placementManager.ShowTemporalObject(furniturePool[furniture], rotation);
+        placementManager.ShowTemporalObject(furniturePool[furniture], CellType.Furniture, rotation);
     }
 
     public void PlaceFurniture(Vector3Int pos)

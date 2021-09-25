@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public InputManager inputManager;
     public FurnitureManager furnitureManager;
+    public DecorationManager decorationManager;
     public JsonManager jsonManager;
 
     private float spawnRate = 1.5f;
@@ -58,9 +59,12 @@ public class GameManager : MonoBehaviour
         moneyBoard.text = InventoryData.Money.ToString();
     }
 
+    // Deprecated
     private void HandleMouseClick(Vector3Int pos)
     {
         Debug.Log(pos);
+        
+        /*
         if (furnitureManager.IfPlaceable())
         {
             furnitureManager.PlaceFurniture(pos);
@@ -97,16 +101,18 @@ public class GameManager : MonoBehaviour
                 GameObject c = hit.collider.gameObject;
                 if (c.name.Contains("Chair"))
                 {
-                    bagManager.AddItem(new Item { itemType = Item.ItemType.Chair, name = "chair", amount = 1});
+                    bagManager.AddItem(new Item { itemType = Item.ItemType.Chair, name = "chair", amount = 1 });
                     furnitureManager.Store(c);
                 }
                 else if (c.name.Contains("Table"))
                 {
-                    bagManager.AddItem(new Item { itemType = Item.ItemType.Table, name = "table", amount = 1});
+                    bagManager.AddItem(new Item { itemType = Item.ItemType.Table, name = "table", amount = 1 });
                     furnitureManager.Store(c);
                 }
             }
         }
+        */
+
     }
 
 
