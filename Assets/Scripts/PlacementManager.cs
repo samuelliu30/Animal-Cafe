@@ -55,8 +55,13 @@ public class PlacementManager : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    //PlaceTemporaryStructure(Vector3Int.RoundToInt(tempStructure.transform.position), tempStructure, cellType);
-                    furnitureManager.PlaceFurniture(Vector3Int.RoundToInt(tempStructure.transform.position));
+                    Vector3Int pos = Vector3Int.RoundToInt(tempStructure.transform.position);
+                    if((CheckIfPositionInBound(pos) == true)&& (CheckIfPositionIsFree(pos) == true))
+                    {
+                        PlaceTemporaryStructure(Vector3Int.RoundToInt(tempStructure.transform.position), tempStructure, cellType);
+                        furnitureManager.PlaceFurniture();
+                    }
+
                 }
             }
             else if(cellType == CellType.Decorator)
@@ -87,6 +92,7 @@ public class PlacementManager : MonoBehaviour
                 //CameraManager cameraManager = Camera.main.GetComponent<CameraManager>();
                 //cameraManager.MoveCamera();
                 //cameraManager.DecorateLeftWall();
+
                 // Convert Screen unit to game world unit
                 Vector3 mouse = Input.mousePosition;
                 Ray castPoint = Camera.main.ScreenPointToRay(mouse);

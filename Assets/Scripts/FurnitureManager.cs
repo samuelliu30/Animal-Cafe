@@ -61,15 +61,8 @@ public class FurnitureManager : MonoBehaviour
         placementManager.ShowTemporalObject(furniturePool[furniture], CellType.Furniture, rotation);
     }
 
-    public void PlaceFurniture(Vector3Int pos)
+    public void PlaceFurniture()
     {
-
-        if (placementManager.CheckIfPositionInBound(pos) == false) 
-            return;
-        if (placementManager.CheckIfPositionIsFree(pos) == false)
-            return;
-
-        placementManager.PlaceTemporaryStructure(pos, furniturePool[furniture], CellType.Furniture);
         if (fromInventory)
         {
             bagManager.RemoveItem(furniture);
