@@ -23,6 +23,7 @@ public class BagManager
         chairDict.Add("chairGrey", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairGrey" });
         chairDict.Add("chairWhite", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairWhite" });
         decoDict.Add("widePlant", new Item { itemType = Item.ItemType.Decoration, amount = 10, name = "widePlant" });
+        decoDict.Add("vasePlant", new Item { itemType = Item.ItemType.Decoration, amount = 10, name = "vasePlant" });
         wallDict.Add("tmpPlatform", new Item { itemType = Item.ItemType.WallDecoration, amount = 10, name = "tmpPlatform" });
 
     }

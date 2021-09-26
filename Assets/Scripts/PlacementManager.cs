@@ -83,7 +83,9 @@ public class PlacementManager : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    PlaceTemporaryStructure(Vector3Int.RoundToInt(tempStructure.transform.position), tempStructure, cellType);
+                    Vector3 roundedPos = new Vector3((float)Math.Round(tempStructure.transform.position.x), (float)Math.Round(tempStructure.transform.position.y, 1), (float)Math.Round(tempStructure.transform.position.z));
+                    Debug.Log(roundedPos);
+                    PlaceTemporaryStructure(tempStructure.transform.position, tempStructure, cellType);
                 }
             }
             else if(cellType == CellType.WallDecorator)
@@ -100,7 +102,6 @@ public class PlacementManager : MonoBehaviour
                 if (Physics.Raycast(castPoint, out hit, Mathf.Infinity, (1 << LayerMask.NameToLayer("Wall"))))
                 {
                     tempStructure.transform.position = new Vector3(hit.point.x, hit.point.y, 0f);
-
                 }
 
                 if (Input.GetKeyDown((KeyCode)'r'))
@@ -140,6 +141,14 @@ public class PlacementManager : MonoBehaviour
             furnitureManager.WritePositionDict(pos, furnitureManager.Furniture, tempStructure.transform.rotation);
         }
         diningRoomGrid.SetGridStatus(pos.x, pos.z, 1);
+
+        // Destroy Indicator
+        GameObject.Destroy(tempStructure);
+
+    }
+    internal void PlaceTemporaryStructure(Vector3 pos, GameObject item, CellType cellType)
+    {
+        GameObject newStructure = Instantiate(item, pos, tempStructure.transform.rotation);
 
         // Destroy Indicator
         GameObject.Destroy(tempStructure);
