@@ -11,6 +11,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public Image background;
     public UI_BagManager uI_BagManager;
+    public UI_StoreManager uI_StoreManager;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,16 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     
     public void Select(string furniture)
     {
-        uI_BagManager.RefreshInventoryItems(furniture);
+        string parentName = this.transform.parent.parent.parent.name;
+        if(parentName == "Inventory")
+        {
+            uI_BagManager.RefreshInventoryItems(furniture);
+        }
+        else
+        {
+            //TODO: Store manager
+            uI_StoreManager.RefreshStoreItems();
+        }
     }
 
     public void Deselect()
