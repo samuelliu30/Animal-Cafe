@@ -26,8 +26,9 @@ public class PlacementManager : MonoBehaviour
 
     private void Update()
     {
+
         // If player is trying to place an object, move the preview with mouse
-        if (tempStructure)
+        if(tempStructure)
         {
             if(cellType == CellType.Furniture)
             {
@@ -116,6 +117,16 @@ public class PlacementManager : MonoBehaviour
                 }
             }
 
+        }
+        else
+        {
+            if (move)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    furnitureManager.PickUp();
+                }
+            }
         }
     }
 
