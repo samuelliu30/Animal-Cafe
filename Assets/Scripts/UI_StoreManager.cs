@@ -15,6 +15,8 @@ public class UI_StoreManager : MonoBehaviour
     public FurnitureManager furnitureManager;
     public ItemAssets itemAssets;
     public UI_BagManager inventory;
+    [SerializeField]
+    InventoryManager moneyManager;
 
     private Transform itemSlotTemplate;
     private Transform tableTransform;
@@ -49,10 +51,6 @@ public class UI_StoreManager : MonoBehaviour
             default:
                 break;
         }
-        foreach(object i in keyList)
-        {
-            Debug.Log(i.ToString());
-        }
         foreach (Transform child in this.transform)
         {
             if (child == itemSlotTemplate || child == backGround || child == tableTransform || child == inventoryBackground) continue;
@@ -68,6 +66,7 @@ public class UI_StoreManager : MonoBehaviour
             tableRectTransform.gameObject.SetActive(true);
             tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
             {
+                moneyManager.ChangeMoney(-itemAssets.priceDict[i.ToString()]);
                 inventory.AddItemToBagmanager(i.ToString(), furniture);
             };
 
