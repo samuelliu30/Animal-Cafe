@@ -15,16 +15,16 @@ public class BagManager
 
     public BagManager()
     {
-        tableDict.Add("table01Wooden", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table01Wooden" });
-        tableDict.Add("table02Wooden", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table02Wooden" });
-        chairDict.Add("chairBrown", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBrown" });
-        chairDict.Add("chairBlue", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBlue" });
-        chairDict.Add("chairBlack", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBlack" });
-        chairDict.Add("chairGrey", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairGrey" });
-        chairDict.Add("chairWhite", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairWhite" });
-        decoDict.Add("widePlant", new Item { itemType = Item.ItemType.Decoration, amount = 10, name = "widePlant" });
-        decoDict.Add("vasePlant", new Item { itemType = Item.ItemType.Decoration, amount = 10, name = "vasePlant" });
-        wallDict.Add("tmpPlatform", new Item { itemType = Item.ItemType.WallDecoration, amount = 10, name = "tmpPlatform" });
+        //tableDict.Add("table01Wooden", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table01Wooden" });
+        //tableDict.Add("table02Wooden", new Item { itemType = Item.ItemType.Table, amount = 10, name = "table02Wooden" });
+        //chairDict.Add("chairBrown", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBrown" });
+        //chairDict.Add("chairBlue", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBlue" });
+        //chairDict.Add("chairBlack", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairBlack" });
+        //chairDict.Add("chairGrey", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairGrey" });
+        //chairDict.Add("chairWhite", new Item { itemType = Item.ItemType.Chair, amount = 10, name = "chairWhite" });
+        //decoDict.Add("widePlant", new Item { itemType = Item.ItemType.Decoration, amount = 10, name = "widePlant" });
+        //decoDict.Add("vasePlant", new Item { itemType = Item.ItemType.Decoration, amount = 10, name = "vasePlant" });
+        //wallDict.Add("tmpPlatform", new Item { itemType = Item.ItemType.WallDecoration, amount = 10, name = "tmpPlatform" });
 
     }
 
@@ -66,18 +66,41 @@ public class BagManager
     }
 
 
-    public void AddItem(Item item)
+    public void AddItem(string item, string type)
     {
-        if (itemDict.ContainsKey(item.name))
+        switch (type)
         {
-            itemDict[item.name].amount += 1;
+            case "table":
+                AddItemToDict(item, tableDict);
+                break;
+            case "chair":
+                AddItemToDict(item, chairDict);
+                break;
+            case "decoration":
+                AddItemToDict(item, decoDict);
+                break;
+            case "wall":
+                AddItemToDict(item, wallDict);
+                break;
+            default:
+                AddItemToDict(item, tableDict);
+                break;
+        }
+
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        //itemList.Add(item);
+    }
+
+    internal void AddItemToDict(string item, Dictionary<string, Item> itemDict)
+    {
+        if (itemDict.ContainsKey(item))
+        {
+            itemDict[item].amount += 1;
         }
         else
         {
-            itemDict.Add(item.name, item);
+            itemDict.Add(item, new Item { amount = 1, name = item });
         }
-        OnItemListChanged?.Invoke(this, EventArgs.Empty);
-        //itemList.Add(item);
     }
 
     public void RemoveItem(string name)

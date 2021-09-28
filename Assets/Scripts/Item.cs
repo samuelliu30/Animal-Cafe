@@ -6,15 +6,18 @@ using UnityEngine;
 [Serializable]
 public class Item
 {
-    public enum ItemType
-    {
-        Table,
-        Chair,
-        Decoration,
-        WallDecoration
-    }
 
-    public ItemType itemType;
+    // Deprecated 
+
+    //public enum ItemType
+    //{
+    //    Table,
+    //    Chair,
+    //    Decoration,
+    //    WallDecoration
+    //}
+
+    //public ItemType itemType;
     public string name;
     public int amount;
 

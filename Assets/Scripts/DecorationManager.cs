@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class DecorationManager : MonoBehaviour
 {
+
+    // Deprecated class
+
     private GameObject decorator;
     public PlacementManager placementManager;
     public List<Vector3Int> tempPlacementPos = new List<Vector3Int>();

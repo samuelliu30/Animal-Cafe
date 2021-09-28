@@ -51,7 +51,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         else
         {
             //TODO: Store manager
-            uI_StoreManager.RefreshStoreItems();
+            uI_StoreManager.RefreshStoreItems(furniture);
         }
     }
 

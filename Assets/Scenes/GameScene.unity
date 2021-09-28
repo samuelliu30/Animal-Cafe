@@ -3861,7 +3861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16751,6 +16751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placementManager: {fileID: 928012334}
+  itemAssets: {fileID: 965563707}
   fromInventory: 0
   tempPlacementPos: []
   furniturePool:
@@ -23065,7 +23066,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 39b471045a6b4494cab7c06f192b765c, type: 3}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -23712,6 +23713,58 @@ MonoBehaviour:
       Value: {fileID: 2800000, guid: f232b8296f83f344c9b74cc27b389146, type: 3}
     - Key: vasePlant
       Value: {fileID: 2800000, guid: 2164bced2408e54488b4316f68eb4ad1, type: 3}
+  tablePool:
+    list:
+    - Key: table01Wooden
+      Value: {fileID: 7964282844709130247, guid: 52ad7ccc47805e74f972d9a79e89558f, type: 3}
+    - Key: table02Wooden
+      Value: {fileID: 6340295604769801638, guid: 0db71f5fcc1770c439e033841eef4d5c, type: 3}
+  chairPool:
+    list:
+    - Key: chairBlack
+      Value: {fileID: 1193656196645038, guid: 000864b77340ef541824d4e16e104780, type: 3}
+    - Key: chairBlue
+      Value: {fileID: 1185017439525552, guid: 5932e47cdec9937408def5d7a5ef82ff, type: 3}
+    - Key: chairBrown
+      Value: {fileID: 3159346109758416859, guid: 0504f87d1512daf49b6b35491849aacf, type: 3}
+    - Key: chairGrey
+      Value: {fileID: 1176348996102032, guid: d12add12aee05c649b0a4f8d624989b9, type: 3}
+    - Key: chairWhite
+      Value: {fileID: 1956085219512652, guid: bb4d22f0888f24c4ca72468fa1911af6, type: 3}
+  decoPool:
+    list:
+    - Key: widePlant
+      Value: {fileID: 1231287918710672, guid: 39e1b5cc093d1f24ab1a6ab531e7bfde, type: 3}
+    - Key: vasePlant
+      Value: {fileID: 3004336070544469900, guid: 1b1640dbb7038c3438365cf98efd823e, type: 3}
+  wallPool:
+    list:
+    - Key: tmpPlatform
+      Value: {fileID: 8431393699075152798, guid: 2331c04eab9356549821bbc6995bf32d, type: 3}
+  priceDict:
+    list:
+    - Key: table01Wooden
+      Value: 1
+    - Key: table02Wooden
+      Value: 1
+    - Key: chairBrown
+      Value: 1
+    - Key: chairBlue
+      Value: 1
+    - Key: chairBlack
+      Value: 1
+    - Key: chairWhite
+      Value: 1
+    - Key: chairGrey
+      Value: 1
+    - Key: table03Wooden
+      Value: 1
+    - Key: widePlant
+      Value: 1
+    - Key: tmpPlatform
+      Value: 1
+    - Key: vasePlant
+      Value: 1
 --- !u!4 &965563708
 Transform:
   m_ObjectHideFlags: 0
@@ -30556,55 +30609,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1253040902
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1253040904}
-  - component: {fileID: 1253040903}
-  m_Layer: 0
-  m_Name: WallManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1253040903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253040902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f3f4db07d196db4aa26e35404ff2a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placementManager: {fileID: 928012334}
-  tempPlacementPos: []
-  wallPool:
-    list:
-    - Key: tmpPlatform
-      Value: {fileID: 8431393699075152798, guid: 2331c04eab9356549821bbc6995bf32d, type: 3}
---- !u!4 &1253040904
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253040902}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.59079, y: -1.2858884, z: 2.3094645}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1253660197
 Transform:
   m_ObjectHideFlags: 0
@@ -36281,8 +36285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   furnitureManager: {fileID: 657863390}
-  decorationManager: {fileID: 1549052033}
-  wallManager: {fileID: 1253040903}
+  decorationManager: {fileID: 0}
+  wallManager: {fileID: 0}
   inventoryArea: {fileID: 302641022}
 --- !u!23 &1432835144
 MeshRenderer:
@@ -39430,57 +39434,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1549052032
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1549052034}
-  - component: {fileID: 1549052033}
-  m_Layer: 0
-  m_Name: DecorationManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1549052033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549052032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf0d36fb26a1854a8774361ed48c3bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placementManager: {fileID: 928012334}
-  tempPlacementPos: []
-  DecoratorPool:
-    list:
-    - Key: widePlant
-      Value: {fileID: 1231287918710672, guid: 39e1b5cc093d1f24ab1a6ab531e7bfde, type: 3}
-    - Key: vasePlant
-      Value: {fileID: 3004336070544469900, guid: 1b1640dbb7038c3438365cf98efd823e, type: 3}
---- !u!4 &1549052034
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549052032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.877888, y: -2.0906506, z: -17.112026}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1564335761
 GameObject:
   m_ObjectHideFlags: 0
@@ -41442,7 +41395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    itemType: 0
     name: 
     amount: 0
 --- !u!4 &1648686241
@@ -49669,6 +49621,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryArea: {fileID: 1170315605}
+  furnitureManager: {fileID: 0}
+  itemAssets: {fileID: 965563707}
+  inventory: {fileID: 1431326771}
 --- !u!23 &1990527341
 MeshRenderer:
   m_ObjectHideFlags: 0

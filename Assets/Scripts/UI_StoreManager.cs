@@ -12,6 +12,10 @@ public class UI_StoreManager : MonoBehaviour
     private Dictionary<string, Item> tmpDict;
 
     public GameObject inventoryArea;
+    public FurnitureManager furnitureManager;
+    public ItemAssets itemAssets;
+    public UI_BagManager inventory;
+
     private Transform itemSlotTemplate;
     private Transform tableTransform;
     private Transform inventoryBackground;
@@ -28,7 +32,27 @@ public class UI_StoreManager : MonoBehaviour
 
     public void RefreshStoreItems(string furniture = "default")
     {
-
+        ICollection<string> keyList = new List<string>();
+        switch (furniture)
+        {
+            case "table":
+                keyList = itemAssets.tablePool.Keys;
+                break;
+            case "chair":
+                keyList = itemAssets.chairPool.Keys;
+                break;
+            case "decoration":
+                keyList = itemAssets.decoPool.Keys;
+                break;
+            case "wall":
+                break;
+            default:
+                break;
+        }
+        foreach(object i in keyList)
+        {
+            Debug.Log(i.ToString());
+        }
         foreach (Transform child in this.transform)
         {
             if (child == itemSlotTemplate || child == backGround || child == tableTransform || child == inventoryBackground) continue;
@@ -38,17 +62,20 @@ public class UI_StoreManager : MonoBehaviour
         int y = 0;
         float itemSlotCellSize = 150f;
 
-        foreach (KeyValuePair<string, Item> item in tmpDict)
+        foreach (object i in keyList)
         {
             RectTransform tableRectTransform = Instantiate(tableTransform, this.transform).GetComponent<RectTransform>();
             tableRectTransform.gameObject.SetActive(true);
-
+            tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+            {
+                inventory.AddItemToBagmanager(i.ToString(), furniture);
+            };
 
             tableRectTransform.anchoredPosition = new Vector2(-286 + x * itemSlotCellSize, 43 + y * itemSlotCellSize);
             RawImage image = tableRectTransform.Find("Image").GetComponent<RawImage>();
-            image.texture = item.Value.GetTexture2DByName();
+            image.texture = itemAssets.itemPool[i.ToString()];
             TextMeshProUGUI text = tableRectTransform.Find("Text").GetComponent<TextMeshProUGUI>();
-            text.SetText(item.Value.amount.ToString());
+            text.SetText(itemAssets.priceDict[i.ToString()].ToString());
             x++;
             if (x == 5)
             {
@@ -56,6 +83,5 @@ public class UI_StoreManager : MonoBehaviour
                 x = 0;
             }
         }
-
     }
 }

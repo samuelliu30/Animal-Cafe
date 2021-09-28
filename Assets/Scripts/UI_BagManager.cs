@@ -33,6 +33,11 @@ public class UI_BagManager : MonoBehaviour
         inventoryBackground = transform.Find("InventoryBackground");
     }
 
+    public void AddItemToBagmanager(string name, string type)
+    {
+        bagManager.AddItem(name, type);
+    } 
+
     public void SetBagManager(BagManager bagManager)
     {
         this.bagManager = bagManager;
@@ -83,31 +88,12 @@ public class UI_BagManager : MonoBehaviour
         {
             RectTransform tableRectTransform = Instantiate(tableTransform, this.transform).GetComponent<RectTransform>();
             tableRectTransform.gameObject.SetActive(true);
-            if(furniture == "decoration")
+            tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
             {
-                tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
-                {
-                    decorationManager.ChangePlacement(item.Value.name);
-                    inventoryArea.SetActive(false);
-                };
-            }
-            else if(furniture == "wall")
-            {
-                tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
-                {
-                    wallManager.ChangePlacement(item.Value.name);
-                    inventoryArea.SetActive(false);
-                };
-            }
-            else
-            {
-                tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
-                {
-                    furnitureManager.fromInventory = true;
-                    furnitureManager.ChangePlacement(item.Value.name);
-                    inventoryArea.SetActive(false);
-                };
-            }
+                furnitureManager.fromInventory = true;
+                furnitureManager.ChangePlacement(item.Value.name, furniture);
+                inventoryArea.SetActive(false);
+            };
 
             tableRectTransform.anchoredPosition = new Vector2(-286 + x * itemSlotCellSize, 43 + y * itemSlotCellSize);
             RawImage image = tableRectTransform.Find("Image").GetComponent<RawImage>();

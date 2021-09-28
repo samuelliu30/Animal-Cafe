@@ -12,6 +12,8 @@ public class FurnitureManager : MonoBehaviour
     private GameObject tempStructure;
 
     public PlacementManager placementManager;
+    public ItemAssets itemAssets;
+
     private BagManager bagManager;
     public bool fromInventory = false;
 
@@ -35,6 +37,7 @@ public class FurnitureManager : MonoBehaviour
 
 
     private Dictionary<Vector3Int, FurnitureData> postionFurnitureDic = new Dictionary<Vector3Int, FurnitureData>();
+    private Dictionary<Vector3Int, FurnitureData> positionDecorationDic = new Dictionary<Vector3Int, FurnitureData>();
 
     public SerializableDictionary<string, GameObject> furniturePool;
 
@@ -44,11 +47,29 @@ public class FurnitureManager : MonoBehaviour
     }
 
 
-    public void ChangePlacement(string name)
+    public void ChangePlacement(string name, string type = "table")
     {
 
         furniture = name;
-        placementManager.ShowTemporalObject(furniturePool[furniture], CellType.Furniture);
+        //placementManager.ShowTemporalObject(furniturePool[furniture], CellType.Furniture);
+
+        switch (type)
+        {
+            case "table":
+                placementManager.ShowTemporalObject(itemAssets.tablePool[furniture], CellType.Furniture);
+                break;
+            case "chair":
+                placementManager.ShowTemporalObject(itemAssets.chairPool[furniture], CellType.Furniture);
+                break;
+            case "decoration":
+                placementManager.ShowTemporalObject(itemAssets.decoPool[furniture], CellType.Decorator);
+                break;
+            case "wall":
+                placementManager.ShowTemporalObject(itemAssets.wallPool[furniture], CellType.WallDecorator);
+                break;
+            default:
+                break;
+        }
 
     }
 
