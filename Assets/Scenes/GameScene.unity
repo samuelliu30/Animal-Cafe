@@ -36285,8 +36285,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   furnitureManager: {fileID: 657863390}
-  decorationManager: {fileID: 0}
-  wallManager: {fileID: 0}
   inventoryArea: {fileID: 302641022}
 --- !u!23 &1432835144
 MeshRenderer:
@@ -37252,7 +37250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1467371802
 RectTransform:
   m_ObjectHideFlags: 0

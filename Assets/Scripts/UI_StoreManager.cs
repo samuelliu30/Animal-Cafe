@@ -47,8 +47,11 @@ public class UI_StoreManager : MonoBehaviour
                 keyList = itemAssets.decoPool.Keys;
                 break;
             case "wall":
+                keyList = itemAssets.wallPool.Keys;
                 break;
             default:
+                furniture = "table";
+                keyList = itemAssets.tablePool.Keys;
                 break;
         }
         foreach (Transform child in this.transform)
@@ -64,10 +67,15 @@ public class UI_StoreManager : MonoBehaviour
         {
             RectTransform tableRectTransform = Instantiate(tableTransform, this.transform).GetComponent<RectTransform>();
             tableRectTransform.gameObject.SetActive(true);
+
+            int cost = itemAssets.priceDict[i.ToString()];
             tableRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
             {
-                moneyManager.ChangeMoney(-itemAssets.priceDict[i.ToString()]);
-                inventory.AddItemToBagmanager(i.ToString(), furniture);
+                if (cost < moneyManager.Money)
+                {
+                    moneyManager.ChangeMoney(-cost);
+                    inventory.AddItemToBagmanager(i.ToString(), furniture);
+                }
             };
 
             tableRectTransform.anchoredPosition = new Vector2(-286 + x * itemSlotCellSize, 43 + y * itemSlotCellSize);

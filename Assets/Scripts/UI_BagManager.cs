@@ -16,10 +16,7 @@ public class UI_BagManager : MonoBehaviour
     private Transform backGround;
     [SerializeField]
     FurnitureManager furnitureManager;
-    [SerializeField]
-    DecorationManager decorationManager;    
-    [SerializeField]
-    WallManager wallManager;
+
 
     private Dictionary<string, Item> tmpDict;
 
@@ -71,6 +68,7 @@ public class UI_BagManager : MonoBehaviour
                 tmpDict = bagManager.WallDict;
                 break;
             default:
+                furniture = "table";
                 tmpDict = (tmpDict == null) ? bagManager.TableDict : tmpDict;
                 break;
         }
